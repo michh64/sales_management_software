@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QLBH_techModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="lsp_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="NC_NhaCC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaSP" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenSP" Type="nvarchar" Mode="In" />
+          <Parameter Name="DonGia" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaNCC" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaKho" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaLSP" Type="nvarchar" Mode="In" />
+          <Parameter Name="TrangThai" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_Select" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaSP" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenSP" Type="nvarchar" Mode="In" />
+          <Parameter Name="DonGia" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaNCC" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaKho" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaLSP" Type="nvarchar" Mode="In" />
+          <Parameter Name="TrangThai" Type="bit" Mode="In" />
+        </Function>
+        <EntityContainer Name="QLBH_techModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLBH_techModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="QLBH_techEntities1" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="lsp_Select" ReturnType="Collection(QLBH_techModel.lsp_Select_Result)" />
+          <FunctionImport Name="NC_NhaCC" ReturnType="Collection(QLBH_techModel.NC_NhaCC_Result)" />
+          <FunctionImport Name="sp_Insert">
+            <Parameter Name="MaSP" Mode="In" Type="String" />
+            <Parameter Name="TenSP" Mode="In" Type="String" />
+            <Parameter Name="DonGia" Mode="In" Type="String" />
+            <Parameter Name="MaNCC" Mode="In" Type="String" />
+            <Parameter Name="MaKho" Mode="In" Type="String" />
+            <Parameter Name="MaLSP" Mode="In" Type="String" />
+            <Parameter Name="TrangThai" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="sp_Select" ReturnType="Collection(QLBH_techModel.sp_Select_Result)" />
+          <FunctionImport Name="sp_Update">
+            <Parameter Name="MaSP" Mode="In" Type="String" />
+            <Parameter Name="TenSP" Mode="In" Type="String" />
+            <Parameter Name="DonGia" Mode="In" Type="String" />
+            <Parameter Name="MaNCC" Mode="In" Type="String" />
+            <Parameter Name="MaKho" Mode="In" Type="String" />
+            <Parameter Name="MaLSP" Mode="In" Type="String" />
+            <Parameter Name="TrangThai" Mode="In" Type="Boolean" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="lsp_Select_Result">
+          <Property Type="String" Name="MaLSP" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TenLSP" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="NC_NhaCC_Result">
+          <Property Type="String" Name="MaNCC" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TenCongTy" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DiaChi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SoDienThoai" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="TrangThai" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_Select_Result">
+          <Property Type="String" Name="MaSP" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="TenSP" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DonGia" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaNCC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaKho" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="MaLSP" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="TrangThai" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLBH_techModelStoreContainer" CdmEntityContainer="QLBH_techEntities1" >
+          <FunctionImportMapping FunctionImportName="lsp_Select" FunctionName="QLBH_techModel.Store.lsp_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBH_techModel.lsp_Select_Result">
+                <ScalarProperty Name="MaLSP" ColumnName="MaLSP" />
+                <ScalarProperty Name="TenLSP" ColumnName="TenLSP" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="NC_NhaCC" FunctionName="QLBH_techModel.Store.NC_NhaCC">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBH_techModel.NC_NhaCC_Result">
+                <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+                <ScalarProperty Name="TenCongTy" ColumnName="TenCongTy" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Insert" FunctionName="QLBH_techModel.Store.sp_Insert" />
+          <FunctionImportMapping FunctionImportName="sp_Select" FunctionName="QLBH_techModel.Store.sp_Select">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="QLBH_techModel.sp_Select_Result">
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="TenSP" ColumnName="TenSP" />
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
+                <ScalarProperty Name="MaKho" ColumnName="MaKho" />
+                <ScalarProperty Name="MaLSP" ColumnName="MaLSP" />
+                <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_Update" FunctionName="QLBH_techModel.Store.sp_Update" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
