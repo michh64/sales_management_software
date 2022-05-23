@@ -19,7 +19,7 @@ namespace sales_management_software
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            label1.Text = "Demo push";
+            label1.Text = "Demo push again";
         }
     }
 }
