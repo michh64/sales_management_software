@@ -21,5 +21,10 @@ namespace sales_management_software
         {
             label1.Text = "Demo push againn";
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
