@@ -16,5 +16,10 @@ namespace sales_management_software
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            label1.Text = "Demo push";
+        }
     }
 }
