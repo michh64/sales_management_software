@@ -12,6 +12,7 @@ namespace sales_management_software
 {
     public partial class FormCungCap : Form
     {
+        //tinlam
         List<NHA_CUNG_CAP_DTO> listNCC;
         public FormCungCap()
         {
