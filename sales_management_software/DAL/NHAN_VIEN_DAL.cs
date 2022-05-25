@@ -11,21 +11,20 @@ namespace sales_management_software
         public static List<NHAN_VIEN_DTO> EF_GetAll()
         {
             Sale_ManagementEntities data = new Sale_ManagementEntities();
-            var truyvan = data.Select_nv().ToList();
-            List<SAN_PHAM_DTO> dsSP = new List<SAN_PHAM_DTO>();
+            var truyvan = data.select_nv().ToList();
+            List<NHAN_VIEN_DTO> dsNV = new List<NHAN_VIEN_DTO>();
             foreach (var s in truyvan)
             {
-                SAN_PHAM_DTO dp = new SAN_PHAM_DTO();
-                dp.masp = s.masp;
-                dp.tensp = s.tensp;
-                dp.dongia = (int)s.dongia;
-                dp.maNCC = s.maNCC;
-                dp.maloai = s.maloai;
-                dp.soluong = (int)s.soluong;
+                NHAN_VIEN_DTO dp = new NHAN_VIEN_DTO();
+                dp.manv = s.manv;
+                dp.matkhau = s.matkhau;
+                dp.hotennv = s.hotennv;
+                dp.sdt = s.sdt;
+                dp.diachi = s.diachi;
                 dp.deleted = (bool)s.deleted;
-                dsSP.Add(dp);
+                dsNV.Add(dp);
             }
-            return dsSP;
+            return dsNV;
         }
 
     }

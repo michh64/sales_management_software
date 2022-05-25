@@ -155,10 +155,19 @@
     <Compile Include="Select_ncc_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="select_nv_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Select_sp_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="SHIPPER.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="THONG_SO_KY_THUAT.cs">
