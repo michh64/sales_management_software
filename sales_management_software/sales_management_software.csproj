@@ -63,27 +63,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Attribute\BoThongSo.cs" />
-    <Compile Include="Attribute\ChiTietHoaDon.cs" />
-    <Compile Include="Attribute\ChiTietThongSoKyThuat.cs" />
     <Compile Include="BLL\DON_HANG_BLL.cs" />
     <Compile Include="BLL\HOA_DON_BLL.cs" />
-    <Compile Include="BLL\KhachHangBLL.cs" />
-    <Compile Include="BLL\KhoBLL.cs" />
-    <Compile Include="BLL\LoaiSanPhamBLL.cs" />
-    <Compile Include="BLL\NhaCungCapBLL.cs" />
-    <Compile Include="BLL\NhanVienBLL.cs" />
-    <Compile Include="BLL\SanPhamBLL.cs" />
+    <Compile Include="BLL\KHACH_HANG_BLL.cs" />
+    <Compile Include="BLL\KHO_HANG_BLL.cs" />
+    <Compile Include="BLL\LOAI_SAN_PHAM_BLL.cs" />
+    <Compile Include="BLL\NHA_CUNG_CAP_BLL.cs" />
+    <Compile Include="BLL\NHAN_VIEN_BLL.cs" />
+    <Compile Include="BLL\SAN_PHAM_BLL.cs" />
     <Compile Include="BLL\SHIPPER_BLL.cs" />
     <Compile Include="BLL\THONG_SO_KY_THUAT_BLL.cs" />
-    <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\DON_HANG_DAL.cs" />
     <Compile Include="DAL\HOA_DON_DAL.cs" />
-    <Compile Include="DAL\KhachHangDAL.cs" />
+    <Compile Include="DAL\KHACH_HANG_DAL.cs" />
     <Compile Include="DAL\KHO_HANG_DAL.cs" />
     <Compile Include="DAL\LOAI_SAN_PHAM_DAL.cs" />
     <Compile Include="DAL\NHA_CUNG_CAP_DAL.cs" />
-    <Compile Include="DAL\NhanVienDAL.cs" />
+    <Compile Include="DAL\NHAN_VIEN_DAL.cs" />
     <Compile Include="DAL\SAN_PHAM_DAL.cs" />
     <Compile Include="DAL\SHIPPER_DAL.cs" />
     <Compile Include="DAL\THONG_SO_KY_THUAT_DAL.cs" />
@@ -100,15 +96,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Attribute\HoaDon.cs" />
-    <Compile Include="Attribute\KhachHang.cs" />
     <Compile Include="DTO\KHACH_HANG_DTO.cs" />
-    <Compile Include="Attribute\Kho.cs" />
-    <Compile Include="Attribute\LoaiSanPham.cs" />
     <Compile Include="DTO\LOAI_SAN_PHAM.cs" />
-    <Compile Include="Attribute\NhaCungCap.cs" />
     <Compile Include="DTO\NHA_CUNG_CAP.cs" />
-    <Compile Include="Attribute\NhanVien.cs" />
     <Compile Include="DTO\NHAN_VIEN_DTO.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -136,11 +126,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Attribute\SanPham.cs" />
     <Compile Include="DTO\SAN_PHAM_DTO.cs" />
-    <Compile Include="Attribute\Shipper.cs" />
-    <Compile Include="DTO\SHIPER_DTO.cs" />
-    <Compile Include="Attribute\ThongSoKyThuat.cs" />
+    <Compile Include="DTO\SHIPPER_DTO.cs" />
     <Compile Include="Sale_Management_Data.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -219,6 +206,7 @@
     <EmbeddedResource Include="UC\UC_NhanVien.resx">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -236,9 +224,6 @@
     <None Include="Sale_Management_Data.edmx.diagram">
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

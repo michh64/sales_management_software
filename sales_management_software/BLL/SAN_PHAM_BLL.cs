@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sales_management_software
 {
-    class SanPhamBLL
+    class SAN_PHAM_BLL
     {
         public static List<SAN_PHAM_DTO> EF_GetAll()
         {

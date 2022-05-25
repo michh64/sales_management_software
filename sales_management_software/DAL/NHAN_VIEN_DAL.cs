@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace sales_management_software
 {
-    class LoaiSanPhamBLL
+    class NHAN_VIEN_DAL
     {
-        public static List<LOAI_SAN_PHAM_DTO> EF_GetAll()
-        {
-            return LOAI_SAN_PHAM_DAL.EF_GetAll();
-        }
     }
 }

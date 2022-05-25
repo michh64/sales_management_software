@@ -36,7 +36,7 @@ namespace sales_management_software
                 txt_maloai.Text = "SP0" + (chuoi2 + 1).ToString();
             }
             SAN_PHAM_DTO sp = new SAN_PHAM_DTO(txt_masp.Text, txt_tensp.Text, int.Parse(txt_dongia.Text),int.Parse(txt_soluong.Text),txt_ncc.Text, txt_maloai.Text, checkBox1.Checked);
-            bool s = SanPhamBLL.EF_AddNew(sp);
+            bool s = SAN_PHAM_BLL.EF_AddNew(sp);
             if (s == false)
             {
                 MessageBox.Show("Them thanh cong");
@@ -46,14 +46,14 @@ namespace sales_management_software
             {
                 MessageBox.Show("Lỗi");
             }
-            list = SanPhamBLL.EF_GetAll();
+            list = SAN_PHAM_BLL.EF_GetAll();
             dataGridView1.DataSource = list;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             List<SAN_PHAM_DTO> listsanpham;
-            listsanpham = SanPhamBLL.EF_GetAll();
+            listsanpham = SAN_PHAM_BLL.EF_GetAll();
             dataGridView1.DataSource = listsanpham;
         }
     }

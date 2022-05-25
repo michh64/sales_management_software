@@ -26,20 +26,20 @@ namespace sales_management_software
         private void UC_NhanVien_Load(object sender, EventArgs e)
         {
             //sanpham
-            listsanpham = SanPhamBLL.EF_GetAll();
+            listsanpham = SAN_PHAM_BLL.EF_GetAll();
             dataGridView1.DataSource = listsanpham;
             //loaisp
-            listLSP = LoaiSanPhamBLL.EF_GetAll();
+            listLSP = LOAI_SAN_PHAM_BLL.EF_GetAll();
             cb_maloai.DataSource = listLSP;
-            cb_maloai.DisplayMember = "TenLSP";
-            cb_maloai.ValueMember = "MaLSP";
+            cb_maloai.DisplayMember = "tenloai";
+            cb_maloai.ValueMember = "maloai";
             //nhacungcap
-            lisNCC = NhaCungCapBLL.EF_GetAll();
+            lisNCC = NHA_CUNG_CAP_BLL.EF_GetAll();
             cb_mancc.DataSource= lisNCC;
-            cb_mancc.DisplayMember = "TenCongTy";
-            cb_mancc.ValueMember = "MaNCC";
+            cb_mancc.DisplayMember = "tencty";
+            cb_mancc.ValueMember = "maNCC";
             //kho
-            listKho = KhoBLL.EF_GetAll();
+            listKho = KHO_HANG_BLL.EF_GetAll();
             cb_makho.DataSource = listKho;
             cb_makho.DisplayMember = "MaKho";
             cb_makho.ValueMember = "MaKho";

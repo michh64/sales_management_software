@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sales_management_software
 {
-    class NhanVienBLL
+    class KHACH_HANG_BLL
     {
     }
 }

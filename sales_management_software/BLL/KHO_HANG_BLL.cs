@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace sales_management_software
 {
-    class NhanVienDAL
+    public class KHO_HANG_BLL
     {
+        public static List<KHO_HANG_DTO> EF_GetAll()
+        {
+            return KHO_HANG_DAL.EF_GetAll();
+        }
     }
 }
