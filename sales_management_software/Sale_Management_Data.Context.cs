@@ -36,6 +36,7 @@ namespace sales_management_software
         public virtual DbSet<NHAN_VIEN> NHAN_VIEN { get; set; }
         public virtual DbSet<SAN_PHAM> SAN_PHAM { get; set; }
         public virtual DbSet<SHIPPER> SHIPPERs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THONG_SO_KY_THUAT> THONG_SO_KY_THUAT { get; set; }
     
         public virtual int Insert_sp(string masp, string tensp, Nullable<int> dongia, Nullable<int> soluong, string maNCC, string maloai, Nullable<bool> deleted)
@@ -86,47 +87,14 @@ namespace sales_management_software
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_ncc_Result>("Select_ncc");
         }
     
-        public virtual ObjectResult<Select_sp_Result> Select_sp()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_sp_Result>("Select_sp");
-        }
-    
-        public virtual int Update_sp(string masp, string tensp, Nullable<int> dongia, Nullable<int> soluong, string maNCC, string maloai, Nullable<bool> deleted)
-        {
-            var maspParameter = masp != null ?
-                new ObjectParameter("masp", masp) :
-                new ObjectParameter("masp", typeof(string));
-    
-            var tenspParameter = tensp != null ?
-                new ObjectParameter("tensp", tensp) :
-                new ObjectParameter("tensp", typeof(string));
-    
-            var dongiaParameter = dongia.HasValue ?
-                new ObjectParameter("dongia", dongia) :
-                new ObjectParameter("dongia", typeof(int));
-    
-            var soluongParameter = soluong.HasValue ?
-                new ObjectParameter("soluong", soluong) :
-                new ObjectParameter("soluong", typeof(int));
-    
-            var maNCCParameter = maNCC != null ?
-                new ObjectParameter("maNCC", maNCC) :
-                new ObjectParameter("maNCC", typeof(string));
-    
-            var maloaiParameter = maloai != null ?
-                new ObjectParameter("maloai", maloai) :
-                new ObjectParameter("maloai", typeof(string));
-    
-            var deletedParameter = deleted.HasValue ?
-                new ObjectParameter("deleted", deleted) :
-                new ObjectParameter("deleted", typeof(bool));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_sp", maspParameter, tenspParameter, dongiaParameter, soluongParameter, maNCCParameter, maloaiParameter, deletedParameter);
-        }
-    
         public virtual ObjectResult<select_nv_Result> select_nv()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<select_nv_Result>("select_nv");
+        }
+    
+        public virtual ObjectResult<Select_sp_Result> Select_sp()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_sp_Result>("Select_sp");
         }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

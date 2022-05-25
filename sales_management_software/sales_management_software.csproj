@@ -99,8 +99,8 @@
     <Compile Include="FormUpdate_SP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUpdate_SP.Designer.cs">
-      <DependentUpon>FormUpdate_SP.cs</DependentUpon>
+    <Compile Include="FormKhachHang.Designer.cs">
+      <DependentUpon>FormKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI.cs">
       <SubType>Form</SubType>
@@ -180,6 +180,9 @@
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="THONG_SO_KY_THUAT.cs">
@@ -268,7 +271,6 @@
   <ItemGroup>
     <Content Include="Infomation.txt" />
     <Content Include="Query.sql" />
-    <None Include="Resources\statistic.png" />
     <Content Include="Sale_Management_Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
@@ -279,6 +281,7 @@
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
       <LastGenOutput>Sale_Management_Data.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\statistic.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
