@@ -32,7 +32,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QLBH_techModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="QLBH_techEntities1" annotation:LazyLoadingEnabled="true" >
+        <EntityContainer Name="QLBH_techEntities" annotation:LazyLoadingEnabled="true" >
           <FunctionImport Name="lsp_Select" ReturnType="Collection(QLBH_techModel.lsp_Select_Result)" />
           <FunctionImport Name="NC_NhaCC" ReturnType="Collection(QLBH_techModel.NC_NhaCC_Result)" />
           <FunctionImport Name="sp_Insert">
@@ -80,7 +80,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLBH_techModelStoreContainer" CdmEntityContainer="QLBH_techEntities1" >
+        <EntityContainerMapping StorageEntityContainer="QLBH_techModelStoreContainer" CdmEntityContainer="QLBH_techEntities" >
           <FunctionImportMapping FunctionImportName="lsp_Select" FunctionName="QLBH_techModel.Store.lsp_Select">
             <ResultMapping>
               <ComplexTypeMapping TypeName="QLBH_techModel.lsp_Select_Result">

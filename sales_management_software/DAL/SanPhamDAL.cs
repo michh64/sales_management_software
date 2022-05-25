@@ -10,7 +10,7 @@ namespace sales_management_software
     {
         public static List<SanPhamDTO> EF_GetAll()
         {
-            QLBH_techEntities1 data = new QLBH_techEntities1();
+            QLBH_techEntities data = new QLBH_techEntities();
             var truyvan = data.sp_Select();
             List<SanPhamDTO> dsSP = new List<SanPhamDTO>();
             foreach(var s in truyvan)
@@ -30,7 +30,7 @@ namespace sales_management_software
         }
         public static bool EF_AddNew(SanPhamDTO dto)
         {
-            QLBH_techEntities1 data = new QLBH_techEntities1();
+            QLBH_techEntities data = new QLBH_techEntities();
                 string[] arrr = new string[7];
                 arrr[0] = dto.MaSP;
                 arrr[1] = dto.TenSP;

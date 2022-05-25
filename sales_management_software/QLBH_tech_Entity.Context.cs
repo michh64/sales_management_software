@@ -15,10 +15,10 @@ namespace sales_management_software
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class QLBH_techEntities1 : DbContext
+    public partial class QLBH_techEntities : DbContext
     {
-        public QLBH_techEntities1()
-            : base("name=QLBH_techEntities1")
+        public QLBH_techEntities()
+            : base("name=QLBH_techEntities")
         {
         }
     

@@ -10,7 +10,7 @@ namespace sales_management_software
     {
         public static List<NhaCungCapDTO> EF_GetAll()
         {
-            QLBH_techEntities1 data = new QLBH_techEntities1();
+            QLBH_techEntities data = new QLBH_techEntities();
             var truyvan = data.NC_NhaCC();
             List<NhaCungCapDTO> dsLSP = new List<NhaCungCapDTO>();
             foreach (var s in truyvan)
