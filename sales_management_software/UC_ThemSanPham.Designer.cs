@@ -1,13 +1,13 @@
 ﻿namespace sales_management_software
 {
-    partial class AddSP
+    partial class UC_ThemSanPham
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -50,145 +50,144 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(270, 146);
+            this.checkBox1.Location = new System.Drawing.Point(257, 153);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(60, 17);
-            this.checkBox1.TabIndex = 71;
+            this.checkBox1.TabIndex = 87;
             this.checkBox1.Text = "Đã xóa";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // txt_ncc
             // 
-            this.txt_ncc.Location = new System.Drawing.Point(538, 107);
+            this.txt_ncc.Location = new System.Drawing.Point(525, 114);
             this.txt_ncc.Name = "txt_ncc";
             this.txt_ncc.Size = new System.Drawing.Size(100, 20);
-            this.txt_ncc.TabIndex = 70;
+            this.txt_ncc.TabIndex = 86;
             // 
             // txt_maloai
             // 
-            this.txt_maloai.Location = new System.Drawing.Point(538, 76);
+            this.txt_maloai.Location = new System.Drawing.Point(525, 83);
             this.txt_maloai.Name = "txt_maloai";
             this.txt_maloai.Size = new System.Drawing.Size(100, 20);
-            this.txt_maloai.TabIndex = 69;
+            this.txt_maloai.TabIndex = 85;
             // 
             // txt_soluong
             // 
-            this.txt_soluong.Location = new System.Drawing.Point(538, 45);
+            this.txt_soluong.Location = new System.Drawing.Point(525, 52);
             this.txt_soluong.Name = "txt_soluong";
             this.txt_soluong.Size = new System.Drawing.Size(100, 20);
-            this.txt_soluong.TabIndex = 68;
+            this.txt_soluong.TabIndex = 84;
             this.txt_soluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_soluong_KeyPress);
             // 
             // btt_Luu
             // 
-            this.btt_Luu.Location = new System.Drawing.Point(503, 155);
+            this.btt_Luu.Location = new System.Drawing.Point(490, 162);
             this.btt_Luu.Name = "btt_Luu";
             this.btt_Luu.Size = new System.Drawing.Size(133, 23);
-            this.btt_Luu.TabIndex = 67;
+            this.btt_Luu.TabIndex = 83;
             this.btt_Luu.Text = "Lưu";
             this.btt_Luu.UseVisualStyleBackColor = true;
             this.btt_Luu.Click += new System.EventHandler(this.btt_Luu_Click);
             // 
             // txt_dongia
             // 
-            this.txt_dongia.Location = new System.Drawing.Point(270, 107);
+            this.txt_dongia.Location = new System.Drawing.Point(257, 114);
             this.txt_dongia.Name = "txt_dongia";
             this.txt_dongia.Size = new System.Drawing.Size(141, 20);
-            this.txt_dongia.TabIndex = 66;
+            this.txt_dongia.TabIndex = 82;
             this.txt_dongia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dongia_KeyPress);
             // 
             // txt_tensp
             // 
-            this.txt_tensp.Location = new System.Drawing.Point(270, 72);
+            this.txt_tensp.Location = new System.Drawing.Point(257, 79);
             this.txt_tensp.Name = "txt_tensp";
             this.txt_tensp.Size = new System.Drawing.Size(141, 20);
-            this.txt_tensp.TabIndex = 65;
+            this.txt_tensp.TabIndex = 81;
             // 
             // txt_masp
             // 
-            this.txt_masp.Location = new System.Drawing.Point(270, 46);
+            this.txt_masp.Location = new System.Drawing.Point(257, 53);
             this.txt_masp.Name = "txt_masp";
             this.txt_masp.ReadOnly = true;
             this.txt_masp.Size = new System.Drawing.Size(141, 20);
-            this.txt_masp.TabIndex = 64;
+            this.txt_masp.TabIndex = 80;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(163, 146);
+            this.label7.Location = new System.Drawing.Point(150, 153);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 13);
-            this.label7.TabIndex = 63;
+            this.label7.TabIndex = 79;
             this.label7.Text = "Trạng thái";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(467, 43);
+            this.label6.Location = new System.Drawing.Point(454, 50);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
-            this.label6.TabIndex = 62;
+            this.label6.TabIndex = 78;
             this.label6.Text = "Số Lượng";
             // 
             // maloai
             // 
             this.maloai.AutoSize = true;
-            this.maloai.Location = new System.Drawing.Point(467, 72);
+            this.maloai.Location = new System.Drawing.Point(454, 79);
             this.maloai.Name = "maloai";
             this.maloai.Size = new System.Drawing.Size(45, 13);
-            this.maloai.TabIndex = 61;
+            this.maloai.TabIndex = 77;
             this.maloai.Text = "Mã Loại";
             // 
             // mancc
             // 
             this.mancc.AutoSize = true;
-            this.mancc.Location = new System.Drawing.Point(467, 107);
+            this.mancc.Location = new System.Drawing.Point(454, 114);
             this.mancc.Name = "mancc";
             this.mancc.Size = new System.Drawing.Size(47, 13);
-            this.mancc.TabIndex = 60;
+            this.mancc.TabIndex = 76;
             this.mancc.Text = "Mã NCC";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(163, 107);
+            this.label3.Location = new System.Drawing.Point(150, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 59;
+            this.label3.TabIndex = 75;
             this.label3.Text = "Đơn giá";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(163, 79);
+            this.label2.Location = new System.Drawing.Point(150, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
-            this.label2.TabIndex = 58;
+            this.label2.TabIndex = 74;
             this.label2.Text = "Tên sản phẩm";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(163, 46);
+            this.label1.Location = new System.Drawing.Point(150, 53);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 56;
+            this.label1.TabIndex = 72;
             this.label1.Text = "Mã sản phẩm";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(166, 203);
+            this.dataGridView1.Location = new System.Drawing.Point(153, 210);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(470, 205);
-            this.dataGridView1.TabIndex = 57;
+            this.dataGridView1.TabIndex = 73;
             // 
-            // Form2
+            // UC_ThemSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txt_ncc);
             this.Controls.Add(this.txt_maloai);
@@ -205,9 +204,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form2";
-            this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Name = "UC_ThemSanPham";
+            this.Size = new System.Drawing.Size(790, 465);
+            this.Load += new System.EventHandler(this.UC_ThemSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

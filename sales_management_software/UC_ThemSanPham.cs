@@ -10,18 +10,27 @@ using System.Windows.Forms;
 
 namespace sales_management_software
 {
-    public partial class AddSP : Form
+    public partial class UC_ThemSanPham : UserControl
     {
-        List<SAN_PHAM_DTO> listsp;
-        public AddSP()
+        public UC_ThemSanPham()
         {
             InitializeComponent();
+        }
+
+        List<SAN_PHAM_DTO> listsp;
+
+        private void UC_ThemSanPham_Load(object sender, EventArgs e)
+        {
+            List<SAN_PHAM_DTO> listsanpham;
+            listsanpham = SAN_PHAM_BLL.EF_GetAll();
+            dataGridView1.DataSource = listsanpham;
+
         }
 
         private void btt_Luu_Click(object sender, EventArgs e)
         {
             int countrow = dataGridView1.Rows.Count;
-            
+
             // Lấy giá trị mã sản phẩm cuối cùng
             string value = Convert.ToString(dataGridView1.Rows[countrow - 1].Cells[0].Value);
 
@@ -33,14 +42,14 @@ namespace sales_management_software
 
             //them sp
             string masp = txt_masp.Text;
-            string tensp=txt_tensp.Text;
+            string tensp = txt_tensp.Text;
             int dongia = int.Parse(txt_dongia.Text);
-            int soluong=int.Parse(txt_soluong.Text);
+            int soluong = int.Parse(txt_soluong.Text);
             string ncc = txt_ncc.Text.ToUpper();
             string maloai = txt_maloai.Text.ToUpper();
             bool check = false;
             Sale_ManagementEntities data = new Sale_ManagementEntities();
-            data.Insert_sp(masp,tensp,dongia,soluong,ncc,maloai,check);
+            data.Insert_sp(masp, tensp, dongia, soluong, ncc, maloai, check);
             data.SaveChanges();
             listsp = SAN_PHAM_BLL.EF_GetAll();
             dataGridView1.DataSource = listsp;
@@ -55,12 +64,6 @@ namespace sales_management_software
             txt_ncc.Text = "";
             txt_maloai.Text = "";
             checkBox1.Checked = false;
-        }
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            List<SAN_PHAM_DTO> listsanpham;
-            listsanpham = SAN_PHAM_BLL.EF_GetAll();
-            dataGridView1.DataSource = listsanpham;
         }
 
         private void txt_dongia_KeyPress(object sender, KeyPressEventArgs e)

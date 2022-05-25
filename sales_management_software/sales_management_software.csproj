@@ -90,11 +90,11 @@
     <Compile Include="DTO\HOA_DON_DTO.cs" />
     <Compile Include="DTO\KHO_HANG_DTO.cs" />
     <Compile Include="DTO\THONG_SO_KY_THUAT_DTO.cs" />
-    <Compile Include="FormCungCap.cs">
+    <Compile Include="FormDemo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCungCap.Designer.cs">
-      <DependentUpon>FormCungCap.cs</DependentUpon>
+    <Compile Include="FormDemo.Designer.cs">
+      <DependentUpon>FormDemo.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI.cs">
       <SubType>Form</SubType>
@@ -106,12 +106,6 @@
     <Compile Include="DTO\LOAI_SAN_PHAM.cs" />
     <Compile Include="DTO\NHA_CUNG_CAP.cs" />
     <Compile Include="DTO\NHAN_VIEN_DTO.cs" />
-    <Compile Include="AddSP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddSP.Designer.cs">
-      <DependentUpon>AddSP.cs</DependentUpon>
-    </Compile>
     <Compile Include="HOA_DON.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
@@ -206,14 +200,23 @@
     <Compile Include="UC\UC_Login.Designer.cs">
       <DependentUpon>UC_Login.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormCungCap.resx">
-      <DependentUpon>FormCungCap.cs</DependentUpon>
+    <Compile Include="UC_ThemSanPham.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ThemSanPham.Designer.cs">
+      <DependentUpon>UC_ThemSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ThemNCC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ThemNCC.Designer.cs">
+      <DependentUpon>UC_ThemNCC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormDemo.resx">
+      <DependentUpon>FormDemo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI.resx">
       <DependentUpon>GUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddSP.resx">
-      <DependentUpon>AddSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -225,6 +228,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC_ThemNCC.resx">
+      <DependentUpon>UC_ThemNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ThemSanPham.resx">
+      <DependentUpon>UC_ThemSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>
     </EmbeddedResource>

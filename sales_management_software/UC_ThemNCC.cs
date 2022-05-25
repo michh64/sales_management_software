@@ -10,14 +10,21 @@ using System.Windows.Forms;
 
 namespace sales_management_software
 {
-    public partial class FormCungCap : Form
+    public partial class UC_ThemNCC : UserControl
     {
-        //tinlam
-        List<NHA_CUNG_CAP_DTO> listNCC;
-        public FormCungCap()
+        public UC_ThemNCC()
         {
             InitializeComponent();
         }
+
+        private void UC_ThemNCC_Load(object sender, EventArgs e)
+        {
+            listNCC = NHA_CUNG_CAP_BLL.EF_GetAll();
+            dataGridView1.DataSource = listNCC;
+        }
+
+        //tinlam
+        List<NHA_CUNG_CAP_DTO> listNCC;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -27,7 +34,7 @@ namespace sales_management_software
             string diachi = txt_diachi.Text;
             string sdt = txt_sdt.Text;
             bool check = false;
-            Sale_ManagementEntities data =new Sale_ManagementEntities();
+            Sale_ManagementEntities data = new Sale_ManagementEntities();
             data.Insert_ncc(maNCC, tencty, diachi, sdt, check);
             data.SaveChanges();
             listNCC = NHA_CUNG_CAP_BLL.EF_GetAll();
@@ -42,10 +49,6 @@ namespace sales_management_software
             txt_sdt.Text = "";
             checkBox1.Checked = false;
         }
-        private void FormCungCap_Load(object sender, EventArgs e)
-        {
-            listNCC = NHA_CUNG_CAP_BLL.EF_GetAll();
-            dataGridView1.DataSource = listNCC;
-        }
+
     }
 }
