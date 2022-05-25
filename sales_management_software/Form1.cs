@@ -18,7 +18,7 @@ namespace sales_management_software
         {
             InitializeComponent();
         }
-
+        //đây là code mới vd
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DefaultColorMenuItem();
@@ -99,8 +99,10 @@ namespace sales_management_software
             }
             
         }
-       
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
