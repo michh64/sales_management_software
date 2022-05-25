@@ -90,11 +90,11 @@
     <Compile Include="DTO\HOA_DON_DTO.cs" />
     <Compile Include="DTO\KHO_HANG_DTO.cs" />
     <Compile Include="DTO\THONG_SO_KY_THUAT_DTO.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="GUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="GUI.Designer.cs">
+      <DependentUpon>GUI.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\KHACH_HANG_DTO.cs" />
     <Compile Include="DTO\LOAI_SAN_PHAM.cs" />
@@ -182,8 +182,14 @@
     <Compile Include="UC\UC_NhanVien.Designer.cs">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UC\UC_Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_Login.Designer.cs">
+      <DependentUpon>UC_Login.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="GUI.resx">
+      <DependentUpon>GUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
@@ -196,12 +202,16 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UC\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_KhachHang.resx">
       <DependentUpon>UC_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UC_Login.resx">
+      <DependentUpon>UC_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_NhanVien.resx">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
@@ -231,6 +241,7 @@
   <ItemGroup>
     <Content Include="Infomation.txt" />
     <Content Include="Query.sql" />
+    <None Include="Resources\statistic.png" />
     <Content Include="Sale_Management_Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>

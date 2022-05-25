@@ -46,7 +46,7 @@ namespace sales_management_software
             funcBtn.Add(btt_themsp);
             funcBtn.Add(button2);
             funcBtn.Add(button3);
-            Form1 fm1 = new Form1();
+            GUI fm1 = new GUI();
             fm1.DefaultFuncBtn(funcBtn.ToArray());
         }
 
