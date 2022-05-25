@@ -18,6 +18,9 @@ namespace sales_management_software
                 NHA_CUNG_CAP_DTO ncc = new NHA_CUNG_CAP_DTO();
                 ncc.tencty = s.tencty;
                 ncc.maNCC = s.maNCC;
+                ncc.diachi = s.diachi;
+                ncc.sdt= s.sdt;
+                ncc.deleted =(bool)(s.deleted);
                 dsLSP.Add(ncc);
             }
 

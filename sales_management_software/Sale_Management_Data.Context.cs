@@ -231,5 +231,30 @@ namespace sales_management_software
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual int Insert_ncc(string maNCC, string tencty, string diachi, string sdt, Nullable<bool> deleted)
+        {
+            var maNCCParameter = maNCC != null ?
+                new ObjectParameter("maNCC", maNCC) :
+                new ObjectParameter("maNCC", typeof(string));
+    
+            var tenctyParameter = tencty != null ?
+                new ObjectParameter("tencty", tencty) :
+                new ObjectParameter("tencty", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            var deletedParameter = deleted.HasValue ?
+                new ObjectParameter("deleted", deleted) :
+                new ObjectParameter("deleted", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_ncc", maNCCParameter, tenctyParameter, diachiParameter, sdtParameter, deletedParameter);
+        }
     }
 }
