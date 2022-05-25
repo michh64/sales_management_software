@@ -73,6 +73,9 @@ namespace sales_management_software
             fm1.DefaultFuncBtn(funcBtn.ToArray());
         }
 
-       
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

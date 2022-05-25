@@ -19,6 +19,7 @@ namespace sales_management_software
             InitializeComponent();
         }
         //đây là code mới của lợi
+        //phương
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DefaultColorMenuItem();
