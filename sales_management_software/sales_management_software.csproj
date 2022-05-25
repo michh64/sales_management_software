@@ -90,6 +90,12 @@
     <Compile Include="DTO\HOA_DON_DTO.cs" />
     <Compile Include="DTO\KHO_HANG_DTO.cs" />
     <Compile Include="DTO\THONG_SO_KY_THUAT_DTO.cs" />
+    <Compile Include="FormUpdate_SP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdate_SP.Designer.cs">
+      <DependentUpon>FormUpdate_SP.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     <Compile Include="UC\UC_Login.Designer.cs">
       <DependentUpon>UC_Login.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormUpdate_SP.resx">
+      <DependentUpon>FormUpdate_SP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI.resx">
       <DependentUpon>GUI.cs</DependentUpon>
     </EmbeddedResource>

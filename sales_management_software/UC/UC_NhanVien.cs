@@ -17,7 +17,7 @@ namespace sales_management_software
         List<SAN_PHAM_DTO> listsanpham;
         List<LOAI_SAN_PHAM_DTO> listLSP;
         List<NHA_CUNG_CAP_DTO> lisNCC;
-        List<KHO_HANG_DTO> listKho;
+
         public UC_NhanVien()
         {
             InitializeComponent();
@@ -38,11 +38,6 @@ namespace sales_management_software
             cb_mancc.DataSource= lisNCC;
             cb_mancc.DisplayMember = "tencty";
             cb_mancc.ValueMember = "maNCC";
-            //kho
-            listKho = KHO_HANG_BLL.EF_GetAll();
-            cb_makho.DataSource = listKho;
-            cb_makho.DisplayMember = "MaKho";
-            cb_makho.ValueMember = "MaKho";
             funcBtn.Add(btt_themsp);
             funcBtn.Add(button2);
             funcBtn.Add(button3);
