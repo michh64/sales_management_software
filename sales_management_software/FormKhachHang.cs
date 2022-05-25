@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace sales_management_software
 {
-    // gg
+    // Code
     public partial class FormKhachHang : Form
     {
         public FormKhachHang()
