@@ -52,9 +52,9 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(270, 146);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.Size = new System.Drawing.Size(60, 17);
             this.checkBox1.TabIndex = 71;
-            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.Text = "Đã xóa";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // txt_ncc
@@ -124,9 +124,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(467, 43);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 62;
-            this.label6.Text = "Mã Kho";
+            this.label6.Text = "Số Lượng";
             // 
             // maloai
             // 

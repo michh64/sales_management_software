@@ -25,16 +25,17 @@ namespace sales_management_software
             string chuoi = "";
             int chuoi2 = 0;
             chuoi = Convert.ToString(dataGridView1.Rows[count - 1].Cells[0].Value);
-            chuoi2 = Convert.ToInt32((chuoi.Remove(0, 3)));
+            chuoi2 = Convert.ToInt32((chuoi.Remove(0, 2)));
             if (chuoi2 + 1 < 10)
             {
-                txt_maloai.Text = "SP00" + (chuoi2 + 1).ToString();
+                txt_masp.Text = "SP00" + (chuoi2 + 1).ToString();
 
             }
             else if (chuoi2 + 1 < 100)
             {
-                txt_maloai.Text = "SP0" + (chuoi2 + 1).ToString();
+                txt_masp.Text = "SP0" + (chuoi2 + 1).ToString();
             }
+
             //them sp
             string masp = txt_masp.Text;
             string tensp=txt_tensp.Text;
@@ -42,7 +43,7 @@ namespace sales_management_software
             int soluong=int.Parse(txt_soluong.Text);
             string ncc = txt_ncc.Text;
             string maloai = txt_maloai.Text;
-            bool check = Convert.ToBoolean(checkBox1.Text);
+            bool check = false;
             Sale_ManagementEntities data = new Sale_ManagementEntities();
             data.Insert_sp(masp,tensp,dongia,soluong,ncc,maloai,check);
             data.SaveChanges();
