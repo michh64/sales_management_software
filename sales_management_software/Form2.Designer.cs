@@ -31,7 +31,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txt_ncc = new System.Windows.Forms.TextBox();
             this.txt_maloai = new System.Windows.Forms.TextBox();
-            this.txt_kho = new System.Windows.Forms.TextBox();
+            this.txt_soluong = new System.Windows.Forms.TextBox();
             this.btt_Luu = new System.Windows.Forms.Button();
             this.txt_dongia = new System.Windows.Forms.TextBox();
             this.txt_tensp = new System.Windows.Forms.TextBox();
@@ -71,12 +71,12 @@
             this.txt_maloai.Size = new System.Drawing.Size(100, 20);
             this.txt_maloai.TabIndex = 69;
             // 
-            // txt_kho
+            // txt_soluong
             // 
-            this.txt_kho.Location = new System.Drawing.Point(538, 45);
-            this.txt_kho.Name = "txt_kho";
-            this.txt_kho.Size = new System.Drawing.Size(100, 20);
-            this.txt_kho.TabIndex = 68;
+            this.txt_soluong.Location = new System.Drawing.Point(538, 45);
+            this.txt_soluong.Name = "txt_soluong";
+            this.txt_soluong.Size = new System.Drawing.Size(100, 20);
+            this.txt_soluong.TabIndex = 68;
             // 
             // btt_Luu
             // 
@@ -190,7 +190,7 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.txt_ncc);
             this.Controls.Add(this.txt_maloai);
-            this.Controls.Add(this.txt_kho);
+            this.Controls.Add(this.txt_soluong);
             this.Controls.Add(this.btt_Luu);
             this.Controls.Add(this.txt_dongia);
             this.Controls.Add(this.txt_tensp);
@@ -217,7 +217,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox txt_ncc;
         private System.Windows.Forms.TextBox txt_maloai;
-        private System.Windows.Forms.TextBox txt_kho;
+        private System.Windows.Forms.TextBox txt_soluong;
         private System.Windows.Forms.Button btt_Luu;
         private System.Windows.Forms.TextBox txt_dongia;
         private System.Windows.Forms.TextBox txt_tensp;

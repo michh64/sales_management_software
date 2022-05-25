@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Sale_ManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DON_HANG">
+          <Key>
+            <PropertyRef Name="madh" />
+          </Key>
+          <Property Name="madh" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="mahd" Type="char" MaxLength="5" />
+          <Property Name="makh" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="manv" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="mashiper" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="ngaydat" Type="date" />
+          <Property Name="ngaygiao" Type="date" />
+          <Property Name="diachigiao" Type="nvarchar" MaxLength="50" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="HOA_DON">
+          <Key>
+            <PropertyRef Name="mahd" />
+          </Key>
+          <Property Name="mahd" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="masp" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="tensp" Type="nvarchar" MaxLength="30" />
+          <Property Name="dongia" Type="int" />
+          <Property Name="giamgia" Type="int" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="tongtien" Type="int" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="KHACH_HANG">
+          <Key>
+            <PropertyRef Name="makh" />
+          </Key>
+          <Property Name="makh" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="tenkh" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="sdt" Type="char" MaxLength="10" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="KHO_HANG">
+          <Key>
+            <PropertyRef Name="makho" />
+          </Key>
+          <Property Name="makho" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="tenkho" Type="nvarchar" MaxLength="30" />
+          <Property Name="masp" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="soluongtonkho" Type="int" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="LOAI_SAN_PHAM">
+          <Key>
+            <PropertyRef Name="maloai" />
+          </Key>
+          <Property Name="maloai" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="tenloai" Type="nvarchar" MaxLength="30" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="NHA_CUNG_CAP">
+          <Key>
+            <PropertyRef Name="maNCC" />
+          </Key>
+          <Property Name="maNCC" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="tencty" Type="nvarchar" MaxLength="30" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="sdt" Type="char" MaxLength="10" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="NHAN_VIEN">
+          <Key>
+            <PropertyRef Name="manv" />
+          </Key>
+          <Property Name="manv" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="matkhau" Type="varchar" MaxLength="15" />
+          <Property Name="hotennv" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="dongia" Type="int" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="maNCC" Type="char" MaxLength="10" />
+          <Property Name="maloai" Type="char" MaxLength="5" />
+          <Property Name="sdt" Type="char" MaxLength="10" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="50" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="SAN_PHAM">
+          <Key>
+            <PropertyRef Name="masp" />
+          </Key>
+          <Property Name="masp" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="tensp" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="dongia" Type="int" />
+          <Property Name="soluong" Type="int" />
+          <Property Name="maNCC" Type="char" MaxLength="10" />
+          <Property Name="maloai" Type="char" MaxLength="5" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="SHIPPER">
+          <Key>
+            <PropertyRef Name="mashiper" />
+          </Key>
+          <Property Name="mashiper" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="tenshipper" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="madh" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="sdt" Type="char" MaxLength="10" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="THONG_SO_KY_THUAT">
+          <Key>
+            <PropertyRef Name="mats" />
+          </Key>
+          <Property Name="mats" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="tents" Type="nvarchar" MaxLength="30" />
+          <Property Name="masp" Type="char" MaxLength="5" />
+          <Property Name="giatri" Type="varchar" MaxLength="10" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <Association Name="FK_DON_HANG_HOA_DON">
+          <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="0..1" />
+          <End Role="DON_HANG" Type="Self.DON_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOA_DON">
+              <PropertyRef Name="mahd" />
+            </Principal>
+            <Dependent Role="DON_HANG">
+              <PropertyRef Name="mahd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_madh">
+          <End Role="DON_HANG" Type="Self.DON_HANG" Multiplicity="1" />
+          <End Role="SHIPPER" Type="Self.SHIPPER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DON_HANG">
+              <PropertyRef Name="madh" />
+            </Principal>
+            <Dependent Role="SHIPPER">
+              <PropertyRef Name="madh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_makh">
+          <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="1" />
+          <End Role="DON_HANG" Type="Self.DON_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACH_HANG">
+              <PropertyRef Name="makh" />
+            </Principal>
+            <Dependent Role="DON_HANG">
+              <PropertyRef Name="makh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_manv">
+          <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
+          <End Role="DON_HANG" Type="Self.DON_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAN_VIEN">
+              <PropertyRef Name="manv" />
+            </Principal>
+            <Dependent Role="DON_HANG">
+              <PropertyRef Name="manv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_masp_KhoHang">
+          <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="1" />
+          <End Role="KHO_HANG" Type="Self.KHO_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAN_PHAM">
+              <PropertyRef Name="masp" />
+            </Principal>
+            <Dependent Role="KHO_HANG">
+              <PropertyRef Name="masp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_masp_ThongSoKyThuat">
+          <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="0..1" />
+          <End Role="THONG_SO_KY_THUAT" Type="Self.THONG_SO_KY_THUAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAN_PHAM">
+              <PropertyRef Name="masp" />
+            </Principal>
+            <Dependent Role="THONG_SO_KY_THUAT">
+              <PropertyRef Name="masp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAN_PHAM_LOAI_SAN_PHAM">
+          <End Role="LOAI_SAN_PHAM" Type="Self.LOAI_SAN_PHAM" Multiplicity="0..1" />
+          <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAI_SAN_PHAM">
+              <PropertyRef Name="maloai" />
+            </Principal>
+            <Dependent Role="SAN_PHAM">
+              <PropertyRef Name="maloai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAN_PHAM_NHA_CUNG_CAP">
+          <End Role="NHA_CUNG_CAP" Type="Self.NHA_CUNG_CAP" Multiplicity="0..1" />
+          <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHA_CUNG_CAP">
+              <PropertyRef Name="maNCC" />
+            </Principal>
+            <Dependent Role="SAN_PHAM">
+              <PropertyRef Name="maNCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="Insert_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="masp" Type="char" Mode="In" />
+          <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+          <Parameter Name="dongia" Type="int" Mode="In" />
+          <Parameter Name="soluong" Type="int" Mode="In" />
+          <Parameter Name="maNCC" Type="char" Mode="In" />
+          <Parameter Name="maloai" Type="char" Mode="In" />
+          <Parameter Name="deleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Select_kho" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Select_lsp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Select_ncc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Select_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Update_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="masp" Type="char" Mode="In" />
+          <Parameter Name="tensp" Type="nvarchar" Mode="In" />
+          <Parameter Name="dongia" Type="int" Mode="In" />
+          <Parameter Name="soluong" Type="int" Mode="In" />
+          <Parameter Name="maNCC" Type="char" Mode="In" />
+          <Parameter Name="maloai" Type="char" Mode="In" />
+          <Parameter Name="deleted" Type="bit" Mode="In" />
+        </Function>
+        <EntityContainer Name="Sale_ManagementModelStoreContainer">
+          <EntitySet Name="DON_HANG" EntityType="Self.DON_HANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOA_DON" EntityType="Self.HOA_DON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHO_HANG" EntityType="Self.KHO_HANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOAI_SAN_PHAM" EntityType="Self.LOAI_SAN_PHAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHA_CUNG_CAP" EntityType="Self.NHA_CUNG_CAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAN_PHAM" EntityType="Self.SAN_PHAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SHIPPER" EntityType="Self.SHIPPER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THONG_SO_KY_THUAT" EntityType="Self.THONG_SO_KY_THUAT" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_DON_HANG_HOA_DON" Association="Self.FK_DON_HANG_HOA_DON">
+            <End Role="HOA_DON" EntitySet="HOA_DON" />
+            <End Role="DON_HANG" EntitySet="DON_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_madh" Association="Self.FK_madh">
+            <End Role="DON_HANG" EntitySet="DON_HANG" />
+            <End Role="SHIPPER" EntitySet="SHIPPER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_makh" Association="Self.FK_makh">
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+            <End Role="DON_HANG" EntitySet="DON_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_manv" Association="Self.FK_manv">
+            <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+            <End Role="DON_HANG" EntitySet="DON_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_masp_KhoHang" Association="Self.FK_masp_KhoHang">
+            <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+            <End Role="KHO_HANG" EntitySet="KHO_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_masp_ThongSoKyThuat" Association="Self.FK_masp_ThongSoKyThuat">
+            <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+            <End Role="THONG_SO_KY_THUAT" EntitySet="THONG_SO_KY_THUAT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAN_PHAM_LOAI_SAN_PHAM" Association="Self.FK_SAN_PHAM_LOAI_SAN_PHAM">
+            <End Role="LOAI_SAN_PHAM" EntitySet="LOAI_SAN_PHAM" />
+            <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAN_PHAM_NHA_CUNG_CAP" Association="Self.FK_SAN_PHAM_NHA_CUNG_CAP">
+            <End Role="NHA_CUNG_CAP" EntitySet="NHA_CUNG_CAP" />
+            <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Sale_ManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DON_HANG">
+          <Key>
+            <PropertyRef Name="madh" />
+          </Key>
+          <Property Name="madh" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="mahd" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="makh" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="manv" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="mashiper" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ngaydat" Type="DateTime" Precision="0" />
+          <Property Name="ngaygiao" Type="DateTime" Precision="0" />
+          <Property Name="diachigiao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="HOA_DON" Relationship="Self.FK_DON_HANG_HOA_DON" FromRole="DON_HANG" ToRole="HOA_DON" />
+          <NavigationProperty Name="SHIPPERs" Relationship="Self.FK_madh" FromRole="DON_HANG" ToRole="SHIPPER" />
+          <NavigationProperty Name="KHACH_HANG" Relationship="Self.FK_makh" FromRole="DON_HANG" ToRole="KHACH_HANG" />
+          <NavigationProperty Name="NHAN_VIEN" Relationship="Self.FK_manv" FromRole="DON_HANG" ToRole="NHAN_VIEN" />
+        </EntityType>
+        <EntityType Name="HOA_DON">
+          <Key>
+            <PropertyRef Name="mahd" />
+          </Key>
+          <Property Name="mahd" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="masp" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tensp" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="dongia" Type="Int32" />
+          <Property Name="giamgia" Type="Int32" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="tongtien" Type="Int32" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="DON_HANG" Relationship="Self.FK_DON_HANG_HOA_DON" FromRole="HOA_DON" ToRole="DON_HANG" />
+        </EntityType>
+        <EntityType Name="KHACH_HANG">
+          <Key>
+            <PropertyRef Name="makh" />
+          </Key>
+          <Property Name="makh" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tenkh" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sdt" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="DON_HANG" Relationship="Self.FK_makh" FromRole="KHACH_HANG" ToRole="DON_HANG" />
+        </EntityType>
+        <EntityType Name="KHO_HANG">
+          <Key>
+            <PropertyRef Name="makho" />
+          </Key>
+          <Property Name="makho" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tenkho" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="masp" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="soluongtonkho" Type="Int32" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="SAN_PHAM" Relationship="Self.FK_masp_KhoHang" FromRole="KHO_HANG" ToRole="SAN_PHAM" />
+        </EntityType>
+        <EntityType Name="LOAI_SAN_PHAM">
+          <Key>
+            <PropertyRef Name="maloai" />
+          </Key>
+          <Property Name="maloai" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tenloai" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="SAN_PHAM" Relationship="Self.FK_SAN_PHAM_LOAI_SAN_PHAM" FromRole="LOAI_SAN_PHAM" ToRole="SAN_PHAM" />
+        </EntityType>
+        <EntityType Name="NHA_CUNG_CAP">
+          <Key>
+            <PropertyRef Name="maNCC" />
+          </Key>
+          <Property Name="maNCC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tencty" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="SAN_PHAM" Relationship="Self.FK_SAN_PHAM_NHA_CUNG_CAP" FromRole="NHA_CUNG_CAP" ToRole="SAN_PHAM" />
+        </EntityType>
+        <EntityType Name="NHAN_VIEN">
+          <Key>
+            <PropertyRef Name="manv" />
+          </Key>
+          <Property Name="manv" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="matkhau" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="hotennv" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dongia" Type="Int32" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="maNCC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="maloai" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="sdt" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="DON_HANG" Relationship="Self.FK_manv" FromRole="NHAN_VIEN" ToRole="DON_HANG" />
+        </EntityType>
+        <EntityType Name="SAN_PHAM">
+          <Key>
+            <PropertyRef Name="masp" />
+          </Key>
+          <Property Name="masp" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tensp" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dongia" Type="Int32" />
+          <Property Name="soluong" Type="Int32" />
+          <Property Name="maNCC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="maloai" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="KHO_HANG" Relationship="Self.FK_masp_KhoHang" FromRole="SAN_PHAM" ToRole="KHO_HANG" />
+          <NavigationProperty Name="LOAI_SAN_PHAM" Relationship="Self.FK_SAN_PHAM_LOAI_SAN_PHAM" FromRole="SAN_PHAM" ToRole="LOAI_SAN_PHAM" />
+          <NavigationProperty Name="NHA_CUNG_CAP" Relationship="Self.FK_SAN_PHAM_NHA_CUNG_CAP" FromRole="SAN_PHAM" ToRole="NHA_CUNG_CAP" />
+          <NavigationProperty Name="THONG_SO_KY_THUAT" Relationship="Self.FK_masp_ThongSoKyThuat" FromRole="SAN_PHAM" ToRole="THONG_SO_KY_THUAT" />
+        </EntityType>
+        <EntityType Name="SHIPPER">
+          <Key>
+            <PropertyRef Name="mashiper" />
+          </Key>
+          <Property Name="mashiper" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tenshipper" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="madh" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="sdt" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="DON_HANG" Relationship="Self.FK_madh" FromRole="SHIPPER" ToRole="DON_HANG" />
+        </EntityType>
+        <EntityType Name="THONG_SO_KY_THUAT">
+          <Key>
+            <PropertyRef Name="mats" />
+          </Key>
+          <Property Name="mats" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tents" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="masp" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+          <Property Name="giatri" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="deleted" Type="Boolean" />
+          <NavigationProperty Name="SAN_PHAM" Relationship="Self.FK_masp_ThongSoKyThuat" FromRole="THONG_SO_KY_THUAT" ToRole="SAN_PHAM" />
+        </EntityType>
+        <Association Name="FK_DON_HANG_HOA_DON">
+          <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="0..1" />
+          <End Role="DON_HANG" Type="Self.DON_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOA_DON">
+              <PropertyRef Name="mahd" />
+            </Principal>
+            <Dependent Role="DON_HANG">
+              <PropertyRef Name="mahd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_madh">
+          <End Role="DON_HANG" Type="Self.DON_HANG" Multiplicity="1" />
+          <End Role="SHIPPER" Type="Self.SHIPPER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DON_HANG">
+              <PropertyRef Name="madh" />
+            </Principal>
+            <Dependent Role="SHIPPER">
+              <PropertyRef Name="madh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_makh">
+          <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="1" />
+          <End Role="DON_HANG" Type="Self.DON_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACH_HANG">
+              <PropertyRef Name="makh" />
+            </Principal>
+            <Dependent Role="DON_HANG">
+              <PropertyRef Name="makh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_manv">
+          <End Role="NHAN_VIEN" Type="Self.NHAN_VIEN" Multiplicity="1" />
+          <End Role="DON_HANG" Type="Self.DON_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAN_VIEN">
+              <PropertyRef Name="manv" />
+            </Principal>
+            <Dependent Role="DON_HANG">
+              <PropertyRef Name="manv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_masp_KhoHang">
+          <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="1" />
+          <End Role="KHO_HANG" Type="Self.KHO_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAN_PHAM">
+              <PropertyRef Name="masp" />
+            </Principal>
+            <Dependent Role="KHO_HANG">
+              <PropertyRef Name="masp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAN_PHAM_LOAI_SAN_PHAM">
+          <End Role="LOAI_SAN_PHAM" Type="Self.LOAI_SAN_PHAM" Multiplicity="0..1" />
+          <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOAI_SAN_PHAM">
+              <PropertyRef Name="maloai" />
+            </Principal>
+            <Dependent Role="SAN_PHAM">
+              <PropertyRef Name="maloai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAN_PHAM_NHA_CUNG_CAP">
+          <End Role="NHA_CUNG_CAP" Type="Self.NHA_CUNG_CAP" Multiplicity="0..1" />
+          <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHA_CUNG_CAP">
+              <PropertyRef Name="maNCC" />
+            </Principal>
+            <Dependent Role="SAN_PHAM">
+              <PropertyRef Name="maNCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_masp_ThongSoKyThuat">
+          <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="0..1" />
+          <End Role="THONG_SO_KY_THUAT" Type="Self.THONG_SO_KY_THUAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAN_PHAM">
+              <PropertyRef Name="masp" />
+            </Principal>
+            <Dependent Role="THONG_SO_KY_THUAT">
+              <PropertyRef Name="masp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Sale_ManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DON_HANG" EntityType="Self.DON_HANG" />
+          <EntitySet Name="HOA_DON" EntityType="Self.HOA_DON" />
+          <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" />
+          <EntitySet Name="KHO_HANG" EntityType="Self.KHO_HANG" />
+          <EntitySet Name="LOAI_SAN_PHAM" EntityType="Self.LOAI_SAN_PHAM" />
+          <EntitySet Name="NHA_CUNG_CAP" EntityType="Self.NHA_CUNG_CAP" />
+          <EntitySet Name="NHAN_VIEN" EntityType="Self.NHAN_VIEN" />
+          <EntitySet Name="SAN_PHAM" EntityType="Self.SAN_PHAM" />
+          <EntitySet Name="SHIPPERs" EntityType="Self.SHIPPER" />
+          <EntitySet Name="THONG_SO_KY_THUAT" EntityType="Self.THONG_SO_KY_THUAT" />
+          <AssociationSet Name="FK_DON_HANG_HOA_DON" Association="Self.FK_DON_HANG_HOA_DON">
+            <End Role="HOA_DON" EntitySet="HOA_DON" />
+            <End Role="DON_HANG" EntitySet="DON_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_madh" Association="Self.FK_madh">
+            <End Role="DON_HANG" EntitySet="DON_HANG" />
+            <End Role="SHIPPER" EntitySet="SHIPPERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_makh" Association="Self.FK_makh">
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+            <End Role="DON_HANG" EntitySet="DON_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_manv" Association="Self.FK_manv">
+            <End Role="NHAN_VIEN" EntitySet="NHAN_VIEN" />
+            <End Role="DON_HANG" EntitySet="DON_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_masp_KhoHang" Association="Self.FK_masp_KhoHang">
+            <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+            <End Role="KHO_HANG" EntitySet="KHO_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAN_PHAM_LOAI_SAN_PHAM" Association="Self.FK_SAN_PHAM_LOAI_SAN_PHAM">
+            <End Role="LOAI_SAN_PHAM" EntitySet="LOAI_SAN_PHAM" />
+            <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAN_PHAM_NHA_CUNG_CAP" Association="Self.FK_SAN_PHAM_NHA_CUNG_CAP">
+            <End Role="NHA_CUNG_CAP" EntitySet="NHA_CUNG_CAP" />
+            <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_masp_ThongSoKyThuat" Association="Self.FK_masp_ThongSoKyThuat">
+            <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+            <End Role="THONG_SO_KY_THUAT" EntitySet="THONG_SO_KY_THUAT" />
+          </AssociationSet>
+          <FunctionImport Name="Insert_sp">
+            <Parameter Name="masp" Mode="In" Type="String" />
+            <Parameter Name="tensp" Mode="In" Type="String" />
+            <Parameter Name="dongia" Mode="In" Type="Int32" />
+            <Parameter Name="soluong" Mode="In" Type="Int32" />
+            <Parameter Name="maNCC" Mode="In" Type="String" />
+            <Parameter Name="maloai" Mode="In" Type="String" />
+            <Parameter Name="deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="Select_kho" ReturnType="Collection(Sale_ManagementModel.Select_kho_Result)" />
+          <FunctionImport Name="Select_lsp" ReturnType="Collection(Sale_ManagementModel.Select_lsp_Result)" />
+          <FunctionImport Name="Select_ncc" ReturnType="Collection(Sale_ManagementModel.Select_ncc_Result)" />
+          <FunctionImport Name="Select_sp" ReturnType="Collection(Sale_ManagementModel.Select_sp_Result)" />
+          <FunctionImport Name="Update_sp">
+            <Parameter Name="masp" Mode="In" Type="String" />
+            <Parameter Name="tensp" Mode="In" Type="String" />
+            <Parameter Name="dongia" Mode="In" Type="Int32" />
+            <Parameter Name="soluong" Mode="In" Type="Int32" />
+            <Parameter Name="maNCC" Mode="In" Type="String" />
+            <Parameter Name="maloai" Mode="In" Type="String" />
+            <Parameter Name="deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Select_kho_Result">
+          <Property Type="String" Name="makho" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="tenkho" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="masp" Nullable="false" MaxLength="5" />
+          <Property Type="Int32" Name="soluongtonkho" Nullable="true" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Select_lsp_Result">
+          <Property Type="String" Name="maloai" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="tenloai" Nullable="true" MaxLength="30" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Select_ncc_Result">
+          <Property Type="String" Name="maNCC" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="tencty" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="diachi" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="sdt" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Select_sp_Result">
+          <Property Type="String" Name="masp" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="tensp" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="dongia" Nullable="true" />
+          <Property Type="Int32" Name="soluong" Nullable="true" />
+          <Property Type="String" Name="maNCC" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="maloai" Nullable="true" MaxLength="5" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Sale_ManagementModelStoreContainer" CdmEntityContainer="Sale_ManagementEntities">
+          <EntitySetMapping Name="DON_HANG">
+            <EntityTypeMapping TypeName="Sale_ManagementModel.DON_HANG">
+              <MappingFragment StoreEntitySet="DON_HANG">
+                <ScalarProperty Name="madh" ColumnName="madh" />
+                <ScalarProperty Name="mahd" ColumnName="mahd" />
+                <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="manv" ColumnName="manv" />
+                <ScalarProperty Name="mashiper" ColumnName="mashiper" />
+                <ScalarProperty Name="ngaydat" ColumnName="ngaydat" />
+                <ScalarProperty Name="ngaygiao" ColumnName="ngaygiao" />
+                <ScalarProperty Name="diachigiao" ColumnName="diachigiao" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOA_DON">
+            <EntityTypeMapping TypeName="Sale_ManagementModel.HOA_DON">
+              <MappingFragment StoreEntitySet="HOA_DON">
+                <ScalarProperty Name="mahd" ColumnName="mahd" />
+                <ScalarProperty Name="masp" ColumnName="masp" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="giamgia" ColumnName="giamgia" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACH_HANG">
+            <EntityTypeMapping TypeName="Sale_ManagementModel.KHACH_HANG">
+              <MappingFragment StoreEntitySet="KHACH_HANG">
+                <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="tenkh" ColumnName="tenkh" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHO_HANG">
+            <EntityTypeMapping TypeName="Sale_ManagementModel.KHO_HANG">
+              <MappingFragment StoreEntitySet="KHO_HANG">
+                <ScalarProperty Name="makho" ColumnName="makho" />
+                <ScalarProperty Name="tenkho" ColumnName="tenkho" />
+                <ScalarProperty Name="masp" ColumnName="masp" />
+                <ScalarProperty Name="soluongtonkho" ColumnName="soluongtonkho" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOAI_SAN_PHAM">
+            <EntityTypeMapping TypeName="Sale_ManagementModel.LOAI_SAN_PHAM">
+              <MappingFragment StoreEntitySet="LOAI_SAN_PHAM">
+                <ScalarProperty Name="maloai" ColumnName="maloai" />
+                <ScalarProperty Name="tenloai" ColumnName="tenloai" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHA_CUNG_CAP">
+            <EntityTypeMapping TypeName="Sale_ManagementModel.NHA_CUNG_CAP">
+              <MappingFragment StoreEntitySet="NHA_CUNG_CAP">
+                <ScalarProperty Name="maNCC" ColumnName="maNCC" />
+                <ScalarProperty Name="tencty" ColumnName="tencty" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHAN_VIEN">
+            <EntityTypeMapping TypeName="Sale_ManagementModel.NHAN_VIEN">
+              <MappingFragment StoreEntitySet="NHAN_VIEN">
+                <ScalarProperty Name="manv" ColumnName="manv" />
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+                <ScalarProperty Name="hotennv" ColumnName="hotennv" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="maNCC" ColumnName="maNCC" />
+                <ScalarProperty Name="maloai" ColumnName="maloai" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAN_PHAM">
+            <EntityTypeMapping TypeName="Sale_ManagementModel.SAN_PHAM">
+              <MappingFragment StoreEntitySet="SAN_PHAM">
+                <ScalarProperty Name="masp" ColumnName="masp" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="maNCC" ColumnName="maNCC" />
+                <ScalarProperty Name="maloai" ColumnName="maloai" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SHIPPERs">
+            <EntityTypeMapping TypeName="Sale_ManagementModel.SHIPPER">
+              <MappingFragment StoreEntitySet="SHIPPER">
+                <ScalarProperty Name="mashiper" ColumnName="mashiper" />
+                <ScalarProperty Name="tenshipper" ColumnName="tenshipper" />
+                <ScalarProperty Name="madh" ColumnName="madh" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THONG_SO_KY_THUAT">
+            <EntityTypeMapping TypeName="Sale_ManagementModel.THONG_SO_KY_THUAT">
+              <MappingFragment StoreEntitySet="THONG_SO_KY_THUAT">
+                <ScalarProperty Name="mats" ColumnName="mats" />
+                <ScalarProperty Name="tents" ColumnName="tents" />
+                <ScalarProperty Name="masp" ColumnName="masp" />
+                <ScalarProperty Name="giatri" ColumnName="giatri" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Insert_sp" FunctionName="Sale_ManagementModel.Store.Insert_sp" />
+          <FunctionImportMapping FunctionImportName="Select_kho" FunctionName="Sale_ManagementModel.Store.Select_kho">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Sale_ManagementModel.Select_kho_Result">
+                <ScalarProperty Name="makho" ColumnName="makho" />
+                <ScalarProperty Name="tenkho" ColumnName="tenkho" />
+                <ScalarProperty Name="masp" ColumnName="masp" />
+                <ScalarProperty Name="soluongtonkho" ColumnName="soluongtonkho" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Select_lsp" FunctionName="Sale_ManagementModel.Store.Select_lsp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Sale_ManagementModel.Select_lsp_Result">
+                <ScalarProperty Name="maloai" ColumnName="maloai" />
+                <ScalarProperty Name="tenloai" ColumnName="tenloai" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Select_ncc" FunctionName="Sale_ManagementModel.Store.Select_ncc">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Sale_ManagementModel.Select_ncc_Result">
+                <ScalarProperty Name="maNCC" ColumnName="maNCC" />
+                <ScalarProperty Name="tencty" ColumnName="tencty" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Select_sp" FunctionName="Sale_ManagementModel.Store.Select_sp">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Sale_ManagementModel.Select_sp_Result">
+                <ScalarProperty Name="masp" ColumnName="masp" />
+                <ScalarProperty Name="tensp" ColumnName="tensp" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="maNCC" ColumnName="maNCC" />
+                <ScalarProperty Name="maloai" ColumnName="maloai" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Update_sp" FunctionName="Sale_ManagementModel.Store.Update_sp" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

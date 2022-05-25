@@ -11,12 +11,10 @@ namespace sales_management_software
 {
     using System;
     
-    public partial class NC_NhaCC_Result
+    public partial class Select_lsp_Result
     {
-        public string MaNCC { get; set; }
-        public string TenCongTy { get; set; }
-        public string DiaChi { get; set; }
-        public string SoDienThoai { get; set; }
-        public Nullable<bool> TrangThai { get; set; }
+        public string maloai { get; set; }
+        public string tenloai { get; set; }
+        public Nullable<bool> deleted { get; set; }
     }
 }

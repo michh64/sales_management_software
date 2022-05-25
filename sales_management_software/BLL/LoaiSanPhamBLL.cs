@@ -8,9 +8,9 @@ namespace sales_management_software
 {
     class LoaiSanPhamBLL
     {
-        public static List<LoaiSanPhamDTO> EF_GetAll()
+        public static List<LOAI_SAN_PHAM_DTO> EF_GetAll()
         {
-            return LoaiSanPhamDAL.EF_GetAll();
+            return LOAI_SAN_PHAM_DAL.EF_GetAll();
         }
     }
 }

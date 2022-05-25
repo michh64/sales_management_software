@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace sales_management_software
 {
-    class NhaCungCapBLL
+    public class THONG_SO_KY_THUAT_BLL
     {
-        public static List<NHA_CUNG_CAP_DTO> EF_GetAll()
-        {
-            return NHA_CUNG_CAP_DAL.EF_GetAll();
-        }
     }
 }
