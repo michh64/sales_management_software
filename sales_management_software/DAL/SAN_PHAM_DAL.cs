@@ -11,7 +11,7 @@ namespace sales_management_software
         public static List<SAN_PHAM_DTO> EF_GetAll()
         {
             Sale_ManagementEntities data = new Sale_ManagementEntities();
-            var truyvan = data.Select_sp();
+            var truyvan = data.Select_sp().ToList();
             List<SAN_PHAM_DTO> dsSP = new List<SAN_PHAM_DTO>();
             foreach(var s in truyvan)
             {

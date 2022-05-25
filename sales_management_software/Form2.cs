@@ -12,7 +12,7 @@ namespace sales_management_software
 {
     public partial class Form2 : Form
     {
-        List<SAN_PHAM_DTO> list;
+        List<SAN_PHAM_DTO> listsp;
         public Form2()
         {
             InitializeComponent();
@@ -35,19 +35,20 @@ namespace sales_management_software
             {
                 txt_maloai.Text = "SP0" + (chuoi2 + 1).ToString();
             }
-            SAN_PHAM_DTO sp = new SAN_PHAM_DTO(txt_masp.Text, txt_tensp.Text, int.Parse(txt_dongia.Text),int.Parse(txt_soluong.Text),txt_ncc.Text, txt_maloai.Text, checkBox1.Checked);
-            bool s = SAN_PHAM_BLL.EF_AddNew(sp);
-            if (s == false)
-            {
-                MessageBox.Show("Them thanh cong");
+            //them sp
+            string masp = txt_masp.Text;
+            string tensp=txt_tensp.Text;
+            int dongia = int.Parse(txt_dongia.Text);
+            int soluong=int.Parse(txt_soluong.Text);
+            string ncc = txt_ncc.Text;
+            string maloai = txt_maloai.Text;
+            bool check = Convert.ToBoolean(checkBox1.Text);
+            Sale_ManagementEntities data = new Sale_ManagementEntities();
+            data.Insert_sp(masp,tensp,dongia,soluong,ncc,maloai,check);
+            data.SaveChanges();
+            listsp = SAN_PHAM_BLL.EF_GetAll();
+            dataGridView1.DataSource = listsp;
 
-            }
-            else
-            {
-                MessageBox.Show("Lỗi");
-            }
-            list = SAN_PHAM_BLL.EF_GetAll();
-            dataGridView1.DataSource = list;
         }
 
         private void Form2_Load(object sender, EventArgs e)
