@@ -18,7 +18,7 @@ namespace sales_management_software
         {
             InitializeComponent();
         }
-
+        // Click
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DefaultColorMenuItem();
