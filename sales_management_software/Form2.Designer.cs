@@ -77,6 +77,7 @@
             this.txt_soluong.Name = "txt_soluong";
             this.txt_soluong.Size = new System.Drawing.Size(100, 20);
             this.txt_soluong.TabIndex = 68;
+            this.txt_soluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_soluong_KeyPress);
             // 
             // btt_Luu
             // 
@@ -94,6 +95,7 @@
             this.txt_dongia.Name = "txt_dongia";
             this.txt_dongia.Size = new System.Drawing.Size(141, 20);
             this.txt_dongia.TabIndex = 66;
+            this.txt_dongia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dongia_KeyPress);
             // 
             // txt_tensp
             // 
