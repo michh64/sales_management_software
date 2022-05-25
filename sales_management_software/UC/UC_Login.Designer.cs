@@ -131,6 +131,7 @@
             this.button7.TabIndex = 3;
             this.button7.Text = "Đăng nhập";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label5
             // 

@@ -15,13 +15,13 @@ namespace sales_management_software
             List<NHAN_VIEN_DTO> dsNV = new List<NHAN_VIEN_DTO>();
             foreach (var s in truyvan)
             {
-                NHAN_VIEN_DTO dp = new NHAN_VIEN_DTO();
-                dp.manv = s.manv;
-                dp.matkhau = s.matkhau;
-                dp.hotennv = s.hotennv;
-                dp.sdt = s.sdt;
-                dp.diachi = s.diachi;
-                dp.deleted = (bool)s.deleted;
+                NHAN_VIEN_DTO dp = new NHAN_VIEN_DTO(s.manv, s.matkhau, s.hotennv, s.sdt, s.diachi, (bool) s.deleted);
+                //dp.manv = s.manv;
+                //dp.matkhau = s.matkhau;
+                //dp.hotennv = s.hotennv;
+                //dp.sdt = s.sdt;
+                //dp.diachi = s.diachi;
+                //dp.deleted = (bool)s.deleted;
                 dsNV.Add(dp);
             }
             return dsNV;

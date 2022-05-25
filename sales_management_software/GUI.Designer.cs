@@ -164,6 +164,6 @@ namespace sales_management_software
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel3;
+        public System.Windows.Forms.Panel panel3;
     }
 }
