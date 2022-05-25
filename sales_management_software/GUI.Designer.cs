@@ -34,11 +34,11 @@ namespace sales_management_software
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,47 +78,10 @@ namespace sales_management_software
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(8, 19);
+            this.panel2.Location = new System.Drawing.Point(6, 7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 243);
+            this.panel2.Size = new System.Drawing.Size(238, 243);
             this.panel2.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(32, 74);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(32, 31);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Danh sách sản phẩm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(212, 384);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "KH";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Location = new System.Drawing.Point(7, 671);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 73);
-            this.panel3.TabIndex = 3;
             // 
             // button3
             // 
@@ -129,6 +92,44 @@ namespace sales_management_software
             this.button3.Text = "Đăng nhập";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(32, 87);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(31, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(177, 36);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Danh sách sản phẩm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(252, 635);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "KH";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Location = new System.Drawing.Point(7, 671);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 73);
+            this.panel3.TabIndex = 3;
             // 
             // GUI
             // 

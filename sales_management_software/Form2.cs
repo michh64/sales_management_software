@@ -20,21 +20,16 @@ namespace sales_management_software
 
         private void btt_Luu_Click(object sender, EventArgs e)
         {
-            int count = 0;
-            count = dataGridView1.Rows.Count;
-            string chuoi = "";
-            int chuoi2 = 0;
-            chuoi = Convert.ToString(dataGridView1.Rows[count - 1].Cells[0].Value);
-            chuoi2 = Convert.ToInt32((chuoi.Remove(0, 2)));
-            if (chuoi2 + 1 < 10)
-            {
-                txt_masp.Text = "SP00" + (chuoi2 + 1).ToString();
+            int countrow = dataGridView1.Rows.Count;
+            
+            // Lấy giá trị mã sản phẩm cuối cùng
+            string value = Convert.ToString(dataGridView1.Rows[countrow - 1].Cells[0].Value);
 
-            }
-            else if (chuoi2 + 1 < 100)
-            {
-                txt_masp.Text = "SP0" + (chuoi2 + 1).ToString();
-            }
+            // Lấy chỉ số của sản phẩm cuối
+            int index = Convert.ToInt32(value.Remove(0, 2)) + 1;
+
+            txt_masp.Text = "SP" + index.ToString("000");
+            MessageBox.Show(txt_masp.Text);
 
             //them sp
             string masp = txt_masp.Text;
