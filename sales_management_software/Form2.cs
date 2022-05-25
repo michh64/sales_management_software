@@ -12,7 +12,7 @@ namespace sales_management_software
 {
     public partial class Form2 : Form
     {
-        List<SanPhamDTO> list;
+        List<SAN_PHAM_DTO> list;
         public Form2()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace sales_management_software
             {
                 txt_maloai.Text = "SP0" + (chuoi2 + 1).ToString();
             }
-            SanPhamDTO sp = new SanPhamDTO(txt_maloai.Text, txt_tensp.Text, txt_dongia.Text, txt_ncc.Text, txt_kho.Text, txt_maloai.Text, checkBox1.Checked);
+            SAN_PHAM_DTO sp = new SAN_PHAM_DTO(txt_masp.Text, txt_tensp.Text, int.Parse(txt_dongia.Text),int.Parse(txt_soluong.Text),txt_ncc.Text, txt_maloai.Text, checkBox1.Checked);
             bool s = SanPhamBLL.EF_AddNew(sp);
             if (s == false)
             {
@@ -52,7 +52,7 @@ namespace sales_management_software
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            List<SanPhamDTO> listsanpham;
+            List<SAN_PHAM_DTO> listsanpham;
             listsanpham = SanPhamBLL.EF_GetAll();
             dataGridView1.DataSource = listsanpham;
         }

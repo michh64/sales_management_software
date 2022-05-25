@@ -66,22 +66,34 @@
     <Compile Include="Attribute\BoThongSo.cs" />
     <Compile Include="Attribute\ChiTietHoaDon.cs" />
     <Compile Include="Attribute\ChiTietThongSoKyThuat.cs" />
+    <Compile Include="BLL\DON_HANG_BLL.cs" />
+    <Compile Include="BLL\HOA_DON_BLL.cs" />
     <Compile Include="BLL\KhachHangBLL.cs" />
     <Compile Include="BLL\KhoBLL.cs" />
     <Compile Include="BLL\LoaiSanPhamBLL.cs" />
     <Compile Include="BLL\NhaCungCapBLL.cs" />
     <Compile Include="BLL\NhanVienBLL.cs" />
     <Compile Include="BLL\SanPhamBLL.cs" />
-    <Compile Include="BLL\ShipperBLL.cs" />
+    <Compile Include="BLL\SHIPPER_BLL.cs" />
+    <Compile Include="BLL\THONG_SO_KY_THUAT_BLL.cs" />
     <Compile Include="DAL\DataProvider.cs" />
+    <Compile Include="DAL\DON_HANG_DAL.cs" />
+    <Compile Include="DAL\HOA_DON_DAL.cs" />
     <Compile Include="DAL\KhachHangDAL.cs" />
-    <Compile Include="DAL\KhoDAL.cs" />
-    <Compile Include="DAL\LoaiSanPhamDAL.cs" />
-    <Compile Include="DAL\NhaCungCapDAL.cs" />
+    <Compile Include="DAL\KHO_HANG_DAL.cs" />
+    <Compile Include="DAL\LOAI_SAN_PHAM_DAL.cs" />
+    <Compile Include="DAL\NHA_CUNG_CAP_DAL.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
-    <Compile Include="DAL\SanPhamDAL.cs" />
-    <Compile Include="DAL\ShipperDAL.cs" />
-    <Compile Include="DTO\KhoDTO.cs" />
+    <Compile Include="DAL\SAN_PHAM_DAL.cs" />
+    <Compile Include="DAL\SHIPPER_DAL.cs" />
+    <Compile Include="DAL\THONG_SO_KY_THUAT_DAL.cs" />
+    <Compile Include="DON_HANG.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\DON_HANG_DTO.cs" />
+    <Compile Include="DTO\HOA_DON_DTO.cs" />
+    <Compile Include="DTO\KHO_HANG_DTO.cs" />
+    <Compile Include="DTO\THONG_SO_KY_THUAT_DTO.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,53 +102,80 @@
     </Compile>
     <Compile Include="Attribute\HoaDon.cs" />
     <Compile Include="Attribute\KhachHang.cs" />
-    <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="DTO\KHACH_HANG_DTO.cs" />
     <Compile Include="Attribute\Kho.cs" />
     <Compile Include="Attribute\LoaiSanPham.cs" />
-    <Compile Include="DTO\LoaiSanPhamDTO.cs" />
+    <Compile Include="DTO\LOAI_SAN_PHAM.cs" />
     <Compile Include="Attribute\NhaCungCap.cs" />
-    <Compile Include="DTO\NhaCungCapDTO.cs" />
+    <Compile Include="DTO\NHA_CUNG_CAP.cs" />
     <Compile Include="Attribute\NhanVien.cs" />
-    <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="DTO\NHAN_VIEN_DTO.cs" />
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="kho_Select_Result.cs">
-      <DependentUpon>QLBH_tech_Entity.tt</DependentUpon>
+    <Compile Include="HOA_DON.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="lsp_Select_Result.cs">
-      <DependentUpon>QLBH_tech_Entity.tt</DependentUpon>
+    <Compile Include="KHACH_HANG.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="NC_NhaCC_Result.cs">
-      <DependentUpon>QLBH_tech_Entity.tt</DependentUpon>
+    <Compile Include="KHO_HANG.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LOAI_SAN_PHAM.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHAN_VIEN.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHA_CUNG_CAP.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Attribute\SanPham.cs" />
-    <Compile Include="DTO\SanPhamDTO.cs" />
+    <Compile Include="DTO\SAN_PHAM_DTO.cs" />
     <Compile Include="Attribute\Shipper.cs" />
-    <Compile Include="DTO\ShipperDTO.cs" />
+    <Compile Include="DTO\SHIPER_DTO.cs" />
     <Compile Include="Attribute\ThongSoKyThuat.cs" />
-    <Compile Include="QLBH_tech_Entity.Context.cs">
+    <Compile Include="Sale_Management_Data.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLBH_tech_Entity.Context.tt</DependentUpon>
+      <DependentUpon>Sale_Management_Data.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="QLBH_tech_Entity.cs">
+    <Compile Include="Sale_Management_Data.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLBH_tech_Entity.tt</DependentUpon>
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="QLBH_tech_Entity.Designer.cs">
+    <Compile Include="Sale_Management_Data.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLBH_tech_Entity.edmx</DependentUpon>
+      <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
     </Compile>
-    <Compile Include="sp_Select_Result.cs">
-      <DependentUpon>QLBH_tech_Entity.tt</DependentUpon>
+    <Compile Include="SAN_PHAM.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_kho_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_lsp_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_ncc_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Select_sp_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SHIPPER.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="THONG_SO_KY_THUAT.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="UC\UC_Home.cs">
       <SubType>UserControl</SubType>
@@ -190,12 +229,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="QLBH_tech_Entity.edmx">
+    <EntityDeploy Include="Sale_Management_Data.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLBH_tech_Entity.Designer.cs</LastGenOutput>
+      <LastGenOutput>Sale_Management_Data.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="QLBH_tech_Entity.edmx.diagram">
-      <DependentUpon>QLBH_tech_Entity.edmx</DependentUpon>
+    <None Include="Sale_Management_Data.edmx.diagram">
+      <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -206,15 +245,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Infomation.txt" />
-    <Content Include="QLBH_tech_Entity.Context.tt">
+    <Content Include="Sale_Management_Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLBH_tech_Entity.edmx</DependentUpon>
-      <LastGenOutput>QLBH_tech_Entity.Context.cs</LastGenOutput>
+      <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
+      <LastGenOutput>Sale_Management_Data.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="QLBH_tech_Entity.tt">
+    <Content Include="Sale_Management_Data.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLBH_tech_Entity.edmx</DependentUpon>
-      <LastGenOutput>QLBH_tech_Entity.cs</LastGenOutput>
+      <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
+      <LastGenOutput>Sale_Management_Data.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

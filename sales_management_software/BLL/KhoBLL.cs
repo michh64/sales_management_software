@@ -8,9 +8,9 @@ namespace sales_management_software
 {
     public class KhoBLL
     {
-        public static List<KhoDTO> EF_GetAll()
+        public static List<KHO_HANG_DTO> EF_GetAll()
         {
-            return KhoDAL.EF_GetAll();
+            return KHO_HANG_DAL.EF_GetAll();
         }
     }
 }

@@ -8,13 +8,13 @@ namespace sales_management_software
 {
     class SanPhamBLL
     {
-        public static List<SanPhamDTO> EF_GetAll()
+        public static List<SAN_PHAM_DTO> EF_GetAll()
         {
-            return SanPhamDAL.EF_GetAll();
+            return SAN_PHAM_DAL.EF_GetAll();
         }
-        public static bool EF_AddNew(SanPhamDTO sp)
+        public static bool EF_AddNew(SAN_PHAM_DTO sp)
         {
-            return SanPhamDAL.EF_AddNew(sp);
+            return SAN_PHAM_DAL.EF_AddNew(sp);
         }
     }
 }

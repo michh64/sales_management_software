@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sales_management_software
+namespace sales_management_software.DAL
 {
-    class ShipperDAL
+    public class DON_HANG_DAL
     {
     }
 }

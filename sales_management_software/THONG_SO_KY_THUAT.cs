@@ -10,10 +10,16 @@
 namespace sales_management_software
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class lsp_Select_Result
+    public partial class THONG_SO_KY_THUAT
     {
-        public string MaLSP { get; set; }
-        public string TenLSP { get; set; }
+        public string mats { get; set; }
+        public string tents { get; set; }
+        public string masp { get; set; }
+        public string giatri { get; set; }
+        public Nullable<bool> deleted { get; set; }
+    
+        public virtual SAN_PHAM SAN_PHAM { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace sales_management_software
 {
-    class ShipperBLL
+    public class HOA_DON_BLL
     {
     }
 }

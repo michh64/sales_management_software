@@ -14,10 +14,10 @@ namespace sales_management_software
     {
         bool selected = false;
         List<Button> funcBtn = new List<Button>();
-        List<SanPhamDTO> listsanpham;
-        List<LoaiSanPhamDTO> listLSP;
-        List<NhaCungCapDTO> lisNCC;
-        List<KhoDTO> listKho;
+        List<SAN_PHAM_DTO> listsanpham;
+        List<LOAI_SAN_PHAM_DTO> listLSP;
+        List<NHA_CUNG_CAP_DTO> lisNCC;
+        List<KHO_HANG_DTO> listKho;
         public UC_NhanVien()
         {
             InitializeComponent();
@@ -106,10 +106,10 @@ namespace sales_management_software
 
         private void btt_Luu_Click(object sender, EventArgs e)
         {
-            SanPhamDTO dto = new SanPhamDTO();
-            dto.MaSP = txt_masp.Text;
-            dto.DonGia = txt_dongia.Text;
-            dto.TenSP = txt_tensp.Text;
+            SAN_PHAM_DTO dto = new SAN_PHAM_DTO();
+            dto.masp = txt_masp.Text;
+            dto.dongia = int.Parse(txt_dongia.Text);
+            dto.tensp = txt_tensp.Text;
             
         }
     }
