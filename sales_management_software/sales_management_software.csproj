@@ -46,7 +46,7 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -212,6 +212,12 @@
     <Compile Include="UC_ThemNCC.Designer.cs">
       <DependentUpon>UC_ThemNCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_UpdateSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_UpdateSP.Designer.cs">
+      <DependentUpon>UC_UpdateSP.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormDemo.resx">
       <DependentUpon>FormDemo.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_NhanVien.resx">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_UpdateSP.resx">
+      <DependentUpon>UC_UpdateSP.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
