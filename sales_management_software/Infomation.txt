@@ -1,0 +1,18 @@
+﻿-- Đây là file note thông tin
+-- Mọi người có thể ghi chú vào đây để code
+-- Bao gồm phân công công việc
+
+Phương
+-
+
+Tín
+-
+
+Nguyện
+-
+
+Lợi
+-
+
+Trung
+-

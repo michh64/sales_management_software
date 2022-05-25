@@ -190,6 +190,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Infomation.txt" />
     <Content Include="QLBH_tech_Entity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLBH_tech_Entity.edmx</DependentUpon>
