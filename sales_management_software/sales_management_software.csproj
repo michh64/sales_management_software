@@ -230,6 +230,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Infomation.txt" />
+    <Content Include="Query.sql" />
     <Content Include="Sale_Management_Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
