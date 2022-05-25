@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace sales_management_software
 {
-    public partial class Form2 : Form
+    public partial class AddSP : Form
     {
         List<SAN_PHAM_DTO> listsp;
-        public Form2()
+        public AddSP()
         {
             InitializeComponent();
         }

@@ -96,12 +96,6 @@
     <Compile Include="FormCungCap.Designer.cs">
       <DependentUpon>FormCungCap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUpdate_SP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormKhachHang.Designer.cs">
-      <DependentUpon>FormKhachHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,11 +106,11 @@
     <Compile Include="DTO\LOAI_SAN_PHAM.cs" />
     <Compile Include="DTO\NHA_CUNG_CAP.cs" />
     <Compile Include="DTO\NHAN_VIEN_DTO.cs" />
-    <Compile Include="Form2.cs">
+    <Compile Include="AddSP.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="AddSP.Designer.cs">
+      <DependentUpon>AddSP.cs</DependentUpon>
     </Compile>
     <Compile Include="HOA_DON.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
@@ -215,14 +209,11 @@
     <EmbeddedResource Include="FormCungCap.resx">
       <DependentUpon>FormCungCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUpdate_SP.resx">
-      <DependentUpon>FormUpdate_SP.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI.resx">
       <DependentUpon>GUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="AddSP.resx">
+      <DependentUpon>AddSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

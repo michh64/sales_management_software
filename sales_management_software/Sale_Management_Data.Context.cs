@@ -39,6 +39,31 @@ namespace sales_management_software
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THONG_SO_KY_THUAT> THONG_SO_KY_THUAT { get; set; }
     
+        public virtual int Insert_ncc(string maNCC, string tencty, string diachi, string sdt, Nullable<bool> deleted)
+        {
+            var maNCCParameter = maNCC != null ?
+                new ObjectParameter("maNCC", maNCC) :
+                new ObjectParameter("maNCC", typeof(string));
+    
+            var tenctyParameter = tencty != null ?
+                new ObjectParameter("tencty", tencty) :
+                new ObjectParameter("tencty", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            var deletedParameter = deleted.HasValue ?
+                new ObjectParameter("deleted", deleted) :
+                new ObjectParameter("deleted", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_ncc", maNCCParameter, tenctyParameter, diachiParameter, sdtParameter, deletedParameter);
+        }
+    
         public virtual int Insert_sp(string masp, string tensp, Nullable<int> dongia, Nullable<int> soluong, string maNCC, string maloai, Nullable<bool> deleted)
         {
             var maspParameter = masp != null ?
@@ -200,29 +225,37 @@ namespace sales_management_software
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        public virtual int Insert_ncc(string maNCC, string tencty, string diachi, string sdt, Nullable<bool> deleted)
+        public virtual int Update_sp(string masp, string tensp, Nullable<int> dongia, Nullable<int> soluong, string maNCC, string maloai, Nullable<bool> deleted)
         {
+            var maspParameter = masp != null ?
+                new ObjectParameter("masp", masp) :
+                new ObjectParameter("masp", typeof(string));
+    
+            var tenspParameter = tensp != null ?
+                new ObjectParameter("tensp", tensp) :
+                new ObjectParameter("tensp", typeof(string));
+    
+            var dongiaParameter = dongia.HasValue ?
+                new ObjectParameter("dongia", dongia) :
+                new ObjectParameter("dongia", typeof(int));
+    
+            var soluongParameter = soluong.HasValue ?
+                new ObjectParameter("soluong", soluong) :
+                new ObjectParameter("soluong", typeof(int));
+    
             var maNCCParameter = maNCC != null ?
                 new ObjectParameter("maNCC", maNCC) :
                 new ObjectParameter("maNCC", typeof(string));
     
-            var tenctyParameter = tencty != null ?
-                new ObjectParameter("tencty", tencty) :
-                new ObjectParameter("tencty", typeof(string));
-    
-            var diachiParameter = diachi != null ?
-                new ObjectParameter("diachi", diachi) :
-                new ObjectParameter("diachi", typeof(string));
-    
-            var sdtParameter = sdt != null ?
-                new ObjectParameter("sdt", sdt) :
-                new ObjectParameter("sdt", typeof(string));
+            var maloaiParameter = maloai != null ?
+                new ObjectParameter("maloai", maloai) :
+                new ObjectParameter("maloai", typeof(string));
     
             var deletedParameter = deleted.HasValue ?
                 new ObjectParameter("deleted", deleted) :
                 new ObjectParameter("deleted", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_ncc", maNCCParameter, tenctyParameter, diachiParameter, sdtParameter, deletedParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_sp", maspParameter, tenspParameter, dongiaParameter, soluongParameter, maNCCParameter, maloaiParameter, deletedParameter);
         }
     }
 }
