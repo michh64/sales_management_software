@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace sales_management_software
 {
+    // gg
     public partial class FormKhachHang : Form
     {
         public FormKhachHang()
@@ -23,6 +24,11 @@ namespace sales_management_software
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
