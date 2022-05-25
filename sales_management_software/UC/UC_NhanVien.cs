@@ -17,6 +17,7 @@ namespace sales_management_software
         List<SanPhamDTO> listsanpham;
         List<LoaiSanPhamDTO> listLSP;
         List<NhaCungCapDTO> lisNCC;
+        List<KhoDTO> listKho;
         public UC_NhanVien()
         {
             InitializeComponent();
@@ -24,16 +25,24 @@ namespace sales_management_software
 
         private void UC_NhanVien_Load(object sender, EventArgs e)
         {
+            //sanpham
             listsanpham = SanPhamBLL.EF_GetAll();
             dataGridView1.DataSource = listsanpham;
+            //loaisp
             listLSP = LoaiSanPhamBLL.EF_GetAll();
             cb_maloai.DataSource = listLSP;
             cb_maloai.DisplayMember = "TenLSP";
             cb_maloai.ValueMember = "MaLSP";
+            //nhacungcap
             lisNCC = NhaCungCapBLL.EF_GetAll();
             cb_mancc.DataSource= lisNCC;
             cb_mancc.DisplayMember = "TenCongTy";
             cb_mancc.ValueMember = "MaNCC";
+            //kho
+            listKho = KhoBLL.EF_GetAll();
+            cb_makho.DataSource = listKho;
+            cb_makho.DisplayMember = "MaKho";
+            cb_makho.ValueMember = "MaKho";
             funcBtn.Add(btt_themsp);
             funcBtn.Add(button2);
             funcBtn.Add(button3);
