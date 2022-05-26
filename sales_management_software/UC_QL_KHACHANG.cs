@@ -115,19 +115,16 @@ namespace sales_management_software
         }
         private void Showdata_gridview()
         {
-            List<string[]> liststring = new List<string[]>();
-            string [] arr=new string[4];
             listKH = KHACH_HANG_BLL.EF_GetAll();
+            dataGridView1.Columns.Add("makh", "Mã khách hàng");
+            dataGridView1.Columns.Add("tenkh", "Tên khách hàng");
+            dataGridView1.Columns.Add("sdt", "Số điện thoại");
+            dataGridView1.Columns.Add("diachi", "Địa chỉ");
+
             for (int i = 0; i < listKH.Count; i++)
             {
-                arr[0]=listKH[i].makh.ToString();
-                arr[1]=listKH[i].tenkh;
-                arr[2]=listKH[i].sdt;
-                arr[3]=listKH[i].diachi;
-                liststring.Add(arr);
-            }    
-            dataGridView1.DataSource = liststring;
-
+                dataGridView1.Rows.Add(listKH[i].makh, listKH[i].tenkh, listKH[i].sdt, listKH[i].diachi);
+            }
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
