@@ -146,6 +146,9 @@
     <Compile Include="SAN_PHAM.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="Search_SanPham_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Select_kho_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
@@ -168,9 +171,6 @@
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="THONG_SO_KY_THUAT.cs">
@@ -218,6 +218,12 @@
     <Compile Include="UC_UpdateSP.Designer.cs">
       <DependentUpon>UC_UpdateSP.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_KhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_KhachHang.Designer.cs">
+      <DependentUpon>UserControl_KhachHang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormDemo.resx">
       <DependentUpon>FormDemo.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_UpdateSP.resx">
       <DependentUpon>UC_UpdateSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_KhachHang.resx">
+      <DependentUpon>UserControl_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

@@ -10,14 +10,11 @@
 namespace sales_management_software
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class Search_SanPham_Result
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string tensp { get; set; }
+        public string maloai { get; set; }
+        public string maNCC { get; set; }
     }
 }

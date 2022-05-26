@@ -36,7 +36,6 @@ namespace sales_management_software
         public virtual DbSet<NHAN_VIEN> NHAN_VIEN { get; set; }
         public virtual DbSet<SAN_PHAM> SAN_PHAM { get; set; }
         public virtual DbSet<SHIPPER> SHIPPERs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THONG_SO_KY_THUAT> THONG_SO_KY_THUAT { get; set; }
     
         public virtual int Insert_ncc(string maNCC, string tencty, string diachi, string sdt, Nullable<bool> deleted)
@@ -256,6 +255,15 @@ namespace sales_management_software
                 new ObjectParameter("deleted", typeof(bool));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_sp", maspParameter, tenspParameter, dongiaParameter, soluongParameter, maNCCParameter, maloaiParameter, deletedParameter);
+        }
+    
+        public virtual ObjectResult<Search_SanPham_Result> Search_SanPham(string tukhoa)
+        {
+            var tukhoaParameter = tukhoa != null ?
+                new ObjectParameter("tukhoa", tukhoa) :
+                new ObjectParameter("tukhoa", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_SanPham_Result>("Search_SanPham", tukhoaParameter);
         }
     }
 }

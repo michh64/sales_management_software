@@ -10,11 +10,10 @@
         <EntityTypeShape EntityType="Sale_ManagementModel.KHACH_HANG" Width="1.5" PointX="7.75" PointY="6.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.KHO_HANG" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.LOAI_SAN_PHAM" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="Sale_ManagementModel.NHA_CUNG_CAP" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sale_ManagementModel.NHA_CUNG_CAP" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.NHAN_VIEN" Width="1.5" PointX="7.75" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.SAN_PHAM" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.SHIPPER" Width="1.5" PointX="12.25" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Sale_ManagementModel.sysdiagram" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.THONG_SO_KY_THUAT" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
         <AssociationConnector Association="Sale_ManagementModel.FK_DON_HANG_HOA_DON" ManuallyRouted="false" />
         <AssociationConnector Association="Sale_ManagementModel.FK_madh" ManuallyRouted="false" />
