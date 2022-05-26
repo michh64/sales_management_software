@@ -16,7 +16,7 @@ namespace sales_management_software
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GUI());
+            Application.Run(new FormDemo());
         }
     }
 }

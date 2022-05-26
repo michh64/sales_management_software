@@ -197,6 +197,12 @@
     <Compile Include="UC\UC_Login.Designer.cs">
       <DependentUpon>UC_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_QL_KHACHANG.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL_KHACHANG.Designer.cs">
+      <DependentUpon>UC_QL_KHACHANG.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ThemLSP.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -243,6 +249,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC_QL_KHACHANG.resx">
+      <DependentUpon>UC_QL_KHACHANG.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ThemLSP.resx">
       <DependentUpon>UC_ThemLSP.cs</DependentUpon>
     </EmbeddedResource>
