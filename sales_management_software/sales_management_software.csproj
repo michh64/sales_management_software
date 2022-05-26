@@ -293,6 +293,17 @@
     <None Include="Resources\statistic2.png" />
     <None Include="Resources\home.png" />
     <None Include="Resources\home1.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\Background.png" />
+    <None Include="Resources\Background1.png" />
+    <None Include="Resources\shopping-cart.png" />
+    <None Include="Resources\shopping-cart %281%29.png" />
+    <None Include="Resources\shopping-cart %282%29.png" />
+    <None Include="Resources\loupe.png" />
+    <None Include="Resources\loupe1.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\clipboard.png" />
+    <None Include="Resources\login.png" />
     <Content Include="Sale_Management_Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>

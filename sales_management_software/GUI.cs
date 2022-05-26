@@ -73,18 +73,6 @@ namespace sales_management_software
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            panel5.Location = new Point(panel5.Location.X, button3.Location.Y + 7);
-
-            UC_Login uc = new UC_Login();
-            uc.Dock = DockStyle.Fill;
-            panel3.BringToFront();
-            panel3.Controls.Add(uc);
-            panel3.Dock = DockStyle.Fill;
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (textBox1.Text == "0")
@@ -93,6 +81,19 @@ namespace sales_management_software
                 panel3.Visible = false;
                 button1_Click(sender, e);
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            panel10.Location = new Point(panel10.Location.X, button8.Location.Y + 7);
+
+            UC_Login uc = new UC_Login();
+            uc.Dock = DockStyle.Fill;
+            panel3.BringToFront();
+            panel3.Controls.Add(uc);
+            panel3.Dock = DockStyle.Fill;
+
+
         }
     }
 }
