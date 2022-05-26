@@ -259,5 +259,10 @@ namespace sales_management_software
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_NCC", maNCCParameter, tenctyParameter, diachiParameter, sdtParameter, deletedParameter);
         }
+    
+        public virtual ObjectResult<select_kh_DE_Result> select_kh_DE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<select_kh_DE_Result>("select_kh_DE");
+        }
     }
 }
