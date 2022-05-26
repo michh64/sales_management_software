@@ -149,7 +149,7 @@
     <Compile Include="Search_SanPham_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="selcet_Khachhang_Result.cs">
+    <Compile Include="select_Dangnhap_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Select_kho_Result.cs">
@@ -203,11 +203,11 @@
     <Compile Include="UC\UC_Login.Designer.cs">
       <DependentUpon>UC_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Uc_QL_KHACHHANG.cs">
+    <Compile Include="UC_ThemLSP.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Uc_QL_KHACHHANG.Designer.cs">
-      <DependentUpon>Uc_QL_KHACHHANG.cs</DependentUpon>
+    <Compile Include="UC_ThemLSP.Designer.cs">
+      <DependentUpon>UC_ThemLSP.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ThemSanPham.cs">
       <SubType>UserControl</SubType>
@@ -249,8 +249,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Uc_QL_KHACHHANG.resx">
-      <DependentUpon>Uc_QL_KHACHHANG.cs</DependentUpon>
+    <EmbeddedResource Include="UC_ThemLSP.resx">
+      <DependentUpon>UC_ThemLSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ThemNCC.resx">
       <DependentUpon>UC_ThemNCC.cs</DependentUpon>

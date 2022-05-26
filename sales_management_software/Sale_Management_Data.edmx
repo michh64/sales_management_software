@@ -213,11 +213,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="Insert_KhacHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="makh" Type="char" Mode="In" />
-          <Parameter Name="tenkh" Type="nvarchar" Mode="In" />
-          <Parameter Name="sdt" Type="char" Mode="In" />
+        <Function Name="Insert_lsp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maloai" Type="char" Mode="In" />
+          <Parameter Name="tenloai" Type="nvarchar" Mode="In" />
+          <Parameter Name="deleted" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="Insert_ncc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maNCC" Type="char" Mode="In" />
+          <Parameter Name="tencty" Type="nvarchar" Mode="In" />
           <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+          <Parameter Name="sdt" Type="char" Mode="In" />
           <Parameter Name="deleted" Type="bit" Mode="In" />
         </Function>
         <Function Name="Insert_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -232,7 +237,7 @@
         <Function Name="Search_SanPham" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="selcet_Khachhang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="select_Dangnhap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_kho" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_lsp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_ncc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -631,21 +636,19 @@
           <FunctionImport Name="Search_SanPham" ReturnType="Collection(Sale_ManagementModel.Search_SanPham_Result)">
           <Parameter Name="tukhoa" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="Insert_KhacHang">
-            <Parameter Name="makh" Mode="In" Type="String" />
-            <Parameter Name="tenkh" Mode="In" Type="String" />
-            <Parameter Name="sdt" Mode="In" Type="String" />
-            <Parameter Name="diachi" Mode="In" Type="String" />
+          <FunctionImport Name="Insert_lsp">
+            <Parameter Name="maloai" Mode="In" Type="String" />
+            <Parameter Name="tenloai" Mode="In" Type="String" />
             <Parameter Name="deleted" Mode="In" Type="Boolean" />
           </FunctionImport>
-          <FunctionImport Name="selcet_Khachhang" ReturnType="Collection(Sale_ManagementModel.selcet_Khachhang_Result)" />
-          <FunctionImport Name="Update_KHACHHANG">
-            <Parameter Name="makh" Mode="In" Type="String" />
-            <Parameter Name="tenkh" Mode="In" Type="String" />
-            <Parameter Name="sdt" Mode="In" Type="String" />
+          <FunctionImport Name="Insert_ncc1">
+            <Parameter Name="maNCC" Mode="In" Type="String" />
+            <Parameter Name="tencty" Mode="In" Type="String" />
             <Parameter Name="diachi" Mode="In" Type="String" />
+            <Parameter Name="sdt" Mode="In" Type="String" />
             <Parameter Name="deleted" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="select_Dangnhap" ReturnType="Collection(Sale_ManagementModel.select_Dangnhap_Result)" />
         </EntityContainer>
         <ComplexType Name="Select_kho_Result">
           <Property Type="String" Name="makho" Nullable="false" MaxLength="5" />
@@ -698,6 +701,18 @@
           <Property Type="String" Name="tensp" Nullable="false" MaxLength="30" />
           <Property Type="String" Name="maloai" Nullable="true" MaxLength="5" />
           <Property Type="String" Name="maNCC" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="select_Dangnhap_Result">
+          <Property Type="String" Name="manv" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="matkhau" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="hotennv" Nullable="false" MaxLength="30" />
+          <Property Type="Int32" Name="dongia" Nullable="true" />
+          <Property Type="Int32" Name="soluong" Nullable="true" />
+          <Property Type="String" Name="maNCC" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="maloai" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="sdt" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="diachi" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
         </ComplexType>
         <ComplexType Name="selcet_Khachhang_Result">
           <Property Type="String" Name="makh" Nullable="false" MaxLength="5" />
@@ -886,6 +901,24 @@
                 <ScalarProperty Name="tensp" ColumnName="tensp" />
                 <ScalarProperty Name="maloai" ColumnName="maloai" />
                 <ScalarProperty Name="maNCC" ColumnName="maNCC" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Insert_lsp" FunctionName="Sale_ManagementModel.Store.Insert_lsp" />
+          <FunctionImportMapping FunctionImportName="Insert_ncc1" FunctionName="Sale_ManagementModel.Store.Insert_ncc" />
+          <FunctionImportMapping FunctionImportName="select_Dangnhap" FunctionName="Sale_ManagementModel.Store.select_Dangnhap">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Sale_ManagementModel.select_Dangnhap_Result">
+                <ScalarProperty Name="manv" ColumnName="manv" />
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+                <ScalarProperty Name="hotennv" ColumnName="hotennv" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="maNCC" ColumnName="maNCC" />
+                <ScalarProperty Name="maloai" ColumnName="maloai" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
