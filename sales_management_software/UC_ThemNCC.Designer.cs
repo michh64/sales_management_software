@@ -46,7 +46,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(127, 230);
+            this.dataGridView1.Location = new System.Drawing.Point(327, 296);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(441, 164);
@@ -54,7 +54,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(415, 161);
+            this.button1.Location = new System.Drawing.Point(615, 227);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(92, 32);
@@ -66,7 +66,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(66, 161);
+            this.label5.Location = new System.Drawing.Point(266, 227);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
@@ -75,7 +75,7 @@
             // 
             // txt_sdt
             // 
-            this.txt_sdt.Location = new System.Drawing.Point(451, 106);
+            this.txt_sdt.Location = new System.Drawing.Point(651, 172);
             this.txt_sdt.Margin = new System.Windows.Forms.Padding(2);
             this.txt_sdt.Name = "txt_sdt";
             this.txt_sdt.Size = new System.Drawing.Size(76, 20);
@@ -84,7 +84,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(389, 58);
+            this.label3.Location = new System.Drawing.Point(589, 124);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
@@ -93,7 +93,7 @@
             // 
             // txt_diachi
             // 
-            this.txt_diachi.Location = new System.Drawing.Point(451, 55);
+            this.txt_diachi.Location = new System.Drawing.Point(651, 121);
             this.txt_diachi.Margin = new System.Windows.Forms.Padding(2);
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.Size = new System.Drawing.Size(76, 20);
@@ -102,7 +102,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(372, 111);
+            this.label4.Location = new System.Drawing.Point(572, 177);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 13);
@@ -111,7 +111,7 @@
             // 
             // txt_tencty
             // 
-            this.txt_tencty.Location = new System.Drawing.Point(177, 96);
+            this.txt_tencty.Location = new System.Drawing.Point(377, 162);
             this.txt_tencty.Margin = new System.Windows.Forms.Padding(2);
             this.txt_tencty.Name = "txt_tencty";
             this.txt_tencty.Size = new System.Drawing.Size(76, 20);
@@ -120,7 +120,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 96);
+            this.label2.Location = new System.Drawing.Point(270, 162);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
@@ -130,7 +130,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(146, 161);
+            this.checkBox1.Location = new System.Drawing.Point(346, 227);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(60, 17);
@@ -140,7 +140,7 @@
             // 
             // txt_maNCC
             // 
-            this.txt_maNCC.Location = new System.Drawing.Point(177, 43);
+            this.txt_maNCC.Location = new System.Drawing.Point(377, 109);
             this.txt_maNCC.Margin = new System.Windows.Forms.Padding(2);
             this.txt_maNCC.Name = "txt_maNCC";
             this.txt_maNCC.Size = new System.Drawing.Size(76, 20);
@@ -149,7 +149,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(70, 46);
+            this.label1.Location = new System.Drawing.Point(270, 112);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
@@ -173,7 +173,7 @@
             this.Controls.Add(this.txt_maNCC);
             this.Controls.Add(this.label1);
             this.Name = "UC_ThemNCC";
-            this.Size = new System.Drawing.Size(653, 439);
+            this.Size = new System.Drawing.Size(1020, 620);
             this.Load += new System.EventHandler(this.UC_ThemNCC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

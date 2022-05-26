@@ -49,7 +49,7 @@
             // 
             // txt_soluong
             // 
-            this.txt_soluong.Location = new System.Drawing.Point(478, 14);
+            this.txt_soluong.Location = new System.Drawing.Point(626, 96);
             this.txt_soluong.Name = "txt_soluong";
             this.txt_soluong.Size = new System.Drawing.Size(100, 20);
             this.txt_soluong.TabIndex = 100;
@@ -57,7 +57,7 @@
             // 
             // btt_Udate
             // 
-            this.btt_Udate.Location = new System.Drawing.Point(447, 129);
+            this.btt_Udate.Location = new System.Drawing.Point(595, 211);
             this.btt_Udate.Name = "btt_Udate";
             this.btt_Udate.Size = new System.Drawing.Size(133, 23);
             this.btt_Udate.TabIndex = 99;
@@ -67,7 +67,7 @@
             // 
             // txt_dongia
             // 
-            this.txt_dongia.Location = new System.Drawing.Point(214, 81);
+            this.txt_dongia.Location = new System.Drawing.Point(362, 163);
             this.txt_dongia.Name = "txt_dongia";
             this.txt_dongia.Size = new System.Drawing.Size(141, 20);
             this.txt_dongia.TabIndex = 98;
@@ -75,14 +75,14 @@
             // 
             // txt_tensp
             // 
-            this.txt_tensp.Location = new System.Drawing.Point(214, 46);
+            this.txt_tensp.Location = new System.Drawing.Point(362, 128);
             this.txt_tensp.Name = "txt_tensp";
             this.txt_tensp.Size = new System.Drawing.Size(141, 20);
             this.txt_tensp.TabIndex = 97;
             // 
             // txt_masp
             // 
-            this.txt_masp.Location = new System.Drawing.Point(214, 20);
+            this.txt_masp.Location = new System.Drawing.Point(362, 102);
             this.txt_masp.Name = "txt_masp";
             this.txt_masp.ReadOnly = true;
             this.txt_masp.Size = new System.Drawing.Size(141, 20);
@@ -91,7 +91,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(107, 120);
+            this.label7.Location = new System.Drawing.Point(255, 202);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 95;
@@ -100,7 +100,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(411, 17);
+            this.label6.Location = new System.Drawing.Point(559, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 94;
@@ -109,7 +109,7 @@
             // maloai
             // 
             this.maloai.AutoSize = true;
-            this.maloai.Location = new System.Drawing.Point(411, 46);
+            this.maloai.Location = new System.Drawing.Point(559, 128);
             this.maloai.Name = "maloai";
             this.maloai.Size = new System.Drawing.Size(45, 13);
             this.maloai.TabIndex = 93;
@@ -118,7 +118,7 @@
             // mancc
             // 
             this.mancc.AutoSize = true;
-            this.mancc.Location = new System.Drawing.Point(411, 81);
+            this.mancc.Location = new System.Drawing.Point(559, 163);
             this.mancc.Name = "mancc";
             this.mancc.Size = new System.Drawing.Size(47, 13);
             this.mancc.TabIndex = 92;
@@ -127,7 +127,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(107, 81);
+            this.label3.Location = new System.Drawing.Point(255, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 91;
@@ -136,7 +136,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(107, 53);
+            this.label2.Location = new System.Drawing.Point(255, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 90;
@@ -145,7 +145,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 20);
+            this.label1.Location = new System.Drawing.Point(255, 102);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
@@ -155,7 +155,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(110, 177);
+            this.dataGridView1.Location = new System.Drawing.Point(258, 259);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(470, 205);
             this.dataGridView1.TabIndex = 89;
@@ -164,7 +164,7 @@
             // cb_maloai
             // 
             this.cb_maloai.FormattingEnabled = true;
-            this.cb_maloai.Location = new System.Drawing.Point(482, 43);
+            this.cb_maloai.Location = new System.Drawing.Point(630, 125);
             this.cb_maloai.Name = "cb_maloai";
             this.cb_maloai.Size = new System.Drawing.Size(96, 21);
             this.cb_maloai.TabIndex = 104;
@@ -172,7 +172,7 @@
             // cb_mancc
             // 
             this.cb_mancc.FormattingEnabled = true;
-            this.cb_mancc.Location = new System.Drawing.Point(482, 81);
+            this.cb_mancc.Location = new System.Drawing.Point(630, 163);
             this.cb_mancc.Name = "cb_mancc";
             this.cb_mancc.Size = new System.Drawing.Size(96, 21);
             this.cb_mancc.TabIndex = 105;
@@ -180,7 +180,7 @@
             // check1
             // 
             this.check1.AutoSize = true;
-            this.check1.Location = new System.Drawing.Point(214, 119);
+            this.check1.Location = new System.Drawing.Point(362, 201);
             this.check1.Name = "check1";
             this.check1.Size = new System.Drawing.Size(60, 17);
             this.check1.TabIndex = 106;
@@ -208,7 +208,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UC_UpdateSP";
-            this.Size = new System.Drawing.Size(754, 407);
+            this.Size = new System.Drawing.Size(1020, 620);
             this.Load += new System.EventHandler(this.UC_UpdateSP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

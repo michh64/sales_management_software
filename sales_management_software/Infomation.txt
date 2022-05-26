@@ -9,7 +9,7 @@ Tín
 --tên sever DESKTOP-4HKGLMA\SQL
 
 Nguyện
--
+-LAPTOP-5S58PVCE\SQLEXPRESS
 
 Lợi
 -

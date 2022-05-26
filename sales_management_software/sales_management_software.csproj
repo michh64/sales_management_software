@@ -289,6 +289,10 @@
   <ItemGroup>
     <Content Include="Infomation.txt" />
     <Content Include="Query.sql" />
+    <None Include="Resources\statistic1.png" />
+    <None Include="Resources\statistic2.png" />
+    <None Include="Resources\home.png" />
+    <None Include="Resources\home1.png" />
     <Content Include="Sale_Management_Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
