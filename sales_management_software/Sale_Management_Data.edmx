@@ -253,6 +253,13 @@
           <Parameter Name="diachi" Type="nvarchar" Mode="In" />
           <Parameter Name="deleted" Type="bit" Mode="In" />
         </Function>
+        <Function Name="Update_NCC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maNCC" Type="char" Mode="In" />
+          <Parameter Name="tencty" Type="nvarchar" Mode="In" />
+          <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+          <Parameter Name="sdt" Type="char" Mode="In" />
+          <Parameter Name="deleted" Type="bit" Mode="In" />
+        </Function>
         <Function Name="Update_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="masp" Type="char" Mode="In" />
           <Parameter Name="tensp" Type="nvarchar" Mode="In" />
@@ -626,6 +633,13 @@
             <Parameter Name="maloai" Mode="In" Type="String" />
             <Parameter Name="deleted" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="Update_NCC">
+            <Parameter Name="maNCC" Mode="In" Type="String" />
+            <Parameter Name="tencty" Mode="In" Type="String" />
+            <Parameter Name="diachi" Mode="In" Type="String" />
+            <Parameter Name="sdt" Mode="In" Type="String" />
+            <Parameter Name="deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Search_SanPham_Result">
           <Property Type="String" Name="tensp" Nullable="false" MaxLength="30" />
@@ -881,6 +895,7 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Update_KhachHang" FunctionName="Sale_ManagementModel.Store.Update_KhachHang" />
           <FunctionImportMapping FunctionImportName="Update_sp" FunctionName="Sale_ManagementModel.Store.Update_sp" />
+          <FunctionImportMapping FunctionImportName="Update_NCC" FunctionName="Sale_ManagementModel.Store.Update_NCC" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

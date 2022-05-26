@@ -23,5 +23,10 @@ namespace sales_management_software
             uc.Dock = DockStyle.Fill;
             panel1.Controls.Add(uc);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

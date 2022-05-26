@@ -31,14 +31,14 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_sdt = new System.Windows.Forms.TextBox();
+            this.cb_sdt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt_diachi = new System.Windows.Forms.TextBox();
+            this.cb_diachi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_tencty = new System.Windows.Forms.TextBox();
+            this.cb_tencty = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.txt_maNCC = new System.Windows.Forms.TextBox();
+            this.cb_maNCC = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,7 @@
             this.button1.TabIndex = 81;
             this.button1.Text = "Update";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -72,13 +73,13 @@
             this.label5.TabIndex = 80;
             this.label5.Text = "Trạng thái";
             // 
-            // txt_sdt
+            // cb_sdt
             // 
-            this.txt_sdt.Location = new System.Drawing.Point(551, 73);
-            this.txt_sdt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_sdt.Name = "txt_sdt";
-            this.txt_sdt.Size = new System.Drawing.Size(100, 22);
-            this.txt_sdt.TabIndex = 79;
+            this.cb_sdt.Location = new System.Drawing.Point(551, 73);
+            this.cb_sdt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cb_sdt.Name = "cb_sdt";
+            this.cb_sdt.Size = new System.Drawing.Size(100, 22);
+            this.cb_sdt.TabIndex = 79;
             // 
             // label3
             // 
@@ -89,13 +90,13 @@
             this.label3.TabIndex = 78;
             this.label3.Text = "Địa chỉ";
             // 
-            // txt_diachi
+            // cb_diachi
             // 
-            this.txt_diachi.Location = new System.Drawing.Point(551, 26);
-            this.txt_diachi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_diachi.Name = "txt_diachi";
-            this.txt_diachi.Size = new System.Drawing.Size(100, 22);
-            this.txt_diachi.TabIndex = 77;
+            this.cb_diachi.Location = new System.Drawing.Point(551, 26);
+            this.cb_diachi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cb_diachi.Name = "cb_diachi";
+            this.cb_diachi.Size = new System.Drawing.Size(100, 22);
+            this.cb_diachi.TabIndex = 77;
             // 
             // label4
             // 
@@ -106,13 +107,13 @@
             this.label4.TabIndex = 76;
             this.label4.Text = "Số điện thoại";
             // 
-            // txt_tencty
+            // cb_tencty
             // 
-            this.txt_tencty.Location = new System.Drawing.Point(175, 60);
-            this.txt_tencty.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_tencty.Name = "txt_tencty";
-            this.txt_tencty.Size = new System.Drawing.Size(100, 22);
-            this.txt_tencty.TabIndex = 75;
+            this.cb_tencty.Location = new System.Drawing.Point(175, 60);
+            this.cb_tencty.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cb_tencty.Name = "cb_tencty";
+            this.cb_tencty.Size = new System.Drawing.Size(100, 22);
+            this.cb_tencty.TabIndex = 75;
             // 
             // label2
             // 
@@ -134,13 +135,13 @@
             this.checkBox1.Text = "Đã xóa";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // txt_maNCC
+            // cb_maNCC
             // 
-            this.txt_maNCC.Location = new System.Drawing.Point(175, 17);
-            this.txt_maNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_maNCC.Name = "txt_maNCC";
-            this.txt_maNCC.Size = new System.Drawing.Size(100, 22);
-            this.txt_maNCC.TabIndex = 72;
+            this.cb_maNCC.Location = new System.Drawing.Point(175, 17);
+            this.cb_maNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cb_maNCC.Name = "cb_maNCC";
+            this.cb_maNCC.Size = new System.Drawing.Size(100, 22);
+            this.cb_maNCC.TabIndex = 72;
             // 
             // label1
             // 
@@ -158,14 +159,14 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txt_sdt);
+            this.Controls.Add(this.cb_sdt);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_diachi);
+            this.Controls.Add(this.cb_diachi);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_tencty);
+            this.Controls.Add(this.cb_tencty);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.txt_maNCC);
+            this.Controls.Add(this.cb_maNCC);
             this.Controls.Add(this.label1);
             this.Name = "UC_UpdateNCC";
             this.Size = new System.Drawing.Size(872, 524);
@@ -181,14 +182,14 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_sdt;
+        private System.Windows.Forms.TextBox cb_sdt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_diachi;
+        private System.Windows.Forms.TextBox cb_diachi;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_tencty;
+        private System.Windows.Forms.TextBox cb_tencty;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox txt_maNCC;
+        private System.Windows.Forms.TextBox cb_maNCC;
         private System.Windows.Forms.Label label1;
     }
 }

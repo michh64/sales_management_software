@@ -234,5 +234,30 @@ namespace sales_management_software
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_sp", maspParameter, tenspParameter, dongiaParameter, soluongParameter, maNCCParameter, maloaiParameter, deletedParameter);
         }
+    
+        public virtual int Update_NCC(string maNCC, string tencty, string diachi, string sdt, Nullable<bool> deleted)
+        {
+            var maNCCParameter = maNCC != null ?
+                new ObjectParameter("maNCC", maNCC) :
+                new ObjectParameter("maNCC", typeof(string));
+    
+            var tenctyParameter = tencty != null ?
+                new ObjectParameter("tencty", tencty) :
+                new ObjectParameter("tencty", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            var deletedParameter = deleted.HasValue ?
+                new ObjectParameter("deleted", deleted) :
+                new ObjectParameter("deleted", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_NCC", maNCCParameter, tenctyParameter, diachiParameter, sdtParameter, deletedParameter);
+        }
     }
 }
