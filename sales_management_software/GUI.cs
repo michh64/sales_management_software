@@ -124,9 +124,12 @@ namespace sales_management_software
         {
             panel10.Location = new Point(panel10.Location.X, button8.Location.Y + 7);
 
+            textBox1.Text = "05";
+
             UC_Login uc = new UC_Login();
             uc.Dock = DockStyle.Fill;
 
+            panel3.Controls.Clear();
             panel3.Visible = true;
             panel3.BringToFront();
             panel3.Dock = DockStyle.Fill;
@@ -214,6 +217,25 @@ namespace sales_management_software
             panel10.Location = new Point(panel10.Location.X, button10.Location.Y + 7);
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            panel8.Location = new Point(panel8.Location.X, button5.Location.Y + 7);
+            textBox1.Text = "03";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panel5.Location = new Point(panel5.Location.X, button3.Location.Y + 7);
+            textBox1.Text = "03";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            panel12.Location = new Point(panel12.Location.X, button9.Location.Y + 7);
+            textBox1.Text = "03";
+        }
         #endregion
+
     }
 }
