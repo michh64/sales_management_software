@@ -14,7 +14,7 @@ namespace sales_management_software
     public partial class GUI : Form
     {
         public static GUI Instance;
-        public int check = 0;
+        public TextBox check;
         //private Color mainBackColor = Color.DodgerBlue;
         //private Color mainForeColor = Color.White;
 
@@ -22,6 +22,7 @@ namespace sales_management_software
         {
             InitializeComponent();
             Instance = this;
+            check = textBox1;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,6 +51,8 @@ namespace sales_management_software
 
         private void button1_Click(object sender, EventArgs e)
         {
+            panel5.Location = new Point(panel5.Location.X, button1.Location.Y + 7);
+
             RemoveAllUserControl();
             UC_NhanVien uc = new UC_NhanVien();
             uc.Dock = DockStyle.Fill;
@@ -59,6 +62,7 @@ namespace sales_management_software
 
         private void button2_Click(object sender, EventArgs e)
         {
+            panel5.Location = new Point(panel5.Location.X, button2.Location.Y + 7);
             RemoveAllUserControl();
             UC_KhachHang uc = new UC_KhachHang();
             uc.Dock = DockStyle.Fill;
@@ -68,25 +72,24 @@ namespace sales_management_software
 
         private void button3_Click(object sender, EventArgs e)
         {
+            panel5.Location = new Point(panel5.Location.X, button3.Location.Y + 7);
+
             UC_Login uc = new UC_Login();
             uc.Dock = DockStyle.Fill;
+            panel3.BringToFront();
             panel3.Controls.Add(uc);
             panel3.Dock = DockStyle.Fill;
 
-            Thread thrd = new Thread(LoginControl);
-            thrd.IsBackground = true;
-            thrd.Start();
-
         }
 
-        void LoginControl()
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            while (check == 0)
+            if (textBox1.Text == "0")
             {
+                panel3.Dock = DockStyle.None;
+                panel3.Visible = false;
+                button1_Click(sender, e);
             }
-
-            panel3.Dock = DockStyle.None;
-            panel3.Visible = false;
-        }    
+        }
     }
 }

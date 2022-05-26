@@ -27,7 +27,7 @@ namespace sales_management_software
                 if(textBox2.Text == nv.manv && textBox3.Text == nv.matkhau)
                 {
                     MessageBox.Show("Đăng nhập thành công");
-                    GUI.Instance.check = 1;
+                    GUI.Instance.check.Text = "0";
                     IsLogin = true;
                 }
             }
@@ -36,6 +36,18 @@ namespace sales_management_software
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
             }
+        }
+
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                button7_Click(sender, e);
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                textBox3.Focus();
         }
     }
 }
