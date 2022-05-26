@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Sale_ManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Sale_ManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="DON_HANG">
           <Key>
             <PropertyRef Name="madh" />
@@ -306,8 +306,7 @@
             <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Sale_ManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -603,7 +602,7 @@
             <Parameter Name="deleted" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Search_SanPham" ReturnType="Collection(Sale_ManagementModel.Search_SanPham_Result)">
-            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          <Parameter Name="tukhoa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Select_KhachHang" ReturnType="Collection(Sale_ManagementModel.Select_KhachHang_Result)" />
           <FunctionImport Name="Select_kho" ReturnType="Collection(Sale_ManagementModel.Select_kho_Result)" />
