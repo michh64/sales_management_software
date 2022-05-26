@@ -21,6 +21,7 @@ namespace sales_management_software
         {
             listNCC = NHA_CUNG_CAP_BLL.EF_GetAll();
             dataGridView1.DataSource = listNCC;
+            dataGridView1.ReadOnly = true;
         }
 
         //tinlam

@@ -23,6 +23,7 @@ namespace sales_management_software
         {
             listKH = KHACH_HANG_BLL.EF_GetAll();
             dataGridView1.DataSource = listKH;
+            dataGridView1.ReadOnly = true;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

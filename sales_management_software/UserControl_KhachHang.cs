@@ -34,6 +34,7 @@ namespace sales_management_software
             
             list_sanpham = SAN_PHAM_BLL.EF_GetAll();
             dataGridView1.DataSource = list_sanpham;
+            dataGridView1.ReadOnly = true;
         }
 
 

@@ -24,7 +24,7 @@ namespace sales_management_software
             List<SAN_PHAM_DTO> listsanpham;
             listsanpham = SAN_PHAM_BLL.EF_GetAll();
             dataGridView1.DataSource = listsanpham;
-
+            dataGridView1.ReadOnly = true;
         }
 
         private void btt_Luu_Click(object sender, EventArgs e)
