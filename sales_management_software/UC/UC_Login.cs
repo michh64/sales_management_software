@@ -29,12 +29,17 @@ namespace sales_management_software
 
         private void button7_Click(object sender, EventArgs e)
         {
+            string usernametxt = textBox2.Text;
+            string passwordtxt = textBox3.Text;
+            textBox2.Text = "";
+            textBox3.Text = "";
+
             if (label1.Visible == true)
             {
 
                 foreach (var nv in dsNV)
                 {
-                    if (textBox2.Text == nv.manv && textBox3.Text == nv.matkhau)
+                    if (usernametxt == nv.manv && passwordtxt == nv.matkhau)
                     {
                         MessageBox.Show("Đăng nhập thành công");
                         GUI.Instance.check.Text = "02";
@@ -53,14 +58,12 @@ namespace sales_management_software
                     {
                         CountWrong++;
                         MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
-                        textBox2.Text = "";
-                        textBox3.Text = "";
                     }
                 }
             }
             else
 
-            if ( (textBox2.Text == "quanli" || textBox2.Text == "quanly" ) && textBox3.Text == "123")
+            if ( (usernametxt == "quanli" || usernametxt == "quanly" ) && passwordtxt == "123")
             {
                 MessageBox.Show("Đăng nhập thành công");
                 GUI.Instance.check.Text = "00";
@@ -68,7 +71,7 @@ namespace sales_management_software
             }
             else
             
-            if (textBox2.Text == "nhanvien" && textBox3.Text == "123")
+            if (usernametxt == "nhanvien" && passwordtxt == "123")
             {
                 MessageBox.Show("Đăng nhập thành công");
                 GUI.Instance.check.Text = "01";
@@ -76,7 +79,7 @@ namespace sales_management_software
             }
             else
 
-            if (textBox2.Text == "khachhang" && textBox3.Text == "123")
+            if (usernametxt == "khachhang" && passwordtxt == "123")
             {
                 MessageBox.Show("Đăng nhập thành công");
                 GUI.Instance.check.Text = "02";
@@ -93,12 +96,10 @@ namespace sales_management_software
                 {
                     CountWrong++;
                     MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
-                    textBox2.Text = "";
-                    textBox3.Text = "";
                 }
 
             }
-            
+
         }
 
         private void textBox3_KeyDown(object sender, KeyEventArgs e)
@@ -127,6 +128,11 @@ namespace sales_management_software
                 label4.Visible = true;
                 button1.Text = "Khách hàng đăng nhập";
             }    
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GUI.Instance.check.Text = "03";
         }
     }
 }
