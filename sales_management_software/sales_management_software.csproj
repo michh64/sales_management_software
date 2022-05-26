@@ -149,7 +149,7 @@
     <Compile Include="Search_SanPham_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="select_Dangnhap_Result.cs">
+    <Compile Include="Select_KhachHang_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Select_kho_Result.cs">
@@ -168,12 +168,6 @@
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="SHIPPER.cs">
-      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="THONG_SO_KY_THUAT.cs">
@@ -301,6 +295,16 @@
   <ItemGroup>
     <Content Include="Infomation.txt" />
     <Content Include="Query.sql" />
+    <Content Include="Sale_Management_Data.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
+      <LastGenOutput>Sale_Management_Data.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Sale_Management_Data.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
+      <LastGenOutput>Sale_Management_Data.cs</LastGenOutput>
+    </Content>
     <None Include="Resources\statistic1.png" />
     <None Include="Resources\statistic2.png" />
     <None Include="Resources\home.png" />
@@ -316,16 +320,6 @@
     <None Include="Resources\exit.png" />
     <None Include="Resources\clipboard.png" />
     <None Include="Resources\login.png" />
-    <Content Include="Sale_Management_Data.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
-      <LastGenOutput>Sale_Management_Data.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Sale_Management_Data.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
-      <LastGenOutput>Sale_Management_Data.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\statistic.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

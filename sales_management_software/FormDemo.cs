@@ -19,9 +19,9 @@ namespace sales_management_software
 
         private void FormDemo_Load(object sender, EventArgs e)
         {
-            Uc_QL_KHACHHANG uc=new Uc_QL_KHACHHANG();
-            uc.Dock = DockStyle.Fill;
-            panel1.Controls.Add(uc);
+            //Uc_QL_KHACHHANG uc = new Uc_QL_KHACHHANG();
+            //uc.Dock = DockStyle.Fill;
+            //panel1.Controls.Add(uc);
         }
     }
 }

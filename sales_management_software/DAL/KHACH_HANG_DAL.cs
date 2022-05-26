@@ -11,7 +11,7 @@ namespace sales_management_software
         public static List<KHACH_HANG_DTO> EF_GetAll()
         {
             Sale_ManagementEntities data = new Sale_ManagementEntities();
-            var truyvan = data.selcet_Khachhang();
+            var truyvan = data.Select_KhachHang();
             List<KHACH_HANG_DTO> dsLSP = new List<KHACH_HANG_DTO>();
             foreach (var s in truyvan)
             {
