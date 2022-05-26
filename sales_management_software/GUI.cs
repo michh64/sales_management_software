@@ -23,11 +23,14 @@ namespace sales_management_software
             InitializeComponent();
             Instance = this;
             check = textBox1;
+
+            // Chạy thử một hàm để kết nối trước với Entity. Tăng tốc độ xử lý những hàm sau
+            LOAI_SAN_PHAM_BLL.EF_GetAll();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            button1_Click(sender, e);
         }
 
         private void RemoveAllUserControl()

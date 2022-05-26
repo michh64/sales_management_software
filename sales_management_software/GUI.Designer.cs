@@ -41,6 +41,7 @@ namespace sales_management_software
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -53,10 +54,10 @@ namespace sales_management_software
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(306, 84);
+            this.panel1.Location = new System.Drawing.Point(244, 63);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(876, 586);
+            this.panel1.Size = new System.Drawing.Size(1020, 620);
             this.panel1.TabIndex = 1;
             // 
             // tabControl1
@@ -156,7 +157,7 @@ namespace sales_management_software
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(245, 640);
+            this.tabPage2.Size = new System.Drawing.Size(245, 660);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "KH";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -171,6 +172,7 @@ namespace sales_management_software
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.textBox1);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.pictureBox1);
@@ -178,6 +180,14 @@ namespace sales_management_software
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1342, 64);
             this.panel4.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(147)))), ((int)(((byte)(251)))));
+            this.panel6.Location = new System.Drawing.Point(-1, 63);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1342, 1);
+            this.panel6.TabIndex = 6;
             // 
             // textBox1
             // 
@@ -253,5 +263,6 @@ namespace sales_management_software
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel6;
     }
 }
