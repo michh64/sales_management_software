@@ -19,7 +19,7 @@ namespace sales_management_software
 
         private void FormDemo_Load(object sender, EventArgs e)
         {
-            UserControl_KhachHang uc=new UserControl_KhachHang();
+           UC_ThemLSP uc=new UC_ThemLSP();
             uc.Dock = DockStyle.Fill;
             panel1.Controls.Add(uc);
         }

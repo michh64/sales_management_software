@@ -265,5 +265,52 @@ namespace sales_management_software
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_SanPham_Result>("Search_SanPham", tukhoaParameter);
         }
+    
+        public virtual int Insert_lsp(string maloai, string tenloai, Nullable<bool> deleted)
+        {
+            var maloaiParameter = maloai != null ?
+                new ObjectParameter("maloai", maloai) :
+                new ObjectParameter("maloai", typeof(string));
+    
+            var tenloaiParameter = tenloai != null ?
+                new ObjectParameter("tenloai", tenloai) :
+                new ObjectParameter("tenloai", typeof(string));
+    
+            var deletedParameter = deleted.HasValue ?
+                new ObjectParameter("deleted", deleted) :
+                new ObjectParameter("deleted", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_lsp", maloaiParameter, tenloaiParameter, deletedParameter);
+        }
+    
+        public virtual int Insert_ncc1(string maNCC, string tencty, string diachi, string sdt, Nullable<bool> deleted)
+        {
+            var maNCCParameter = maNCC != null ?
+                new ObjectParameter("maNCC", maNCC) :
+                new ObjectParameter("maNCC", typeof(string));
+    
+            var tenctyParameter = tencty != null ?
+                new ObjectParameter("tencty", tencty) :
+                new ObjectParameter("tencty", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            var deletedParameter = deleted.HasValue ?
+                new ObjectParameter("deleted", deleted) :
+                new ObjectParameter("deleted", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_ncc1", maNCCParameter, tenctyParameter, diachiParameter, sdtParameter, deletedParameter);
+        }
+    
+        public virtual ObjectResult<select_Dangnhap_Result> select_Dangnhap()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<select_Dangnhap_Result>("select_Dangnhap");
+        }
     }
 }
