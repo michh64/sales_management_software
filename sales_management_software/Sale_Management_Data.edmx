@@ -213,6 +213,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="Insert_KhacHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="makh" Type="char" Mode="In" />
+          <Parameter Name="tenkh" Type="nvarchar" Mode="In" />
+          <Parameter Name="sdt" Type="char" Mode="In" />
+          <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+          <Parameter Name="deleted" Type="bit" Mode="In" />
+        </Function>
         <Function Name="Insert_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="masp" Type="char" Mode="In" />
           <Parameter Name="tensp" Type="nvarchar" Mode="In" />
@@ -225,10 +232,18 @@
         <Function Name="Search_SanPham" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="selcet_Khachhang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_kho" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_lsp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_ncc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Update_KHACHHANG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="makh" Type="char" Mode="In" />
+          <Parameter Name="tenkh" Type="nvarchar" Mode="In" />
+          <Parameter Name="sdt" Type="char" Mode="In" />
+          <Parameter Name="diachi" Type="nvarchar" Mode="In" />
+          <Parameter Name="deleted" Type="bit" Mode="In" />
+        </Function>
         <Function Name="Update_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="masp" Type="char" Mode="In" />
           <Parameter Name="tensp" Type="nvarchar" Mode="In" />
@@ -614,7 +629,22 @@
             <Parameter Name="deleted" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Search_SanPham" ReturnType="Collection(Sale_ManagementModel.Search_SanPham_Result)">
-            <Parameter Name="tukhoa" Mode="In" Type="String" />
+          <Parameter Name="tukhoa" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="Insert_KhacHang">
+            <Parameter Name="makh" Mode="In" Type="String" />
+            <Parameter Name="tenkh" Mode="In" Type="String" />
+            <Parameter Name="sdt" Mode="In" Type="String" />
+            <Parameter Name="diachi" Mode="In" Type="String" />
+            <Parameter Name="deleted" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="selcet_Khachhang" ReturnType="Collection(Sale_ManagementModel.selcet_Khachhang_Result)" />
+          <FunctionImport Name="Update_KHACHHANG">
+            <Parameter Name="makh" Mode="In" Type="String" />
+            <Parameter Name="tenkh" Mode="In" Type="String" />
+            <Parameter Name="sdt" Mode="In" Type="String" />
+            <Parameter Name="diachi" Mode="In" Type="String" />
+            <Parameter Name="deleted" Mode="In" Type="Boolean" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="Select_kho_Result">
@@ -668,6 +698,13 @@
           <Property Type="String" Name="tensp" Nullable="false" MaxLength="30" />
           <Property Type="String" Name="maloai" Nullable="true" MaxLength="5" />
           <Property Type="String" Name="maNCC" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="selcet_Khachhang_Result">
+          <Property Type="String" Name="makh" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="tenkh" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="sdt" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="diachi" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -852,6 +889,19 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Insert_KhacHang" FunctionName="Sale_ManagementModel.Store.Insert_KhacHang" />
+          <FunctionImportMapping FunctionImportName="selcet_Khachhang" FunctionName="Sale_ManagementModel.Store.selcet_Khachhang">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Sale_ManagementModel.selcet_Khachhang_Result">
+                <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="tenkh" ColumnName="tenkh" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Update_KHACHHANG" FunctionName="Sale_ManagementModel.Store.Update_KHACHHANG" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

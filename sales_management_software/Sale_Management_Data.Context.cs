@@ -265,5 +265,60 @@ namespace sales_management_software
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_SanPham_Result>("Search_SanPham", tukhoaParameter);
         }
+    
+        public virtual int Insert_KhacHang(string makh, string tenkh, string sdt, string diachi, Nullable<bool> deleted)
+        {
+            var makhParameter = makh != null ?
+                new ObjectParameter("makh", makh) :
+                new ObjectParameter("makh", typeof(string));
+    
+            var tenkhParameter = tenkh != null ?
+                new ObjectParameter("tenkh", tenkh) :
+                new ObjectParameter("tenkh", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var deletedParameter = deleted.HasValue ?
+                new ObjectParameter("deleted", deleted) :
+                new ObjectParameter("deleted", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_KhacHang", makhParameter, tenkhParameter, sdtParameter, diachiParameter, deletedParameter);
+        }
+    
+        public virtual ObjectResult<selcet_Khachhang_Result> selcet_Khachhang()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<selcet_Khachhang_Result>("selcet_Khachhang");
+        }
+    
+        public virtual int Update_KHACHHANG(string makh, string tenkh, string sdt, string diachi, Nullable<bool> deleted)
+        {
+            var makhParameter = makh != null ?
+                new ObjectParameter("makh", makh) :
+                new ObjectParameter("makh", typeof(string));
+    
+            var tenkhParameter = tenkh != null ?
+                new ObjectParameter("tenkh", tenkh) :
+                new ObjectParameter("tenkh", typeof(string));
+    
+            var sdtParameter = sdt != null ?
+                new ObjectParameter("sdt", sdt) :
+                new ObjectParameter("sdt", typeof(string));
+    
+            var diachiParameter = diachi != null ?
+                new ObjectParameter("diachi", diachi) :
+                new ObjectParameter("diachi", typeof(string));
+    
+            var deletedParameter = deleted.HasValue ?
+                new ObjectParameter("deleted", deleted) :
+                new ObjectParameter("deleted", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_KHACHHANG", makhParameter, tenkhParameter, sdtParameter, diachiParameter, deletedParameter);
+        }
     }
 }
