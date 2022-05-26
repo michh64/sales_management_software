@@ -38,12 +38,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button10);
             this.panel1.Controls.Add(this.button9);
             this.panel1.Controls.Add(this.label6);
@@ -53,9 +56,10 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(405, 83);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(470, 554);
+            this.panel1.Size = new System.Drawing.Size(470, 612);
             this.panel1.TabIndex = 2;
             // 
             // button10
@@ -158,11 +162,36 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(114, 164);
+            this.label4.Location = new System.Drawing.Point(81, 164);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(245, 28);
+            this.label4.Size = new System.Drawing.Size(311, 28);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Đăng nhập vào BestSeller";
+            this.label4.Text = "Nội bộ đăng nhập vào BestSeller";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.button1.ForeColor = System.Drawing.Color.SlateBlue;
+            this.button1.Location = new System.Drawing.Point(149, 541);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(175, 34);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Người dùng nội bộ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(93, 164);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(287, 28);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Chào mừng đến với BestSeller";
             // 
             // UC_Login
             // 
@@ -190,5 +219,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }
