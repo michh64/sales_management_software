@@ -240,6 +240,7 @@
         <Function Name="Search_SanPham" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="select_kh_DE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_KhachHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_kho" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_lsp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -626,6 +627,7 @@
             <Parameter Name="maloai" Mode="In" Type="String" />
             <Parameter Name="deleted" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="select_kh_DE" ReturnType="Collection(Sale_ManagementModel.select_kh_DE_Result)" />
         </EntityContainer>
         <ComplexType Name="Search_SanPham_Result">
           <Property Type="String" Name="tensp" Nullable="false" MaxLength="30" />
@@ -673,6 +675,13 @@
           <Property Type="Int32" Name="soluong" Nullable="true" />
           <Property Type="String" Name="maNCC" Nullable="true" MaxLength="10" />
           <Property Type="String" Name="maloai" Nullable="true" MaxLength="5" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="select_kh_DE_Result">
+          <Property Type="String" Name="makh" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="tenkh" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="sdt" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="diachi" Nullable="true" MaxLength="50" />
           <Property Type="Boolean" Name="deleted" Nullable="true" />
         </ComplexType>
       </Schema>
@@ -881,6 +890,17 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Update_KhachHang" FunctionName="Sale_ManagementModel.Store.Update_KhachHang" />
           <FunctionImportMapping FunctionImportName="Update_sp" FunctionName="Sale_ManagementModel.Store.Update_sp" />
+          <FunctionImportMapping FunctionImportName="select_kh_DE" FunctionName="Sale_ManagementModel.Store.select_kh_DE">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Sale_ManagementModel.select_kh_DE_Result">
+                <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="tenkh" ColumnName="tenkh" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

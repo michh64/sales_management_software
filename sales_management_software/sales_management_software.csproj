@@ -155,6 +155,9 @@
     <Compile Include="Select_kho_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="select_kh_DE_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Select_lsp_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>

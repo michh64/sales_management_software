@@ -234,5 +234,10 @@ namespace sales_management_software
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_sp", maspParameter, tenspParameter, dongiaParameter, soluongParameter, maNCCParameter, maloaiParameter, deletedParameter);
         }
+    
+        public virtual ObjectResult<select_kh_DE_Result> select_kh_DE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<select_kh_DE_Result>("select_kh_DE");
+        }
     }
 }
