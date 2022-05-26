@@ -21,9 +21,7 @@ namespace sales_management_software
 
         private void UC_QL_KHACHANG_Load(object sender, EventArgs e)
         {
-            listKH = KHACH_HANG_BLL.EF_GetAll();
-            dataGridView1.DataSource = listKH;
-            dataGridView1.ReadOnly = true;
+            Showdata_gridview();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -36,9 +34,6 @@ namespace sales_management_software
                 txt_tenkh.Text = row.Cells[1].Value.ToString();
                 txt_sdt.Text = row.Cells[2].Value.ToString();
                 txt_diachi.Text = row.Cells[3].Value.ToString();
-                checkBox1.Checked = Convert.ToBoolean(row.Cells[4].Value);
-
-
             }
         }
 
@@ -67,8 +62,8 @@ namespace sales_management_software
                     string tenkh = txt_tenkh.Text;
                     string sdt = txt_sdt.Text;
                     string diachi = txt_diachi.Text;
-                    bool deleted = false;
-                    data.Update_KhachHang(makh, tenkh, sdt, diachi, deleted);
+                    bool check = false;
+                    data.Update_KhachHang(makh, tenkh, sdt, diachi, check);
                     data.SaveChanges();
                     listKH = KHACH_HANG_BLL.EF_GetAll();
                     dataGridView1.DataSource = listKH;
@@ -83,6 +78,61 @@ namespace sales_management_software
             {
                 MessageBox.Show("Update không thành công");
 
+            }
+        }
+
+        private void btt_xoa_Click(object sender, EventArgs e)
+        {
+            Sale_ManagementEntities data = new Sale_ManagementEntities();
+            SAN_PHAM_DTO sp = new SAN_PHAM_DTO();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                if (txt_makh.Text != "" && txt_tenkh.Text != "" && txt_sdt.Text != "" && txt_diachi.Text != "")
+                {
+                    string makh = txt_makh.Text;
+                    string tenkh = txt_tenkh.Text;
+                    string sdt = txt_sdt.Text;
+                    string diachi = txt_diachi.Text;
+                    data.Update_KhachHang(makh, tenkh, sdt, diachi,true);
+                    data.SaveChanges();
+                    Showdata_gridview();
+                    MessageBox.Show("Xoá thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Xin hãy nhập đầy đủ");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Xoá không thành công");
+
+            }
+           
+
+
+
+        }
+        private void Showdata_gridview()
+        {
+            listKH = KHACH_HANG_BLL.EF_GetAll();
+            dataGridView1.Columns.Add("makh", "Mã khách hàng");
+            dataGridView1.Columns.Add("tenkh", "Tên khách hàng");
+            dataGridView1.Columns.Add("sdt", "Số điện thoại");
+            dataGridView1.Columns.Add("diachi", "Địa chỉ");
+
+            for (int i = 0; i < listKH.Count; i++)
+            {
+                dataGridView1.Rows.Add(listKH[i].makh, listKH[i].tenkh, listKH[i].sdt, listKH[i].diachi);
+            }
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.DataSource != null)
+            {
+                int r = this.dataGridView1.CurrentCell.RowIndex;
+                int c = this.dataGridView1.CurrentCell.ColumnIndex;
             }
         }
     }
