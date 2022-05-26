@@ -19,20 +19,6 @@ namespace sales_management_software
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                txtTenSanPham.Text = row.Cells[1].Value.ToString();
-                txtDonGia.Text = row.Cells[2].Value.ToString();
-                txtSoLuong.Text = row.Cells[3].Value.ToString();
-                txtMaNCC.Text = row.Cells[4].Value.ToString();
-                txtMaLoai.Text = row.Cells[5].Value.ToString();
-
-
-            }
-        }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
