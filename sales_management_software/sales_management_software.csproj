@@ -221,6 +221,12 @@
     <Compile Include="UC_ThemNCC.Designer.cs">
       <DependentUpon>UC_ThemNCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_UpdateNCC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_UpdateNCC.Designer.cs">
+      <DependentUpon>UC_UpdateNCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_UpdateSP.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -269,6 +275,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_NhanVien.resx">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_UpdateNCC.resx">
+      <DependentUpon>UC_UpdateNCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_UpdateSP.resx">
       <DependentUpon>UC_UpdateSP.cs</DependentUpon>

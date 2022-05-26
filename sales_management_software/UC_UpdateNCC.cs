@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace sales_management_software
 {
-    public partial class FormDemo : Form
+    public partial class UC_UpdateNCC : UserControl
     {
-        public FormDemo()
+        public UC_UpdateNCC()
         {
             InitializeComponent();
         }
 
-        private void FormDemo_Load(object sender, EventArgs e)
+        private void UC_UpdateNCC_Load(object sender, EventArgs e)
         {
-           UC_UpdateNCC uc=new UC_UpdateNCC();
-            uc.Dock = DockStyle.Fill;
-            panel1.Controls.Add(uc);
+
         }
     }
 }
