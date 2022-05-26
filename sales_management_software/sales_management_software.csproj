@@ -295,6 +295,14 @@
   <ItemGroup>
     <Content Include="Infomation.txt" />
     <Content Include="Query.sql" />
+    <None Include="Resources\clipboard1.png" />
+    <None Include="Resources\customer.png" />
+    <None Include="Resources\distributed.png" />
+    <None Include="Resources\packages.png" />
+    <None Include="Resources\smartphone.png" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\id-card.png" />
+    <None Include="Resources\pie-chart.png" />
     <Content Include="Sale_Management_Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>

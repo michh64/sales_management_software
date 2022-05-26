@@ -34,16 +34,31 @@ namespace sales_management_software
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.tabPage0 = new System.Windows.Forms.TabPage();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -62,9 +77,10 @@ namespace sales_management_software
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.tabPage0.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -86,6 +102,7 @@ namespace sales_management_software
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage0);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -122,6 +139,57 @@ namespace sales_management_software
             this.panel4.Size = new System.Drawing.Size(1342, 64);
             this.panel4.TabIndex = 4;
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(147)))), ((int)(((byte)(251)))));
+            this.panel7.Location = new System.Drawing.Point(-3, 1);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1342, 1);
+            this.panel7.TabIndex = 7;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBox2.Location = new System.Drawing.Point(293, 15);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(312, 35);
+            this.textBox2.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(137)))), ((int)(((byte)(201)))));
+            this.label4.Location = new System.Drawing.Point(1130, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 21);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Giỏ hàng";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(137)))), ((int)(((byte)(201)))));
+            this.label3.Location = new System.Drawing.Point(834, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(203, 21);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Đặng Ngọc Hoàng Thành";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(137)))), ((int)(((byte)(201)))));
+            this.label2.Location = new System.Drawing.Point(834, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Tài khoản";
+            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(147)))), ((int)(((byte)(251)))));
@@ -150,56 +218,189 @@ namespace sales_management_software
             this.label1.TabIndex = 1;
             this.label1.Text = "BestSeller";
             // 
-            // label2
+            // tabPage0
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(137)))), ((int)(((byte)(201)))));
-            this.label2.Location = new System.Drawing.Point(834, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Tài khoản";
+            this.tabPage0.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage0.BackgroundImage = global::sales_management_software.Properties.Resources.Background1;
+            this.tabPage0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tabPage0.Controls.Add(this.panel12);
+            this.tabPage0.Controls.Add(this.panel13);
+            this.tabPage0.Location = new System.Drawing.Point(4, 22);
+            this.tabPage0.Name = "tabPage0";
+            this.tabPage0.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage0.Size = new System.Drawing.Size(249, 660);
+            this.tabPage0.TabIndex = 5;
+            this.tabPage0.Text = "QL";
             // 
-            // label3
+            // panel12
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(137)))), ((int)(((byte)(201)))));
-            this.label3.Location = new System.Drawing.Point(834, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 21);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Đặng Ngọc Hoàng Thành";
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.Location = new System.Drawing.Point(-1, 93);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(10, 41);
+            this.panel12.TabIndex = 5;
             // 
-            // label4
+            // panel13
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(137)))), ((int)(((byte)(201)))));
-            this.label4.Location = new System.Drawing.Point(1130, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 21);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Giỏ hàng";
+            this.panel13.Controls.Add(this.button12);
+            this.panel13.Controls.Add(this.button19);
+            this.panel13.Controls.Add(this.button20);
+            this.panel13.Controls.Add(this.button21);
+            this.panel13.Controls.Add(this.button22);
+            this.panel13.Controls.Add(this.button23);
+            this.panel13.Controls.Add(this.button24);
+            this.panel13.Controls.Add(this.button9);
+            this.panel13.Location = new System.Drawing.Point(12, 6);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(227, 639);
+            this.panel13.TabIndex = 0;
             // 
-            // textBox2
+            // button12
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBox2.Location = new System.Drawing.Point(293, 15);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(312, 35);
-            this.textBox2.TabIndex = 12;
+            this.button12.BackColor = System.Drawing.Color.White;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.button12.FlatAppearance.BorderSize = 0;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button12.Image = global::sales_management_software.Properties.Resources.pie_chart;
+            this.button12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button12.Location = new System.Drawing.Point(0, 306);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(229, 44);
+            this.button12.TabIndex = 16;
+            this.button12.Text = " Trích xuất báo cáo";
+            this.button12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button12.UseVisualStyleBackColor = false;
             // 
-            // panel7
+            // button19
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(147)))), ((int)(((byte)(251)))));
-            this.panel7.Location = new System.Drawing.Point(-3, 1);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1342, 1);
-            this.panel7.TabIndex = 7;
+            this.button19.BackColor = System.Drawing.Color.White;
+            this.button19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button19.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.button19.FlatAppearance.BorderSize = 0;
+            this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button19.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button19.Image = global::sales_management_software.Properties.Resources.id_card;
+            this.button19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button19.Location = new System.Drawing.Point(0, 262);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(229, 44);
+            this.button19.TabIndex = 15;
+            this.button19.Text = " Quản lý nhân viên";
+            this.button19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button19.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button19.UseVisualStyleBackColor = false;
+            // 
+            // button20
+            // 
+            this.button20.BackColor = System.Drawing.Color.White;
+            this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button20.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.button20.FlatAppearance.BorderSize = 0;
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button20.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button20.Image = global::sales_management_software.Properties.Resources.customer;
+            this.button20.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button20.Location = new System.Drawing.Point(0, 218);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(229, 44);
+            this.button20.TabIndex = 14;
+            this.button20.Text = " Quản lý khách hàng";
+            this.button20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button20.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button20.UseVisualStyleBackColor = false;
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.White;
+            this.button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button21.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.button21.FlatAppearance.BorderSize = 0;
+            this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button21.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button21.Image = global::sales_management_software.Properties.Resources.packages;
+            this.button21.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button21.Location = new System.Drawing.Point(0, 174);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(229, 44);
+            this.button21.TabIndex = 13;
+            this.button21.Text = " Quản lý nhà cung cấp";
+            this.button21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button21.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button21.UseVisualStyleBackColor = false;
+            // 
+            // button22
+            // 
+            this.button22.BackColor = System.Drawing.Color.White;
+            this.button22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button22.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.button22.FlatAppearance.BorderSize = 0;
+            this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button22.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button22.Image = global::sales_management_software.Properties.Resources.distributed;
+            this.button22.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button22.Location = new System.Drawing.Point(0, 130);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(229, 44);
+            this.button22.TabIndex = 12;
+            this.button22.Text = " Quản lý loại sản phẩm";
+            this.button22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button22.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button22.UseVisualStyleBackColor = false;
+            // 
+            // button23
+            // 
+            this.button23.BackColor = System.Drawing.Color.White;
+            this.button23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button23.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.button23.FlatAppearance.BorderSize = 0;
+            this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button23.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button23.Image = global::sales_management_software.Properties.Resources.smartphone;
+            this.button23.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button23.Location = new System.Drawing.Point(0, 86);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(229, 44);
+            this.button23.TabIndex = 11;
+            this.button23.Text = " Quản lý sản phẩm";
+            this.button23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button23.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button23.UseVisualStyleBackColor = false;
+            // 
+            // button24
+            // 
+            this.button24.BackColor = System.Drawing.Color.White;
+            this.button24.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button24.FlatAppearance.BorderSize = 0;
+            this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button24.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button24.Image = global::sales_management_software.Properties.Resources.list;
+            this.button24.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button24.Location = new System.Drawing.Point(0, 42);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(229, 44);
+            this.button24.TabIndex = 10;
+            this.button24.Text = " Danh sách sản phẩm";
+            this.button24.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button24.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.White;
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button9.Image = global::sales_management_software.Properties.Resources.exit;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button9.Location = new System.Drawing.Point(0, 588);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(229, 44);
+            this.button9.TabIndex = 2;
+            this.button9.Text = " Đăng xuất";
+            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button9.UseVisualStyleBackColor = false;
             // 
             // tabPage1
             // 
@@ -215,8 +416,19 @@ namespace sales_management_software
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "NV";
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(-1, 93);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 41);
+            this.panel5.TabIndex = 5;
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button15);
+            this.panel2.Controls.Add(this.button14);
+            this.panel2.Controls.Add(this.button13);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button3);
@@ -224,6 +436,63 @@ namespace sales_management_software
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(227, 639);
             this.panel2.TabIndex = 0;
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.White;
+            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button15.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button15.Image = global::sales_management_software.Properties.Resources.customer;
+            this.button15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button15.Location = new System.Drawing.Point(-1, 218);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(229, 44);
+            this.button15.TabIndex = 6;
+            this.button15.Text = " Quản lý khách hàng";
+            this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button15.UseVisualStyleBackColor = false;
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.White;
+            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button14.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button14.Image = global::sales_management_software.Properties.Resources.packages;
+            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button14.Location = new System.Drawing.Point(-1, 174);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(229, 44);
+            this.button14.TabIndex = 5;
+            this.button14.Text = " Quản lý nhà cung cấp";
+            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button14.UseVisualStyleBackColor = false;
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.White;
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button13.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.button13.Image = global::sales_management_software.Properties.Resources.distributed;
+            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button13.Location = new System.Drawing.Point(-1, 130);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(229, 44);
+            this.button13.TabIndex = 4;
+            this.button13.Text = " Quản lý loại sản phẩm";
+            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button13.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -233,13 +502,13 @@ namespace sales_management_software
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button2.Image = global::sales_management_software.Properties.Resources.statistic2;
+            this.button2.Image = global::sales_management_software.Properties.Resources.smartphone;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(0, 86);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(229, 44);
             this.button2.TabIndex = 1;
-            this.button2.Text = "   button2";
+            this.button2.Text = " Quản lý sản phẩm";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
@@ -252,13 +521,13 @@ namespace sales_management_software
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button1.Image = global::sales_management_software.Properties.Resources.home1;
+            this.button1.Image = global::sales_management_software.Properties.Resources.list;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 42);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(229, 44);
             this.button1.TabIndex = 0;
-            this.button1.Text = " Trang chủ";
+            this.button1.Text = " Danh sách sản phẩm";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -475,14 +744,6 @@ namespace sales_management_software
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(-1, 93);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 41);
-            this.panel5.TabIndex = 5;
-            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,6 +765,8 @@ namespace sales_management_software
             this.tabControl1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.tabPage0.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -552,5 +815,19 @@ namespace sales_management_software
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TabPage tabPage0;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button24;
     }
 }
