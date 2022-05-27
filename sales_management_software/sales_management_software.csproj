@@ -51,7 +51,7 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -80,11 +80,6 @@
     <Compile Include="BLL\SAN_PHAM_BLL.cs" />
     <Compile Include="BLL\SHIPPER_BLL.cs" />
     <Compile Include="BLL\THONG_SO_KY_THUAT_BLL.cs" />
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\DON_HANG_DAL.cs" />
     <Compile Include="DAL\HOA_DON_DAL.cs" />
     <Compile Include="DAL\KHACH_HANG_DAL.cs" />
@@ -95,11 +90,6 @@
     <Compile Include="DAL\SAN_PHAM_DAL.cs" />
     <Compile Include="DAL\SHIPPER_DAL.cs" />
     <Compile Include="DAL\THONG_SO_KY_THUAT_DAL.cs" />
-    <Compile Include="DataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DON_HANG.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
@@ -112,12 +102,6 @@
     </Compile>
     <Compile Include="FormDemo.Designer.cs">
       <DependentUpon>FormDemo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReport.Designer.cs">
-      <DependentUpon>FormReport.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI.cs">
       <SubType>Form</SubType>
@@ -271,15 +255,8 @@
     <Compile Include="UserControl_KhachHang.Designer.cs">
       <DependentUpon>UserControl_KhachHang.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormDemo.resx">
       <DependentUpon>FormDemo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReport.resx">
-      <DependentUpon>FormReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI.resx">
       <DependentUpon>GUI.cs</DependentUpon>
@@ -331,17 +308,6 @@
       <DependentUpon>UserControl_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
-    <None Include="DataSet2.xsc">
-      <DependentUpon>DataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet2.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet2.xss">
-      <DependentUpon>DataSet2.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
