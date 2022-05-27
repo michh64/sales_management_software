@@ -30,14 +30,13 @@ namespace sales_management_software
         public virtual DbSet<DON_HANG> DON_HANG { get; set; }
         public virtual DbSet<HOA_DON> HOA_DON { get; set; }
         public virtual DbSet<KHACH_HANG> KHACH_HANG { get; set; }
-        public virtual DbSet<KHO_HANG> KHO_HANG { get; set; }
         public virtual DbSet<LOAI_SAN_PHAM> LOAI_SAN_PHAM { get; set; }
         public virtual DbSet<NHA_CUNG_CAP> NHA_CUNG_CAP { get; set; }
         public virtual DbSet<SAN_PHAM> SAN_PHAM { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THONG_SO_KY_THUAT> THONG_SO_KY_THUAT { get; set; }
     
-        public virtual int Insert_KhachHang(string makh, string tenkh, string sdt, string diachi, Nullable<bool> deleted)
+        public virtual int Insert_kh(string makh, string tenkh, string sdt, string diachi, Nullable<bool> deleted)
         {
             var makhParameter = makh != null ?
                 new ObjectParameter("makh", makh) :
@@ -59,7 +58,7 @@ namespace sales_management_software
                 new ObjectParameter("deleted", deleted) :
                 new ObjectParameter("deleted", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_KhachHang", makhParameter, tenkhParameter, sdtParameter, diachiParameter, deletedParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_kh", makhParameter, tenkhParameter, sdtParameter, diachiParameter, deletedParameter);
         }
     
         public virtual int Insert_lsp(string maloai, string tenloai, Nullable<bool> deleted)
@@ -137,28 +136,23 @@ namespace sales_management_software
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_sp", maspParameter, tenspParameter, dongiaParameter, soluongParameter, maNCCParameter, maloaiParameter, deletedParameter);
         }
     
-        public virtual ObjectResult<Search_SanPham_Result> Search_SanPham(string tukhoa)
+        public virtual ObjectResult<Search_sp_Result> Search_sp(string tukhoa)
         {
             var tukhoaParameter = tukhoa != null ?
                 new ObjectParameter("tukhoa", tukhoa) :
                 new ObjectParameter("tukhoa", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_SanPham_Result>("Search_SanPham", tukhoaParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_sp_Result>("Search_sp", tukhoaParameter);
         }
     
-        public virtual ObjectResult<select_hoadon_Result> select_hoadon()
+        public virtual ObjectResult<Select_hoadon_Result> Select_hoadon()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<select_hoadon_Result>("select_hoadon");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_hoadon_Result>("Select_hoadon");
         }
     
-        public virtual ObjectResult<select_kh_DE_Result> select_kh_DE()
+        public virtual ObjectResult<Select_kh_DE_Result> Select_kh_DE()
         {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<select_kh_DE_Result>("select_kh_DE");
-        }
-    
-        public virtual ObjectResult<Select_kho_Result> Select_kho()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_kho_Result>("Select_kho");
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_kh_DE_Result>("Select_kh_DE");
         }
     
         public virtual ObjectResult<Select_lsp_Result> Select_lsp()
@@ -169,11 +163,6 @@ namespace sales_management_software
         public virtual ObjectResult<Select_ncc_Result> Select_ncc()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_ncc_Result>("Select_ncc");
-        }
-    
-        public virtual int select_nv()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("select_nv");
         }
     
         public virtual ObjectResult<Select_sp_Result> Select_sp()
@@ -284,7 +273,7 @@ namespace sales_management_software
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
     
-        public virtual int Update_KhachHang(string makh, string tenkh, string sdt, string diachi, Nullable<bool> deleted)
+        public virtual int Update_kh(string makh, string tenkh, string sdt, string diachi, Nullable<bool> deleted)
         {
             var makhParameter = makh != null ?
                 new ObjectParameter("makh", makh) :
@@ -306,10 +295,10 @@ namespace sales_management_software
                 new ObjectParameter("deleted", deleted) :
                 new ObjectParameter("deleted", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_KhachHang", makhParameter, tenkhParameter, sdtParameter, diachiParameter, deletedParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_kh", makhParameter, tenkhParameter, sdtParameter, diachiParameter, deletedParameter);
         }
     
-        public virtual int Update_NCC(string maNCC, string tencty, string diachi, string sdt, Nullable<bool> deleted)
+        public virtual int Update_ncc(string maNCC, string tencty, string diachi, string sdt, Nullable<bool> deleted)
         {
             var maNCCParameter = maNCC != null ?
                 new ObjectParameter("maNCC", maNCC) :
@@ -331,7 +320,7 @@ namespace sales_management_software
                 new ObjectParameter("deleted", deleted) :
                 new ObjectParameter("deleted", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_NCC", maNCCParameter, tenctyParameter, diachiParameter, sdtParameter, deletedParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_ncc", maNCCParameter, tenctyParameter, diachiParameter, sdtParameter, deletedParameter);
         }
     
         public virtual int Update_sp(string masp, string tensp, Nullable<int> dongia, Nullable<int> soluong, string maNCC, string maloai, Nullable<bool> deleted)

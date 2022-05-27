@@ -45,7 +45,7 @@ namespace sales_management_software
             string DIACHI = txt_diachi.Text;
             bool check = false;
             Sale_ManagementEntities data = new Sale_ManagementEntities();
-            data.Insert_KhachHang(MAKH, TENKH, SDT, DIACHI, check);
+            data.Insert_kh(MAKH, TENKH, SDT, DIACHI, check);
             data.SaveChanges();
             listKH = KHACH_HANG_BLL.EF_GetAll();
             dataGridView1.DataSource = listKH;
@@ -63,7 +63,7 @@ namespace sales_management_software
                     string sdt = txt_sdt.Text;
                     string diachi = txt_diachi.Text;
                     bool check = false;
-                    data.Update_KhachHang(makh, tenkh, sdt, diachi, check);
+                    data.Update_kh(makh, tenkh, sdt, diachi, check);
                     data.SaveChanges();
                     listKH = KHACH_HANG_BLL.EF_GetAll();
                     dataGridView1.DataSource = listKH;
@@ -93,7 +93,7 @@ namespace sales_management_software
                     string tenkh = txt_tenkh.Text;
                     string sdt = txt_sdt.Text;
                     string diachi = txt_diachi.Text;
-                    data.Update_KhachHang(makh, tenkh, sdt, diachi,true);
+                    data.Update_kh(makh, tenkh, sdt, diachi,true);
                     data.SaveChanges();
                     Showdata_gridview();
                     MessageBox.Show("Xoá thành công");

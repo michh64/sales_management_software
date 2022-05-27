@@ -14,12 +14,13 @@ namespace sales_management_software
     
     public partial class THONG_SO_KY_THUAT
     {
+        public bool deleted { get; set; }
+        public string manhinh { get; set; }
+        public string camera { get; set; }
+        public string chipset { get; set; }
+        public string ram { get; set; }
+        public string pin { get; set; }
+        public string memory { get; set; }
         public string mats { get; set; }
-        public string tents { get; set; }
-        public string masp { get; set; }
-        public string giatri { get; set; }
-        public Nullable<bool> deleted { get; set; }
-    
-        public virtual SAN_PHAM SAN_PHAM { get; set; }
     }
 }

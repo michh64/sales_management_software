@@ -11,12 +11,10 @@ namespace sales_management_software
 {
     using System;
     
-    public partial class Select_kho_Result
+    public partial class Search_sp_Result
     {
-        public string makho { get; set; }
-        public string tenkho { get; set; }
-        public string masp { get; set; }
-        public Nullable<int> soluongtonkho { get; set; }
-        public Nullable<bool> deleted { get; set; }
+        public string tensp { get; set; }
+        public string maloai { get; set; }
+        public string maNCC { get; set; }
     }
 }

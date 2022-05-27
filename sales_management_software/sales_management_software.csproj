@@ -68,7 +68,6 @@
     <Compile Include="BLL\DON_HANG_BLL.cs" />
     <Compile Include="BLL\HOA_DON_BLL.cs" />
     <Compile Include="BLL\KHACH_HANG_BLL.cs" />
-    <Compile Include="BLL\KHO_HANG_BLL.cs" />
     <Compile Include="BLL\LOAI_SAN_PHAM_BLL.cs" />
     <Compile Include="BLL\NHA_CUNG_CAP_BLL.cs" />
     <Compile Include="BLL\SAN_PHAM_BLL.cs" />
@@ -77,7 +76,6 @@
     <Compile Include="DAL\DON_HANG_DAL.cs" />
     <Compile Include="DAL\HOA_DON_DAL.cs" />
     <Compile Include="DAL\KHACH_HANG_DAL.cs" />
-    <Compile Include="DAL\KHO_HANG_DAL.cs" />
     <Compile Include="DAL\LOAI_SAN_PHAM_DAL.cs" />
     <Compile Include="DAL\NHA_CUNG_CAP_DAL.cs" />
     <Compile Include="DAL\SAN_PHAM_DAL.cs" />
@@ -87,7 +85,6 @@
     </Compile>
     <Compile Include="DTO\DON_HANG_DTO.cs" />
     <Compile Include="DTO\HOA_DON_DTO.cs" />
-    <Compile Include="DTO\KHO_HANG_DTO.cs" />
     <Compile Include="DTO\THONG_SO_KY_THUAT_DTO.cs" />
     <Compile Include="FormDemo.cs">
       <SubType>Form</SubType>
@@ -108,9 +105,6 @@
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="KHACH_HANG.cs">
-      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KHO_HANG.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="LOAI_SAN_PHAM.cs">
@@ -140,16 +134,13 @@
     <Compile Include="SAN_PHAM.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="Search_SanPham_Result.cs">
+    <Compile Include="Search_sp_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="select_hoadon_Result.cs">
+    <Compile Include="Select_hoadon_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="Select_kho_Result.cs">
-      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
-    </Compile>
-    <Compile Include="select_kh_DE_Result.cs">
+    <Compile Include="Select_kh_DE_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Select_lsp_Result.cs">

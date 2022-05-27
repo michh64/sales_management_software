@@ -11,7 +11,7 @@ namespace sales_management_software
 {
     using System;
     
-    public partial class select_hoadon_Result
+    public partial class Select_hoadon_Result
     {
         public string mahd { get; set; }
         public string masp { get; set; }

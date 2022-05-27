@@ -24,7 +24,7 @@ namespace sales_management_software
         {
             Sale_ManagementEntities sale = new Sale_ManagementEntities();
             string tukhoa = txtNhapTuKhoa.Text;
-            dataGridView1.DataSource = sale.Search_SanPham(tukhoa);
+            dataGridView1.DataSource = sale.Search_sp(tukhoa);
 
         }
 

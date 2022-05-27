@@ -40,7 +40,7 @@ namespace sales_management_software
                     string sdt = txt_sdt.Text;       
                     string diachi = txt_diachi.Text;
                     bool deleted = false;
-                    data.Update_NCC(cb_maNCC.Text, tencty, diachi, sdt, deleted);
+                    data.Update_ncc(cb_maNCC.Text, tencty, diachi, sdt, deleted);
                     data.SaveChanges();
                     listNCC = NHA_CUNG_CAP_BLL.EF_GetAll();
                     dataGridView1.DataSource = listNCC;

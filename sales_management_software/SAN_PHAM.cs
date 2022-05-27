@@ -18,8 +18,6 @@ namespace sales_management_software
         public SAN_PHAM()
         {
             this.HOA_DON = new HashSet<HOA_DON>();
-            this.KHO_HANG = new HashSet<KHO_HANG>();
-            this.THONG_SO_KY_THUAT = new HashSet<THONG_SO_KY_THUAT>();
         }
     
         public string masp { get; set; }
@@ -30,14 +28,11 @@ namespace sales_management_software
         public string maloai { get; set; }
         public Nullable<bool> deleted { get; set; }
         public string anhsp { get; set; }
+        public string mats { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOA_DON> HOA_DON { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHO_HANG> KHO_HANG { get; set; }
         public virtual LOAI_SAN_PHAM LOAI_SAN_PHAM { get; set; }
         public virtual NHA_CUNG_CAP NHA_CUNG_CAP { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<THONG_SO_KY_THUAT> THONG_SO_KY_THUAT { get; set; }
     }
 }

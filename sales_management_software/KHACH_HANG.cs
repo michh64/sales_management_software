@@ -25,6 +25,8 @@ namespace sales_management_software
         public string sdt { get; set; }
         public string diachi { get; set; }
         public Nullable<bool> deleted { get; set; }
+        public string username { get; set; }
+        public string pass { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DON_HANG> DON_HANG { get; set; }
