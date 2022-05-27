@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Sale_ManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Sale_ManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="DON_HANG">
           <Key>
             <PropertyRef Name="madh" />
@@ -92,6 +92,7 @@
           <Property Name="maNCC" Type="char" MaxLength="10" />
           <Property Name="maloai" Type="char" MaxLength="5" />
           <Property Name="deleted" Type="bit" />
+          <Property Name="anhsp" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="SHIPPER">
           <Key>
@@ -307,7 +308,8 @@
             <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Sale_ManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -408,6 +410,7 @@
           <Property Name="maNCC" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="maloai" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
           <Property Name="deleted" Type="Boolean" />
+          <Property Name="anhsp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="KHO_HANG" Relationship="Self.FK_masp_KhoHang" FromRole="SAN_PHAM" ToRole="KHO_HANG" />
           <NavigationProperty Name="LOAI_SAN_PHAM" Relationship="Self.FK_SAN_PHAM_LOAI_SAN_PHAM" FromRole="SAN_PHAM" ToRole="LOAI_SAN_PHAM" />
           <NavigationProperty Name="NHA_CUNG_CAP" Relationship="Self.FK_SAN_PHAM_NHA_CUNG_CAP" FromRole="SAN_PHAM" ToRole="NHA_CUNG_CAP" />
@@ -603,8 +606,9 @@
             <Parameter Name="deleted" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="Search_SanPham" ReturnType="Collection(Sale_ManagementModel.Search_SanPham_Result)">
-          <Parameter Name="tukhoa" Mode="In" Type="String" />
+            <Parameter Name="tukhoa" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="select_kh_DE" ReturnType="Collection(Sale_ManagementModel.select_kh_DE_Result)" />
           <FunctionImport Name="Select_KhachHang" ReturnType="Collection(Sale_ManagementModel.Select_KhachHang_Result)" />
           <FunctionImport Name="Select_kho" ReturnType="Collection(Sale_ManagementModel.Select_kho_Result)" />
           <FunctionImport Name="Select_lsp" ReturnType="Collection(Sale_ManagementModel.Select_lsp_Result)" />
@@ -627,12 +631,18 @@
             <Parameter Name="maloai" Mode="In" Type="String" />
             <Parameter Name="deleted" Mode="In" Type="Boolean" />
           </FunctionImport>
-          <FunctionImport Name="select_kh_DE" ReturnType="Collection(Sale_ManagementModel.select_kh_DE_Result)" />
         </EntityContainer>
         <ComplexType Name="Search_SanPham_Result">
           <Property Type="String" Name="tensp" Nullable="false" MaxLength="30" />
           <Property Type="String" Name="maloai" Nullable="true" MaxLength="5" />
           <Property Type="String" Name="maNCC" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="select_kh_DE_Result">
+          <Property Type="String" Name="makh" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="tenkh" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="sdt" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="diachi" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="deleted" Nullable="true" />
         </ComplexType>
         <ComplexType Name="Select_KhachHang_Result">
           <Property Type="String" Name="makh" Nullable="false" MaxLength="5" />
@@ -676,13 +686,7 @@
           <Property Type="String" Name="maNCC" Nullable="true" MaxLength="10" />
           <Property Type="String" Name="maloai" Nullable="true" MaxLength="5" />
           <Property Type="Boolean" Name="deleted" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="select_kh_DE_Result">
-          <Property Type="String" Name="makh" Nullable="false" MaxLength="5" />
-          <Property Type="String" Name="tenkh" Nullable="false" MaxLength="30" />
-          <Property Type="String" Name="sdt" Nullable="true" MaxLength="10" />
-          <Property Type="String" Name="diachi" Nullable="true" MaxLength="50" />
-          <Property Type="Boolean" Name="deleted" Nullable="true" />
+          <Property Type="String" Name="anhsp" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -783,6 +787,7 @@
                 <ScalarProperty Name="maNCC" ColumnName="maNCC" />
                 <ScalarProperty Name="maloai" ColumnName="maloai" />
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="anhsp" ColumnName="anhsp" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -818,6 +823,17 @@
                 <ScalarProperty Name="tensp" ColumnName="tensp" />
                 <ScalarProperty Name="maloai" ColumnName="maloai" />
                 <ScalarProperty Name="maNCC" ColumnName="maNCC" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="select_kh_DE" FunctionName="Sale_ManagementModel.Store.select_kh_DE">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Sale_ManagementModel.select_kh_DE_Result">
+                <ScalarProperty Name="makh" ColumnName="makh" />
+                <ScalarProperty Name="tenkh" ColumnName="tenkh" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -885,22 +901,12 @@
                 <ScalarProperty Name="maNCC" ColumnName="maNCC" />
                 <ScalarProperty Name="maloai" ColumnName="maloai" />
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="anhsp" ColumnName="anhsp" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Update_KhachHang" FunctionName="Sale_ManagementModel.Store.Update_KhachHang" />
           <FunctionImportMapping FunctionImportName="Update_sp" FunctionName="Sale_ManagementModel.Store.Update_sp" />
-          <FunctionImportMapping FunctionImportName="select_kh_DE" FunctionName="Sale_ManagementModel.Store.select_kh_DE">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="Sale_ManagementModel.select_kh_DE_Result">
-                <ScalarProperty Name="makh" ColumnName="makh" />
-                <ScalarProperty Name="tenkh" ColumnName="tenkh" />
-                <ScalarProperty Name="sdt" ColumnName="sdt" />
-                <ScalarProperty Name="diachi" ColumnName="diachi" />
-                <ScalarProperty Name="deleted" ColumnName="deleted" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

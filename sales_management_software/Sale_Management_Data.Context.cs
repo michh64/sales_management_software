@@ -147,6 +147,11 @@ namespace sales_management_software
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Search_SanPham_Result>("Search_SanPham", tukhoaParameter);
         }
     
+        public virtual ObjectResult<select_kh_DE_Result> select_kh_DE()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<select_kh_DE_Result>("select_kh_DE");
+        }
+    
         public virtual ObjectResult<Select_KhachHang_Result> Select_KhachHang()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_KhachHang_Result>("Select_KhachHang");
@@ -233,11 +238,6 @@ namespace sales_management_software
                 new ObjectParameter("deleted", typeof(bool));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_sp", maspParameter, tenspParameter, dongiaParameter, soluongParameter, maNCCParameter, maloaiParameter, deletedParameter);
-        }
-    
-        public virtual ObjectResult<select_kh_DE_Result> select_kh_DE()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<select_kh_DE_Result>("select_kh_DE");
         }
     }
 }

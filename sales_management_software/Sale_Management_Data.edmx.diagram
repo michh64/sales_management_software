@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="688ee9512c494c2f96aa54f66af027c0" Name="Diagram1">
+      <Diagram DiagramId="037680cb88754d0888f9b44f1d34be76" Name="Diagram1">
         <EntityTypeShape EntityType="Sale_ManagementModel.DON_HANG" Width="1.5" PointX="10" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.HOA_DON" Width="1.5" PointX="7.75" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.KHACH_HANG" Width="1.5" PointX="7.75" PointY="6.875" IsExpanded="true" />
@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="Sale_ManagementModel.LOAI_SAN_PHAM" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.NHA_CUNG_CAP" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.NHAN_VIEN" Width="1.5" PointX="7.75" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Sale_ManagementModel.SAN_PHAM" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Sale_ManagementModel.SAN_PHAM" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.SHIPPER" Width="1.5" PointX="12.25" PointY="2.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Sale_ManagementModel.THONG_SO_KY_THUAT" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
         <AssociationConnector Association="Sale_ManagementModel.FK_DON_HANG_HOA_DON" ManuallyRouted="false" />

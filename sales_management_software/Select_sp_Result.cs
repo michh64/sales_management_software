@@ -20,5 +20,6 @@ namespace sales_management_software
         public string maNCC { get; set; }
         public string maloai { get; set; }
         public Nullable<bool> deleted { get; set; }
+        public string anhsp { get; set; }
     }
 }

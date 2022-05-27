@@ -50,6 +50,13 @@ namespace sales_management_software
 			set { _maloai = value; }
 		}
 
+		private string _anhsp;
+		public string anhsp
+		{
+			get { return _anhsp; }
+			set { _anhsp = value; }
+		}
+
 		private bool _deleted;
 		public bool deleted
 		{
@@ -58,7 +65,7 @@ namespace sales_management_software
 		}
 
 
-		public SAN_PHAM_DTO(string masp_, string tensp_, int dongia_, int soluong_, string maNCC_, string maloai_, bool deleted_)
+		public SAN_PHAM_DTO(string masp_, string tensp_, int dongia_, int soluong_, string maNCC_, string maloai_, string anhsp_, bool deleted_)
 		{
 			this.masp = masp_;
 			this.tensp = tensp_;
@@ -66,6 +73,7 @@ namespace sales_management_software
 			this.soluong = soluong_;
 			this.maNCC = maNCC_;
 			this.maloai = maloai_;
+			this.anhsp = anhsp_;
 			this.deleted = deleted_;
 		}
 		public SAN_PHAM_DTO()

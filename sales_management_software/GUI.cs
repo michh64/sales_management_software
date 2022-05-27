@@ -35,15 +35,6 @@ namespace sales_management_software
             button10_Click(sender, e);
         }
 
-        private void RemoveAllUserControl()
-        {
-            foreach (Control ctl in panel1.Controls)
-            {
-                panel1.Controls.Remove(ctl);
-            }
-        }
-
-
         public void DefaultFuncBtn(params Button[] btns )
         {
             for(int i=0;i<btns.Length;i++)
@@ -58,20 +49,17 @@ namespace sales_management_software
         {
             panel5.Location = new Point(panel5.Location.X, button1.Location.Y + 7);
 
-            RemoveAllUserControl();
-            UC_NhanVien uc = new UC_NhanVien();
-            uc.Dock = DockStyle.Fill;
-            panel1.Controls.Add(uc);
+            UC_ListSP uc = new UC_ListSP();
+            ShowUCtoContent(uc);
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             panel5.Location = new Point(panel5.Location.X, button2.Location.Y + 7);
-            RemoveAllUserControl();
+
             UC_KhachHang uc = new UC_KhachHang();
-            uc.Dock = DockStyle.Fill;
-            panel1.Controls.Add(uc);
+            ShowUCtoContent(uc);
 
         }
 
@@ -120,6 +108,15 @@ namespace sales_management_software
 
         }
 
+        private void ShowUCtoContent (UserControl uc)
+        {
+            panel1.Controls.Clear();
+            uc.Dock = DockStyle.Fill;
+            panel1.Controls.Add(uc);
+        }
+        
+        
+        // button đăng nhâp
         private void button8_Click(object sender, EventArgs e)
         {
             panel10.Location = new Point(panel10.Location.X, button8.Location.Y + 7);
@@ -127,6 +124,7 @@ namespace sales_management_software
             textBox1.Text = "05";
 
             UC_Login uc = new UC_Login();
+
             uc.Dock = DockStyle.Fill;
 
             panel3.Controls.Clear();
@@ -144,6 +142,8 @@ namespace sales_management_software
         {
             panel12.Location = new Point(panel12.Location.X, button24.Location.Y + 7);
 
+            UC_ListSP uc = new UC_ListSP();
+            ShowUCtoContent(uc);
         }
 
         private void button23_Click(object sender, EventArgs e)
@@ -204,6 +204,9 @@ namespace sales_management_software
         {
             panel8.Location = new Point(panel8.Location.X, button7.Location.Y + 7);
 
+            UC_ListSP uc = new UC_ListSP();
+            ShowUCtoContent(uc);
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -215,6 +218,9 @@ namespace sales_management_software
         private void button10_Click(object sender, EventArgs e)
         {
             panel10.Location = new Point(panel10.Location.X, button10.Location.Y + 7);
+
+            UC_ListSP uc = new UC_ListSP();
+            ShowUCtoContent(uc);
 
         }
 

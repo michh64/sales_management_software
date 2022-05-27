@@ -72,6 +72,7 @@
     <Compile Include="BLL\NHAN_VIEN_BLL.cs" />
     <Compile Include="BLL\SAN_PHAM_BLL.cs" />
     <Compile Include="BLL\SHIPPER_BLL.cs" />
+    <Compile Include="BLL\SpecFunctions.cs" />
     <Compile Include="BLL\THONG_SO_KY_THUAT_BLL.cs" />
     <Compile Include="DAL\DON_HANG_DAL.cs" />
     <Compile Include="DAL\HOA_DON_DAL.cs" />
@@ -90,22 +91,6 @@
     <Compile Include="DTO\HOA_DON_DTO.cs" />
     <Compile Include="DTO\KHO_HANG_DTO.cs" />
     <Compile Include="DTO\THONG_SO_KY_THUAT_DTO.cs" />
-    <Compile Include="FormDemo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormDemo.Designer.cs">
-      <DependentUpon>FormDemo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GUI.Designer.cs">
-      <DependentUpon>GUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DTO\KHACH_HANG_DTO.cs" />
-    <Compile Include="DTO\LOAI_SAN_PHAM.cs" />
-    <Compile Include="DTO\NHA_CUNG_CAP.cs" />
-    <Compile Include="DTO\NHAN_VIEN_DTO.cs" />
     <Compile Include="HOA_DON.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
@@ -124,10 +109,6 @@
     <Compile Include="NHA_CUNG_CAP.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DTO\SAN_PHAM_DTO.cs" />
-    <Compile Include="DTO\SHIPPER_DTO.cs" />
     <Compile Include="Sale_Management_Data.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -176,6 +157,26 @@
     <Compile Include="THONG_SO_KY_THUAT.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDemo.Designer.cs">
+      <DependentUpon>FormDemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI.Designer.cs">
+      <DependentUpon>GUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\KHACH_HANG_DTO.cs" />
+    <Compile Include="DTO\LOAI_SAN_PHAM.cs" />
+    <Compile Include="DTO\NHA_CUNG_CAP.cs" />
+    <Compile Include="DTO\NHAN_VIEN_DTO.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DTO\SAN_PHAM_DTO.cs" />
+    <Compile Include="DTO\SHIPPER_DTO.cs" />
     <Compile Include="UC\UC_Home.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -199,6 +200,12 @@
     </Compile>
     <Compile Include="UC\UC_Login.Designer.cs">
       <DependentUpon>UC_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ListSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ListSP.Designer.cs">
+      <DependentUpon>UC_ListSP.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_QL_KHACHANG.cs">
       <SubType>UserControl</SubType>
@@ -252,6 +259,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC_ListSP.resx">
+      <DependentUpon>UC_ListSP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_QL_KHACHANG.resx">
       <DependentUpon>UC_QL_KHACHANG.cs</DependentUpon>
     </EmbeddedResource>
@@ -307,14 +317,6 @@
   <ItemGroup>
     <Content Include="Infomation.txt" />
     <Content Include="Query.sql" />
-    <None Include="Resources\customer.png" />
-    <None Include="Resources\distributed.png" />
-    <None Include="Resources\packages.png" />
-    <None Include="Resources\smartphone.png" />
-    <None Include="Resources\list.png" />
-    <None Include="Resources\id-card.png" />
-    <None Include="Resources\pie-chart.png" />
-    <None Include="Resources\back.png" />
     <Content Include="Sale_Management_Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
@@ -325,6 +327,14 @@
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
       <LastGenOutput>Sale_Management_Data.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\customer.png" />
+    <None Include="Resources\distributed.png" />
+    <None Include="Resources\packages.png" />
+    <None Include="Resources\smartphone.png" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\id-card.png" />
+    <None Include="Resources\pie-chart.png" />
+    <None Include="Resources\back.png" />
     <None Include="Resources\statistic2.png" />
     <None Include="Resources\home1.png" />
     <None Include="Resources\user.png" />

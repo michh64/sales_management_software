@@ -19,7 +19,7 @@ namespace sales_management_software
 
         private void FormDemo_Load(object sender, EventArgs e)
         {
-            UC_QL_KHACHANG uc = new UC_QL_KHACHANG();
+            UC_ListSP uc = new UC_ListSP();
             uc.Dock = DockStyle.Fill;
             panel1.Controls.Add(uc);
         }

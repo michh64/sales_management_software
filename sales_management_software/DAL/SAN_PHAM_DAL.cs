@@ -22,6 +22,7 @@ namespace sales_management_software
                 dp.maNCC = s.maNCC;
                 dp.maloai = s.maloai;
                 dp.soluong = (int)s.soluong;
+                dp.anhsp = s.anhsp;
                 dp.deleted = (bool)s.deleted;
                 dsSP.Add(dp);
             }
