@@ -241,6 +241,7 @@
         <Function Name="Search_SanPham" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tukhoa" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="select_hoadon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="select_kh_DE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_KhachHang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_kho" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -631,6 +632,7 @@
             <Parameter Name="maloai" Mode="In" Type="String" />
             <Parameter Name="deleted" Mode="In" Type="Boolean" />
           </FunctionImport>
+          <FunctionImport Name="select_hoadon" ReturnType="Collection(Sale_ManagementModel.select_hoadon_Result)" />
         </EntityContainer>
         <ComplexType Name="Search_SanPham_Result">
           <Property Type="String" Name="tensp" Nullable="false" MaxLength="30" />

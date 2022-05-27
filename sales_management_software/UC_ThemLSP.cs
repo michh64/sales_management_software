@@ -28,6 +28,7 @@ namespace sales_management_software
         {
             listLSP = LOAI_SAN_PHAM_BLL.EF_GetAll();
             dataGridView1.DataSource = listLSP;
+            dataGridView1.ReadOnly = true;
         }
 
         private void btt_luu_Click(object sender, EventArgs e)

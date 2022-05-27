@@ -19,9 +19,14 @@ namespace sales_management_software
 
         private void FormDemo_Load(object sender, EventArgs e)
         {
-            UC_ListSP uc = new UC_ListSP();
+           UC_DatHang uc=new UC_DatHang();
             uc.Dock = DockStyle.Fill;
             panel1.Controls.Add(uc);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

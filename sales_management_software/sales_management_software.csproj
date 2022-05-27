@@ -39,6 +39,19 @@
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -46,12 +59,14 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -130,6 +145,9 @@
     <Compile Include="Search_SanPham_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="select_hoadon_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Select_KhachHang_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
@@ -201,17 +219,29 @@
     <Compile Include="UC\UC_Login.Designer.cs">
       <DependentUpon>UC_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_ListSP.cs">
+    <Compile Include="UC_DatHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_ListSP.Designer.cs">
-      <DependentUpon>UC_ListSP.cs</DependentUpon>
+    <Compile Include="UC_DatHang.Designer.cs">
+      <DependentUpon>UC_DatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_HoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_HoaDon.Designer.cs">
+      <DependentUpon>UC_HoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_QL_KHACHANG.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_QL_KHACHANG.Designer.cs">
       <DependentUpon>UC_QL_KHACHANG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_Report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Report.Designer.cs">
+      <DependentUpon>UC_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ThemLSP.cs">
       <SubType>UserControl</SubType>
@@ -230,6 +260,12 @@
     </Compile>
     <Compile Include="UC_ThemNCC.Designer.cs">
       <DependentUpon>UC_ThemNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_UpdateNCC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_UpdateNCC.Designer.cs">
+      <DependentUpon>UC_UpdateNCC.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_UpdateSP.cs">
       <SubType>UserControl</SubType>
@@ -259,11 +295,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UC_ListSP.resx">
-      <DependentUpon>UC_ListSP.cs</DependentUpon>
+    <EmbeddedResource Include="UC_DatHang.resx">
+      <DependentUpon>UC_DatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_HoaDon.resx">
+      <DependentUpon>UC_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QL_KHACHANG.resx">
       <DependentUpon>UC_QL_KHACHANG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_Report.resx">
+      <DependentUpon>UC_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ThemLSP.resx">
       <DependentUpon>UC_ThemLSP.cs</DependentUpon>
@@ -286,6 +328,9 @@
     <EmbeddedResource Include="UC\UC_NhanVien.resx">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_UpdateNCC.resx">
+      <DependentUpon>UC_UpdateNCC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_UpdateSP.resx">
       <DependentUpon>UC_UpdateSP.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,7 +341,6 @@
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -313,6 +357,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Infomation.txt" />

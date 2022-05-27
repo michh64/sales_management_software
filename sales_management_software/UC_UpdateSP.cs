@@ -35,6 +35,7 @@ namespace sales_management_software
             cb_mancc.DataSource = lisNCC;
             cb_mancc.DisplayMember = "tencty";
             cb_mancc.ValueMember = "maNCC";
+            dataGridView1.ReadOnly = true;
         }
 
         private void btt_Udate_Click(object sender, EventArgs e)
