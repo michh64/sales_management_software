@@ -149,6 +149,9 @@
     <Compile Include="Search_SanPham_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="select_hoadon_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Select_KhachHang_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
@@ -199,6 +202,18 @@
     </Compile>
     <Compile Include="UC\UC_Login.Designer.cs">
       <DependentUpon>UC_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_DatHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_DatHang.Designer.cs">
+      <DependentUpon>UC_DatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_HoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_HoaDon.Designer.cs">
+      <DependentUpon>UC_HoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_QL_KHACHANG.cs">
       <SubType>UserControl</SubType>
@@ -258,6 +273,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC_DatHang.resx">
+      <DependentUpon>UC_DatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_HoaDon.resx">
+      <DependentUpon>UC_HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_QL_KHACHANG.resx">
       <DependentUpon>UC_QL_KHACHANG.cs</DependentUpon>
     </EmbeddedResource>

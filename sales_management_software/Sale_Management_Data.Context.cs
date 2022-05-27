@@ -264,5 +264,10 @@ namespace sales_management_software
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<select_kh_DE_Result>("select_kh_DE");
         }
+    
+        public virtual ObjectResult<select_hoadon_Result> select_hoadon()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<select_hoadon_Result>("select_hoadon");
+        }
     }
 }
