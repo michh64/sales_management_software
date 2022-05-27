@@ -15,32 +15,11 @@ namespace sales_management_software.DTO
 				set { _madh = value; }
 			}
 
-			private string _mahd;
-			public string mahd
-			{
-				get { return _mahd; }
-				set { _mahd = value; }
-			}
-
 			private string _makh;
 			public string makh
 			{
 				get { return _makh; }
 				set { _makh = value; }
-			}
-
-			private string _manv;
-			public string manv
-			{
-				get { return _manv; }
-				set { _manv = value; }
-			}
-
-			private string _mashiper;
-			public string mashiper
-			{
-				get { return _mashiper; }
-				set { _mashiper = value; }
 			}
 
 			private DateTime _ngaydat;
@@ -72,13 +51,10 @@ namespace sales_management_software.DTO
 			}
 
 
-			public DON_HANG_DTO(string madh_, string mahd_, string makh_, string manv_, string mashiper_, DateTime ngaydat_, DateTime ngaygiao_, string diachigiao_, bool deleted_)
+			public DON_HANG_DTO(string madh_, string makh_, DateTime ngaydat_, DateTime ngaygiao_, string diachigiao_, bool deleted_)
 			{
 				this.madh = madh_;
-				this.mahd = mahd_;
 				this.makh = makh_;
-				this.manv = manv_;
-				this.mashiper = mashiper_;
 				this.ngaydat = ngaydat_;
 				this.ngaygiao = ngaygiao_;
 				this.diachigiao = diachigiao_;
