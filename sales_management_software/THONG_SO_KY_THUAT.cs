@@ -14,6 +14,12 @@ namespace sales_management_software
     
     public partial class THONG_SO_KY_THUAT
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public THONG_SO_KY_THUAT()
+        {
+            this.SAN_PHAM = new HashSet<SAN_PHAM>();
+        }
+    
         public bool deleted { get; set; }
         public string manhinh { get; set; }
         public string camera { get; set; }
@@ -22,5 +28,8 @@ namespace sales_management_software
         public string pin { get; set; }
         public string memory { get; set; }
         public string mats { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SAN_PHAM> SAN_PHAM { get; set; }
     }
 }

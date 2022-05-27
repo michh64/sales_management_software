@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace sales_management_software
 {
-    public partial class UC_KhachHang : UserControl
+    public partial class UC_Maintain : UserControl
     {
-
-        public UC_KhachHang()
+        public UC_Maintain()
         {
             InitializeComponent();
         }
-
     }
 }

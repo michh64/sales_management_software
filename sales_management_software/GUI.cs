@@ -15,8 +15,10 @@ namespace sales_management_software
     {
         public static GUI Instance;
         public TextBox check;
-        //private Color mainBackColor = Color.DodgerBlue;
-        //private Color mainForeColor = Color.White;
+
+        public KHACH_HANG_DTO accKhachHang;
+        public QUAN_LY_DTO accQuanLy;
+
 
         public GUI()
         {
@@ -31,59 +33,25 @@ namespace sales_management_software
         private void Form1_Load(object sender, EventArgs e)
         {
             panel3.Visible = false;
-            tabControl1.SelectedIndex = 3;
+            tabControl1.SelectedIndex = 2;
             button10_Click(sender, e);
-        }
-
-        public void DefaultFuncBtn(params Button[] btns )
-        {
-            for(int i=0;i<btns.Length;i++)
-            {
-                btns[i].BackColor = Color.DodgerBlue;
-                btns[i].ForeColor = Color.White;
-            }
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            panel5.Location = new Point(panel5.Location.X, button1.Location.Y + 7);
-
-            UC_ListSP uc = new UC_ListSP();
-            ShowUCtoContent(uc);
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            panel5.Location = new Point(panel5.Location.X, button2.Location.Y + 7);
-
-            UC_KhachHang uc = new UC_KhachHang();
-            ShowUCtoContent(uc);
-
         }
 
         // Check Transfer Data form other form
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "00")
-            {
-                panel3.Dock = DockStyle.None;
-                panel3.SendToBack();
-                panel3.Visible = false;
-
-                button24_Click(sender, e);
-                tabControl1.SelectedIndex = 0;
-            }
-
             if (textBox1.Text == "01")
             {
                 panel3.Dock = DockStyle.None;
                 panel3.SendToBack();
                 panel3.Visible = false;
 
-                button1_Click(sender, e);
-                tabControl1.SelectedIndex = 1;
+                label3.Text = accQuanLy.tenql;
+                label4.Visible = false;
+                pictureBox3.Visible = false;
+
+                button24_Click(sender, e);
+                tabControl1.SelectedIndex = 0;
             }
 
             if (textBox1.Text == "02")
@@ -92,8 +60,12 @@ namespace sales_management_software
                 panel3.SendToBack();
                 panel3.Visible = false;
 
+                label3.Text = accKhachHang.tenkh;
+                label4.Visible = true;
+                pictureBox3.Visible = true;
+
                 button7_Click(sender, e);
-                tabControl1.SelectedIndex = 2;
+                tabControl1.SelectedIndex = 1;
             }
 
             if (textBox1.Text == "03")
@@ -103,7 +75,7 @@ namespace sales_management_software
                 panel3.Visible = false;
 
                 button10_Click(sender, e);
-                tabControl1.SelectedIndex = 3;
+                tabControl1.SelectedIndex = 2;
             }
 
         }
@@ -173,30 +145,14 @@ namespace sales_management_software
         private void button19_Click(object sender, EventArgs e)
         {
             panel12.Location = new Point(panel12.Location.X, button19.Location.Y + 7);
-
+            
+            UC_Maintain uc = new UC_Maintain();
+            ShowUCtoContent(uc);
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
             panel12.Location = new Point(panel12.Location.X, button12.Location.Y + 7);
-
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-            panel5.Location = new Point(panel5.Location.X, button15.Location.Y + 7);
-
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-            panel5.Location = new Point(panel5.Location.X, button14.Location.Y + 7);
-
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            panel5.Location = new Point(panel5.Location.X, button13.Location.Y + 7);
 
         }
 
@@ -230,11 +186,6 @@ namespace sales_management_software
             textBox1.Text = "03";
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            panel5.Location = new Point(panel5.Location.X, button3.Location.Y + 7);
-            textBox1.Text = "03";
-        }
 
         private void button9_Click(object sender, EventArgs e)
         {
@@ -243,5 +194,12 @@ namespace sales_management_software
         }
         #endregion
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 2)
+            {
+                button8_Click(sender, e);
+            }
+        }
     }
 }

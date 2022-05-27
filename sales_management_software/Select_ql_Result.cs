@@ -11,15 +11,11 @@ namespace sales_management_software
 {
     using System;
     
-    public partial class Select_hoadon_Result
+    public partial class Select_ql_Result
     {
-        public string mahd { get; set; }
-        public string masp { get; set; }
-        public string tensp { get; set; }
-        public Nullable<int> dongia { get; set; }
-        public Nullable<int> giamgia { get; set; }
-        public Nullable<int> soluong { get; set; }
-        public Nullable<int> tongtien { get; set; }
-        public Nullable<bool> deleted { get; set; }
+        public string maql { get; set; }
+        public string tenql { get; set; }
+        public string username { get; set; }
+        public string pass { get; set; }
     }
 }

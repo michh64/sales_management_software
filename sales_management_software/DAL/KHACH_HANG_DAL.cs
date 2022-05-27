@@ -21,6 +21,8 @@ namespace sales_management_software
                 ldp.sdt = s.sdt;
                 ldp.diachi = s.diachi;
                 ldp.deleted = (bool)s.deleted;
+                ldp.username = s.username;
+                ldp.password = s.pass;
                 dsLSP.Add(ldp);
             }
 

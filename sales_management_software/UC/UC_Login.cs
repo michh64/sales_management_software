@@ -12,18 +12,22 @@ namespace sales_management_software
 {
     public partial class UC_Login : UserControl
     {
-        public bool IsLogin { get; set; }
 
-        //List<NHAN_VIEN_DTO> dsNV = NHAN_VIEN_BLL.EF_GetAll();
+        List<KHACH_HANG_DTO> dsKH = KHACH_HANG_BLL.EF_GetAll();
+        List<QUAN_LY_DTO> dsQL = QUAN_LY_BLL.EF_GetAll();
+
+
         public UC_Login()
         {
             InitializeComponent();
+
             CountWrong = 0;
 
             label1.Visible = true;
             label4.Visible = false;
             button1.Text = "Người dùng nội bộ";
         }
+
 
         static int CountWrong = 0;
 
@@ -34,56 +38,48 @@ namespace sales_management_software
             textBox2.Text = "";
             textBox3.Text = "";
 
+            // khách
             if (label1.Visible == true)
             {
-
-                if (usernametxt == "khachhang" && passwordtxt == "123")
+                for (int i = 0; i < dsKH.Count; i++)
                 {
-                    MessageBox.Show("Đăng nhập thành công");
-                    GUI.Instance.check.Text = "02";
-                    //IsLogin = true;
-                }
-                else
-
-
-                    //if (IsLogin == false)
-                {
-                    if (CountWrong == 2)
+                    if (usernametxt == dsKH[i].username && passwordtxt == dsKH[i].password)
                     {
-                        MessageBox.Show("Bạn đã nhập sai 3 lần liên tiếp!");
-                        GUI.Instance.check.Text = "03";
-                    }
-                    else
-                    {
-                        CountWrong++;
-                        MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+                        MessageBox.Show("Đăng nhập thành công");
+                        GUI.Instance.accKhachHang = dsKH[i];
+                        GUI.Instance.check.Text = "02";
+                        return;
                     }
                 }
             }
+            // quản lý
             else
-
-            if ( (usernametxt == "quanli" || usernametxt == "quanly" ) && passwordtxt == "123")
             {
-                MessageBox.Show("Đăng nhập thành công");
-                GUI.Instance.check.Text = "00";
-                //IsLogin = true;
-            }
-            else
-
-            {
-                if (CountWrong == 2)
+                for (int i = 0; i < dsQL.Count; i++)
                 {
-                    MessageBox.Show("Bạn đã nhập sai 3 lần liên tiếp!");
-                    GUI.Instance.check.Text = "03";
-                }
-                else
-                {
-                    CountWrong++;
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+                    if (usernametxt == dsQL[i].username && passwordtxt == dsQL[i].pass)
+                    {
+                        MessageBox.Show("Đăng nhập thành công");
+                        GUI.Instance.accQuanLy = dsQL[i];
+                        GUI.Instance.check.Text = "01";
+                        return;
+                    }
                 }
 
             }
 
+            // Nhập sai
+            if (CountWrong == 2)
+            {
+                MessageBox.Show("Bạn đã nhập sai 3 lần liên tiếp!");
+                GUI.Instance.check.Text = "03";
+            }
+            else
+            {
+                CountWrong++;
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+            }
+            
         }
 
         private void textBox3_KeyDown(object sender, KeyEventArgs e)

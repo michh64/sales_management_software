@@ -34,5 +34,6 @@ namespace sales_management_software
         public virtual ICollection<HOA_DON> HOA_DON { get; set; }
         public virtual LOAI_SAN_PHAM LOAI_SAN_PHAM { get; set; }
         public virtual NHA_CUNG_CAP NHA_CUNG_CAP { get; set; }
+        public virtual THONG_SO_KY_THUAT THONG_SO_KY_THUAT { get; set; }
     }
 }

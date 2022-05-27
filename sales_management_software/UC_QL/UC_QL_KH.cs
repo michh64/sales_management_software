@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace sales_management_software
 {
-    public partial class UC_Home : UserControl
+    public partial class UC_QL_KH : UserControl
     {
-        public UC_Home()
+        public UC_QL_KH()
         {
             InitializeComponent();
         }
-
-        
     }
 }

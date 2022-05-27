@@ -29,7 +29,6 @@
           <Property Name="soluong" Type="int" />
           <Property Name="tongtien" Type="int" />
           <Property Name="deleted" Type="bit" />
-          <Property Name="madh" Type="char" MaxLength="5" />
         </EntityType>
         <EntityType Name="KHACH_HANG">
           <Key>
@@ -60,6 +59,15 @@
           <Property Name="diachi" Type="nvarchar" MaxLength="50" />
           <Property Name="sdt" Type="char" MaxLength="10" />
           <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="QUAN_LY">
+          <Key>
+            <PropertyRef Name="maql" />
+          </Key>
+          <Property Name="maql" Type="char" MaxLength="5" Nullable="false" />
+          <Property Name="tenql" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="pass" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="SAN_PHAM">
           <Key>
@@ -158,6 +166,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SAN_PHAM_THONG_SO_KY_THUAT">
+          <End Role="THONG_SO_KY_THUAT" Type="Self.THONG_SO_KY_THUAT" Multiplicity="0..1" />
+          <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THONG_SO_KY_THUAT">
+              <PropertyRef Name="mats" />
+            </Principal>
+            <Dependent Role="SAN_PHAM">
+              <PropertyRef Name="mats" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="Insert_kh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="makh" Type="char" Mode="In" />
@@ -194,6 +214,7 @@
         <Function Name="Select_kh_DE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_lsp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_ncc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Select_ql" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Select_sp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -254,6 +275,7 @@
           <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAI_SAN_PHAM" EntityType="Self.LOAI_SAN_PHAM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHA_CUNG_CAP" EntityType="Self.NHA_CUNG_CAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QUAN_LY" EntityType="Self.QUAN_LY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SAN_PHAM" EntityType="Self.SAN_PHAM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THONG_SO_KY_THUAT" EntityType="Self.THONG_SO_KY_THUAT" Schema="dbo" store:Type="Tables" />
@@ -275,6 +297,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_SAN_PHAM_NHA_CUNG_CAP" Association="Self.FK_SAN_PHAM_NHA_CUNG_CAP">
             <End Role="NHA_CUNG_CAP" EntitySet="NHA_CUNG_CAP" />
+            <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAN_PHAM_THONG_SO_KY_THUAT" Association="Self.FK_SAN_PHAM_THONG_SO_KY_THUAT">
+            <End Role="THONG_SO_KY_THUAT" EntitySet="THONG_SO_KY_THUAT" />
             <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
           </AssociationSet>
         </EntityContainer>
@@ -309,7 +335,6 @@
           <Property Name="soluong" Type="Int32" />
           <Property Name="tongtien" Type="Int32" />
           <Property Name="deleted" Type="Boolean" />
-          <Property Name="madh" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="DON_HANG" Relationship="Self.FK_DON_HANG_HOA_DON" FromRole="HOA_DON" ToRole="DON_HANG" />
           <NavigationProperty Name="SAN_PHAM" Relationship="Self.FK_HOA_DON_SAN_PHAM" FromRole="HOA_DON" ToRole="SAN_PHAM" />
         </EntityType>
@@ -346,6 +371,15 @@
           <Property Name="deleted" Type="Boolean" />
           <NavigationProperty Name="SAN_PHAM" Relationship="Self.FK_SAN_PHAM_NHA_CUNG_CAP" FromRole="NHA_CUNG_CAP" ToRole="SAN_PHAM" />
         </EntityType>
+        <EntityType Name="QUAN_LY">
+          <Key>
+            <PropertyRef Name="maql" />
+          </Key>
+          <Property Name="maql" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="tenql" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
         <EntityType Name="SAN_PHAM">
           <Key>
             <PropertyRef Name="masp" />
@@ -362,6 +396,7 @@
           <NavigationProperty Name="HOA_DON" Relationship="Self.FK_HOA_DON_SAN_PHAM" FromRole="SAN_PHAM" ToRole="HOA_DON" />
           <NavigationProperty Name="LOAI_SAN_PHAM" Relationship="Self.FK_SAN_PHAM_LOAI_SAN_PHAM" FromRole="SAN_PHAM" ToRole="LOAI_SAN_PHAM" />
           <NavigationProperty Name="NHA_CUNG_CAP" Relationship="Self.FK_SAN_PHAM_NHA_CUNG_CAP" FromRole="SAN_PHAM" ToRole="NHA_CUNG_CAP" />
+          <NavigationProperty Name="THONG_SO_KY_THUAT" Relationship="Self.FK_SAN_PHAM_THONG_SO_KY_THUAT" FromRole="SAN_PHAM" ToRole="THONG_SO_KY_THUAT" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -385,6 +420,7 @@
           <Property Name="pin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="memory" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="mats" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="SAN_PHAM" Relationship="Self.FK_SAN_PHAM_THONG_SO_KY_THUAT" FromRole="THONG_SO_KY_THUAT" ToRole="SAN_PHAM" />
         </EntityType>
         <Association Name="FK_DON_HANG_HOA_DON">
           <End Role="HOA_DON" Type="Self.HOA_DON" Multiplicity="0..1" />
@@ -446,12 +482,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_SAN_PHAM_THONG_SO_KY_THUAT">
+          <End Role="THONG_SO_KY_THUAT" Type="Self.THONG_SO_KY_THUAT" Multiplicity="0..1" />
+          <End Role="SAN_PHAM" Type="Self.SAN_PHAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THONG_SO_KY_THUAT">
+              <PropertyRef Name="mats" />
+            </Principal>
+            <Dependent Role="SAN_PHAM">
+              <PropertyRef Name="mats" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Sale_ManagementEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="DON_HANG" EntityType="Self.DON_HANG" />
           <EntitySet Name="HOA_DON" EntityType="Self.HOA_DON" />
           <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" />
           <EntitySet Name="LOAI_SAN_PHAM" EntityType="Self.LOAI_SAN_PHAM" />
           <EntitySet Name="NHA_CUNG_CAP" EntityType="Self.NHA_CUNG_CAP" />
+          <EntitySet Name="QUAN_LY" EntityType="Self.QUAN_LY" />
           <EntitySet Name="SAN_PHAM" EntityType="Self.SAN_PHAM" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="THONG_SO_KY_THUAT" EntityType="Self.THONG_SO_KY_THUAT" />
@@ -473,6 +522,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_SAN_PHAM_NHA_CUNG_CAP" Association="Self.FK_SAN_PHAM_NHA_CUNG_CAP">
             <End Role="NHA_CUNG_CAP" EntitySet="NHA_CUNG_CAP" />
+            <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAN_PHAM_THONG_SO_KY_THUAT" Association="Self.FK_SAN_PHAM_THONG_SO_KY_THUAT">
+            <End Role="THONG_SO_KY_THUAT" EntitySet="THONG_SO_KY_THUAT" />
             <End Role="SAN_PHAM" EntitySet="SAN_PHAM" />
           </AssociationSet>
           <FunctionImport Name="Insert_kh">
@@ -510,6 +563,7 @@
           <FunctionImport Name="Select_kh_DE" ReturnType="Collection(Sale_ManagementModel.Select_kh_DE_Result)" />
           <FunctionImport Name="Select_lsp" ReturnType="Collection(Sale_ManagementModel.Select_lsp_Result)" />
           <FunctionImport Name="Select_ncc" ReturnType="Collection(Sale_ManagementModel.Select_ncc_Result)" />
+          <FunctionImport Name="Select_ql" ReturnType="Collection(Sale_ManagementModel.Select_ql_Result)" />
           <FunctionImport Name="Select_sp" ReturnType="Collection(Sale_ManagementModel.Select_sp_Result)" />
           <FunctionImport Name="sp_alterdiagram">
             <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -579,7 +633,6 @@
           <Property Type="Int32" Name="soluong" Nullable="true" />
           <Property Type="Int32" Name="tongtien" Nullable="true" />
           <Property Type="Boolean" Name="deleted" Nullable="true" />
-          <Property Type="String" Name="madh" Nullable="true" MaxLength="5" />
         </ComplexType>
         <ComplexType Name="Select_kh_DE_Result">
           <Property Type="String" Name="makh" Nullable="false" MaxLength="5" />
@@ -601,6 +654,12 @@
           <Property Type="String" Name="diachi" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="sdt" Nullable="true" MaxLength="10" />
           <Property Type="Boolean" Name="deleted" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Select_ql_Result">
+          <Property Type="String" Name="maql" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="tenql" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="username" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="pass" Nullable="false" MaxLength="20" />
         </ComplexType>
         <ComplexType Name="Select_sp_Result">
           <Property Type="String" Name="masp" Nullable="false" MaxLength="5" />
@@ -654,7 +713,6 @@
                 <ScalarProperty Name="soluong" ColumnName="soluong" />
                 <ScalarProperty Name="tongtien" ColumnName="tongtien" />
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
-                <ScalarProperty Name="madh" ColumnName="madh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -688,6 +746,16 @@
                 <ScalarProperty Name="diachi" ColumnName="diachi" />
                 <ScalarProperty Name="sdt" ColumnName="sdt" />
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QUAN_LY">
+            <EntityTypeMapping TypeName="Sale_ManagementModel.QUAN_LY">
+              <MappingFragment StoreEntitySet="QUAN_LY">
+                <ScalarProperty Name="maql" ColumnName="maql" />
+                <ScalarProperty Name="tenql" ColumnName="tenql" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -755,7 +823,6 @@
                 <ScalarProperty Name="soluong" ColumnName="soluong" />
                 <ScalarProperty Name="tongtien" ColumnName="tongtien" />
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
-                <ScalarProperty Name="madh" ColumnName="madh" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -789,6 +856,16 @@
                 <ScalarProperty Name="diachi" ColumnName="diachi" />
                 <ScalarProperty Name="sdt" ColumnName="sdt" />
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Select_ql" FunctionName="Sale_ManagementModel.Store.Select_ql">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Sale_ManagementModel.Select_ql_Result">
+                <ScalarProperty Name="maql" ColumnName="maql" />
+                <ScalarProperty Name="tenql" ColumnName="tenql" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

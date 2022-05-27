@@ -33,7 +33,7 @@ namespace sales_management_software
             this.panel1 = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage0 = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.button12 = new System.Windows.Forms.Button();
@@ -44,15 +44,6 @@ namespace sales_management_software
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -79,10 +70,8 @@ namespace sales_management_software
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
-            this.tabPage0.SuspendLayout();
-            this.panel13.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -103,7 +92,6 @@ namespace sales_management_software
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage0);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -113,19 +101,19 @@ namespace sales_management_software
             this.tabControl1.Size = new System.Drawing.Size(257, 686);
             this.tabControl1.TabIndex = 2;
             // 
-            // tabPage0
+            // tabPage1
             // 
-            this.tabPage0.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage0.BackgroundImage = global::sales_management_software.Properties.Resources.Background1;
-            this.tabPage0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage0.Controls.Add(this.panel12);
-            this.tabPage0.Controls.Add(this.panel13);
-            this.tabPage0.Location = new System.Drawing.Point(4, 22);
-            this.tabPage0.Name = "tabPage0";
-            this.tabPage0.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage0.Size = new System.Drawing.Size(249, 660);
-            this.tabPage0.TabIndex = 5;
-            this.tabPage0.Text = "QL";
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.BackgroundImage = global::sales_management_software.Properties.Resources.Background1;
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.panel12);
+            this.tabPage1.Controls.Add(this.panel13);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(249, 660);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "QL";
             // 
             // panel12
             // 
@@ -304,156 +292,6 @@ namespace sales_management_software
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage1.BackgroundImage = global::sales_management_software.Properties.Resources.Background1;
-            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage1.Controls.Add(this.panel5);
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(249, 660);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "NV";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(-1, 93);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 41);
-            this.panel5.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button15);
-            this.panel2.Controls.Add(this.button14);
-            this.panel2.Controls.Add(this.button13);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Location = new System.Drawing.Point(12, 6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(227, 639);
-            this.panel2.TabIndex = 0;
-            // 
-            // button15
-            // 
-            this.button15.BackColor = System.Drawing.Color.White;
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button15.Image = global::sales_management_software.Properties.Resources.customer;
-            this.button15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button15.Location = new System.Drawing.Point(-1, 218);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(229, 44);
-            this.button15.TabIndex = 6;
-            this.button15.Text = " Quản lý khách hàng";
-            this.button15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button15.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button15.UseVisualStyleBackColor = false;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.White;
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button14.Image = global::sales_management_software.Properties.Resources.packages;
-            this.button14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button14.Location = new System.Drawing.Point(-1, 174);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(229, 44);
-            this.button14.TabIndex = 5;
-            this.button14.Text = " Quản lý nhà cung cấp";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button14.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button14.UseVisualStyleBackColor = false;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.White;
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button13.Image = global::sales_management_software.Properties.Resources.distributed;
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.Location = new System.Drawing.Point(-1, 130);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(229, 44);
-            this.button13.TabIndex = 4;
-            this.button13.Text = " Quản lý loại sản phẩm";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button13.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button2.Image = global::sales_management_software.Properties.Resources.smartphone;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 86);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(229, 44);
-            this.button2.TabIndex = 1;
-            this.button2.Text = " Quản lý sản phẩm";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button1.Image = global::sales_management_software.Properties.Resources.list;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(229, 44);
-            this.button1.TabIndex = 0;
-            this.button1.Text = " Danh sách sản phẩm";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.button3.Image = global::sales_management_software.Properties.Resources.exit;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 588);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(229, 44);
-            this.button3.TabIndex = 3;
-            this.button3.Text = " Đăng xuất";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // tabPage2
             // 
@@ -698,9 +536,10 @@ namespace sales_management_software
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(137)))), ((int)(((byte)(201)))));
             this.label3.Location = new System.Drawing.Point(834, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(203, 21);
+            this.label3.Size = new System.Drawing.Size(164, 21);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Đặng Ngọc Hoàng Thành";
+            this.label3.Text = "Đăng nhập/Đăng ký";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -781,10 +620,8 @@ namespace sales_management_software
             this.Text = "Di động BestSeller";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage0.ResumeLayout(false);
-            this.panel13.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
@@ -802,10 +639,6 @@ namespace sales_management_software
         private System.Windows.Forms.Panel panel1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
@@ -831,15 +664,10 @@ namespace sales_management_software
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TabPage tabPage0;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button20;

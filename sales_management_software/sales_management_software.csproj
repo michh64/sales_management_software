@@ -119,6 +119,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DTO\SAN_PHAM_DTO.cs" />
+    <Compile Include="QUAN_LY.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Sale_Management_Data.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,6 +155,9 @@
     <Compile Include="Select_ncc_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="Select_ql_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Select_sp_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
@@ -167,29 +173,22 @@
     <Compile Include="THONG_SO_KY_THUAT.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="UC\UC_Home.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UC_Home.Designer.cs">
-      <DependentUpon>UC_Home.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UC_KhachHang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UC_KhachHang.Designer.cs">
-      <DependentUpon>UC_KhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC\UC_NhanVien.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC\UC_NhanVien.Designer.cs">
-      <DependentUpon>UC_NhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC\UC_Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC\UC_Login.Designer.cs">
       <DependentUpon>UC_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_List_sp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UC_List_sp.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UC\UC_Maintain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\UC_Maintain.Designer.cs">
+      <DependentUpon>UC_Maintain.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_DatHang.cs">
       <SubType>UserControl</SubType>
@@ -209,40 +208,58 @@
     <Compile Include="UC_ListSP.Designer.cs">
       <DependentUpon>UC_ListSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_QL_KHACHANG.cs">
+    <Compile Include="UC_QL\UC_QL_KH.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_QL_KHACHANG.Designer.cs">
-      <DependentUpon>UC_QL_KHACHANG.cs</DependentUpon>
+    <Compile Include="UC_QL\UC_QL_KH.Designer.cs">
+      <DependentUpon>UC_QL_KH.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_ThemLSP.cs">
+    <Compile Include="UC_QL\UC_QL_NCC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_ThemLSP.Designer.cs">
+    <Compile Include="UC_QL\UC_QL_NCC.Designer.cs">
+      <DependentUpon>UC_QL_NCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QL\UC_QL_SP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL\UC_QL_SP.Designer.cs">
+      <DependentUpon>UC_QL_SP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QL\UC_QL_LSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL\UC_QL_LSP.Designer.cs">
+      <DependentUpon>UC_QL_LSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_restore\UC_ThemLSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_restore\UC_ThemLSP.Designer.cs">
       <DependentUpon>UC_ThemLSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_ThemSanPham.cs">
+    <Compile Include="UC_restore\UC_ThemSanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_ThemSanPham.Designer.cs">
+    <Compile Include="UC_restore\UC_ThemSanPham.Designer.cs">
       <DependentUpon>UC_ThemSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_ThemNCC.cs">
+    <Compile Include="UC_restore\UC_ThemNCC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_ThemNCC.Designer.cs">
+    <Compile Include="UC_restore\UC_ThemNCC.Designer.cs">
       <DependentUpon>UC_ThemNCC.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_UpdateNCC.cs">
+    <Compile Include="UC_restore\UC_UpdateNCC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_UpdateNCC.Designer.cs">
+    <Compile Include="UC_restore\UC_UpdateNCC.Designer.cs">
       <DependentUpon>UC_UpdateNCC.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_UpdateSP.cs">
+    <Compile Include="UC_restore\UC_UpdateSP.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_UpdateSP.Designer.cs">
+    <Compile Include="UC_restore\UC_UpdateSP.Designer.cs">
       <DependentUpon>UC_UpdateSP.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControl_KhachHang.cs">
@@ -267,6 +284,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC\UC_Login.resx">
+      <DependentUpon>UC_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_DatHang.resx">
       <DependentUpon>UC_DatHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -276,35 +296,38 @@
     <EmbeddedResource Include="UC_ListSP.resx">
       <DependentUpon>UC_ListSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_List_sp.resx" />
-    <EmbeddedResource Include="UC_QL_KHACHANG.resx">
-      <DependentUpon>UC_QL_KHACHANG.cs</DependentUpon>
+    <EmbeddedResource Include="UC_List_sp.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UC_List_sp.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_ThemLSP.resx">
+    <EmbeddedResource Include="UC\UC_Maintain.resx">
+      <DependentUpon>UC_Maintain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL\UC_QL_KH.resx">
+      <DependentUpon>UC_QL_KH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL\UC_QL_LSP.resx">
+      <DependentUpon>UC_QL_LSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL\UC_QL_NCC.resx">
+      <DependentUpon>UC_QL_NCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL\UC_QL_SP.resx">
+      <DependentUpon>UC_QL_SP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_restore\UC_ThemLSP.resx">
       <DependentUpon>UC_ThemLSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_ThemNCC.resx">
+    <EmbeddedResource Include="UC_restore\UC_ThemNCC.resx">
       <DependentUpon>UC_ThemNCC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_ThemSanPham.resx">
+    <EmbeddedResource Include="UC_restore\UC_ThemSanPham.resx">
       <DependentUpon>UC_ThemSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_Home.resx">
-      <DependentUpon>UC_Home.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_KhachHang.resx">
-      <DependentUpon>UC_KhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_Login.resx">
-      <DependentUpon>UC_Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC\UC_NhanVien.resx">
-      <DependentUpon>UC_NhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_UpdateNCC.resx">
+    <EmbeddedResource Include="UC_restore\UC_UpdateNCC.resx">
       <DependentUpon>UC_UpdateNCC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_UpdateSP.resx">
+    <EmbeddedResource Include="UC_restore\UC_UpdateSP.resx">
       <DependentUpon>UC_UpdateSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_KhachHang.resx">
@@ -335,6 +358,7 @@
   <ItemGroup>
     <Content Include="Infomation.txt" />
     <Content Include="Query.sql" />
+    <None Include="Resources\optimization.png" />
     <Content Include="Sale_Management_Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
@@ -364,6 +388,7 @@
     <None Include="Resources\login.png" />
     <None Include="Resources\statistic.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

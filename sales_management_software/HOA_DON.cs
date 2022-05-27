@@ -28,7 +28,6 @@ namespace sales_management_software
         public Nullable<int> soluong { get; set; }
         public Nullable<int> tongtien { get; set; }
         public Nullable<bool> deleted { get; set; }
-        public string madh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DON_HANG> DON_HANG { get; set; }

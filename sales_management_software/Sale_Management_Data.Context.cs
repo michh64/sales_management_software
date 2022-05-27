@@ -32,6 +32,7 @@ namespace sales_management_software
         public virtual DbSet<KHACH_HANG> KHACH_HANG { get; set; }
         public virtual DbSet<LOAI_SAN_PHAM> LOAI_SAN_PHAM { get; set; }
         public virtual DbSet<NHA_CUNG_CAP> NHA_CUNG_CAP { get; set; }
+        public virtual DbSet<QUAN_LY> QUAN_LY { get; set; }
         public virtual DbSet<SAN_PHAM> SAN_PHAM { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THONG_SO_KY_THUAT> THONG_SO_KY_THUAT { get; set; }
@@ -163,6 +164,11 @@ namespace sales_management_software
         public virtual ObjectResult<Select_ncc_Result> Select_ncc()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_ncc_Result>("Select_ncc");
+        }
+    
+        public virtual ObjectResult<Select_ql_Result> Select_ql()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_ql_Result>("Select_ql");
         }
     
         public virtual ObjectResult<Select_sp_Result> Select_sp()
