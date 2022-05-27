@@ -16,13 +16,6 @@ namespace sales_management_software
 			set { _mahd = value; }
 		}
 
-		private string _madh;
-		public string madh
-		{
-			get { return _madh; }
-			set { _madh = value; }
-		}
-
 		private string _masp;
 		public string masp
 		{
@@ -73,10 +66,9 @@ namespace sales_management_software
 		}
 
 
-		public HOA_DON_DTO(string mahd_, string madh_, string masp_, string tensp_, int dongia_, int giamgia_, int soluong_, int tongtien_, bool deleted_)
+		public HOA_DON_DTO(string mahd_, string masp_, string tensp_, int dongia_, int giamgia_, int soluong_, int tongtien_, bool deleted_)
 		{
 			this.mahd = mahd_;
-			this.madh = madh_;
 			this.masp = masp_;
 			this.tensp = tensp_;
 			this.dongia = dongia_;

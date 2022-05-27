@@ -70,6 +70,7 @@
     <Compile Include="BLL\KHACH_HANG_BLL.cs" />
     <Compile Include="BLL\LOAI_SAN_PHAM_BLL.cs" />
     <Compile Include="BLL\NHA_CUNG_CAP_BLL.cs" />
+    <Compile Include="BLL\QUAN_LY_BLL.cs" />
     <Compile Include="BLL\SAN_PHAM_BLL.cs" />
     <Compile Include="BLL\SpecFunctions.cs" />
     <Compile Include="BLL\THONG_SO_KY_THUAT_BLL.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="DAL\KHACH_HANG_DAL.cs" />
     <Compile Include="DAL\LOAI_SAN_PHAM_DAL.cs" />
     <Compile Include="DAL\NHA_CUNG_CAP_DAL.cs" />
+    <Compile Include="DAL\QUAN_LY_DAL.cs" />
     <Compile Include="DAL\SAN_PHAM_DAL.cs" />
     <Compile Include="DAL\THONG_SO_KY_THUAT_DAL.cs" />
     <Compile Include="DON_HANG.cs">
@@ -85,6 +87,7 @@
     </Compile>
     <Compile Include="DTO\DON_HANG_DTO.cs" />
     <Compile Include="DTO\HOA_DON_DTO.cs" />
+    <Compile Include="DTO\QUAN_LY_DTO.cs" />
     <Compile Include="DTO\THONG_SO_KY_THUAT_DTO.cs" />
     <Compile Include="FormDemo.cs">
       <SubType>Form</SubType>

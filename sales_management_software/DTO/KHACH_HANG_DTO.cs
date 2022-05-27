@@ -43,14 +43,31 @@ namespace sales_management_software
 			set { _deleted = value; }
 		}
 
+		private string _username;
+		public string username
+		{
+			get { return _username; }
+			set { _username = value; }
+		}
 
-		public KHACH_HANG_DTO(string makh_, string tenkh_, string sdt_, string diachi_, bool deleted_)
+		private string _password;
+		public string password
+		{
+			get { return _password; }
+			set { _password = value; }
+		}
+
+
+		public KHACH_HANG_DTO(string makh_, string tenkh_, string sdt_, string diachi_, bool deleted_, string username_, string password_)
 		{
 			this.makh = makh_;
 			this.tenkh = tenkh_;
 			this.sdt = sdt_;
 			this.diachi = diachi_;
 			this.deleted = deleted_;
+			this.username = username_;
+			this.password = password_;
+
 		}
 		public KHACH_HANG_DTO()
         {
