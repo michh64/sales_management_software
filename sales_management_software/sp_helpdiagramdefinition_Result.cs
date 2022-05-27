@@ -10,16 +10,10 @@
 namespace sales_management_software
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class SHIPPER
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public string mashiper { get; set; }
-        public string tenshipper { get; set; }
-        public string madh { get; set; }
-        public string sdt { get; set; }
-        public Nullable<bool> deleted { get; set; }
-    
-        public virtual DON_HANG DON_HANG { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

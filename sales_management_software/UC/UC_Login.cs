@@ -14,7 +14,7 @@ namespace sales_management_software
     {
         public bool IsLogin { get; set; }
 
-        List<NHAN_VIEN_DTO> dsNV = NHAN_VIEN_BLL.EF_GetAll();
+        //List<NHAN_VIEN_DTO> dsNV = NHAN_VIEN_BLL.EF_GetAll();
         public UC_Login()
         {
             InitializeComponent();
@@ -37,17 +37,16 @@ namespace sales_management_software
             if (label1.Visible == true)
             {
 
-                foreach (var nv in dsNV)
+                if (usernametxt == "khachhang" && passwordtxt == "123")
                 {
-                    if (usernametxt == nv.manv && passwordtxt == nv.matkhau)
-                    {
-                        MessageBox.Show("Đăng nhập thành công");
-                        GUI.Instance.check.Text = "02";
-                        IsLogin = true;
-                    }
+                    MessageBox.Show("Đăng nhập thành công");
+                    GUI.Instance.check.Text = "02";
+                    //IsLogin = true;
                 }
+                else
 
-                if (IsLogin == false)
+
+                    //if (IsLogin == false)
                 {
                     if (CountWrong == 2)
                     {
@@ -70,22 +69,7 @@ namespace sales_management_software
                 //IsLogin = true;
             }
             else
-            
-            if (usernametxt == "nhanvien" && passwordtxt == "123")
-            {
-                MessageBox.Show("Đăng nhập thành công");
-                GUI.Instance.check.Text = "01";
-                //IsLogin = true;
-            }
-            else
 
-            if (usernametxt == "khachhang" && passwordtxt == "123")
-            {
-                MessageBox.Show("Đăng nhập thành công");
-                GUI.Instance.check.Text = "02";
-                //IsLogin = true;
-            }
-            else
             {
                 if (CountWrong == 2)
                 {

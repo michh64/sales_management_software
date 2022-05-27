@@ -11,13 +11,12 @@ namespace sales_management_software
 {
     using System;
     
-    public partial class select_nv_Result
+    public partial class sp_helpdiagrams_Result
     {
-        public string manv { get; set; }
-        public string matkhau { get; set; }
-        public string hotennv { get; set; }
-        public string sdt { get; set; }
-        public string diachi { get; set; }
-        public Nullable<bool> deleted { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

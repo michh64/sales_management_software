@@ -21,5 +21,6 @@ namespace sales_management_software
         public Nullable<int> soluong { get; set; }
         public Nullable<int> tongtien { get; set; }
         public Nullable<bool> deleted { get; set; }
+        public string madh { get; set; }
     }
 }

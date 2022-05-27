@@ -14,7 +14,7 @@ namespace sales_management_software
     {
         List<SAN_PHAM_DTO> listSP;
         List<KHACH_HANG_DTO> listKH;
-        List<NHAN_VIEN_DTO> listNV;
+        //List<NHAN_VIEN_DTO> listNV;
         public UC_DatHang()
         {
             InitializeComponent();

@@ -10,13 +10,14 @@
 namespace sales_management_software
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class Select_KhachHang_Result
+    public partial class sysdiagram
     {
-        public string makh { get; set; }
-        public string tenkh { get; set; }
-        public string sdt { get; set; }
-        public string diachi { get; set; }
-        public Nullable<bool> deleted { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
