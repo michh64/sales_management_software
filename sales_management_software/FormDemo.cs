@@ -19,7 +19,7 @@ namespace sales_management_software
 
         private void FormDemo_Load(object sender, EventArgs e)
         {
-           UC_UpdateNCC uc=new UC_UpdateNCC();
+           UC_Report uc=new UC_Report();
             uc.Dock = DockStyle.Fill;
             panel1.Controls.Add(uc);
         }
