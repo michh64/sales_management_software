@@ -10,14 +10,16 @@
 namespace sales_management_software
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class sysdiagram
+    public partial class Select_tskt_Result
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public bool deleted { get; set; }
+        public string manhinh { get; set; }
+        public string camera { get; set; }
+        public string chipset { get; set; }
+        public string ram { get; set; }
+        public string pin { get; set; }
+        public string memory { get; set; }
+        public string mats { get; set; }
     }
 }

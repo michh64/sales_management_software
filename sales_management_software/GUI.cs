@@ -74,6 +74,10 @@ namespace sales_management_software
                 panel3.SendToBack();
                 panel3.Visible = false;
 
+                label3.Text = "Đăng nhập/Đăng ký";
+                label4.Visible = true;
+                pictureBox3.Visible = true;
+
                 button10_Click(sender, e);
                 tabControl1.SelectedIndex = 2;
             }
@@ -122,11 +126,16 @@ namespace sales_management_software
         {
             panel12.Location = new Point(panel12.Location.X, button23.Location.Y + 7);
 
+            UC_QL_SP uc = new UC_QL_SP();
+            ShowUCtoContent(uc);
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
             panel12.Location = new Point(panel12.Location.X, button22.Location.Y + 7);
+
+            UC_QL_LSP uc = new UC_QL_LSP();
+            ShowUCtoContent(uc);
 
         }
 
@@ -134,11 +143,17 @@ namespace sales_management_software
         {
             panel12.Location = new Point(panel12.Location.X, button21.Location.Y + 7);
 
+            UC_QL_NCC uc = new UC_QL_NCC();
+            ShowUCtoContent(uc);
+
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
             panel12.Location = new Point(panel12.Location.X, button20.Location.Y + 7);
+
+            UC_QL_KH uc = new UC_QL_KH();
+            ShowUCtoContent(uc);
 
         }
 

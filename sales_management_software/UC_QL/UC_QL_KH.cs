@@ -15,6 +15,27 @@ namespace sales_management_software
         public UC_QL_KH()
         {
             InitializeComponent();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+        }
+        List<SAN_PHAM_DTO> list_sanpham;
+
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            Sale_ManagementEntities sale = new Sale_ManagementEntities();
+            string tukhoa = txtNhapTuKhoa.Text;
+            dataGridView1.DataSource = sale.Search_sp(tukhoa);
+
+        }
+
+
+        private void UserControl_KhachHang_Load(object sender, EventArgs e)
+        {
+
+            list_sanpham = SAN_PHAM_BLL.EF_GetAll();
+            dataGridView1.DataSource = list_sanpham;
+            dataGridView1.ReadOnly = true;
         }
     }
 }

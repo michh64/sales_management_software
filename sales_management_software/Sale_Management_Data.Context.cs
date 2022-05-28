@@ -34,10 +34,9 @@ namespace sales_management_software
         public virtual DbSet<NHA_CUNG_CAP> NHA_CUNG_CAP { get; set; }
         public virtual DbSet<QUAN_LY> QUAN_LY { get; set; }
         public virtual DbSet<SAN_PHAM> SAN_PHAM { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THONG_SO_KY_THUAT> THONG_SO_KY_THUAT { get; set; }
     
-        public virtual int Insert_kh(string makh, string tenkh, string sdt, string diachi, Nullable<bool> deleted)
+        public virtual int Insert_kh(string makh, string tenkh, string sdt, string diachi, Nullable<bool> deleted, string username, string pass)
         {
             var makhParameter = makh != null ?
                 new ObjectParameter("makh", makh) :
@@ -59,7 +58,15 @@ namespace sales_management_software
                 new ObjectParameter("deleted", deleted) :
                 new ObjectParameter("deleted", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_kh", makhParameter, tenkhParameter, sdtParameter, diachiParameter, deletedParameter);
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_kh", makhParameter, tenkhParameter, sdtParameter, diachiParameter, deletedParameter, usernameParameter, passParameter);
         }
     
         public virtual int Insert_lsp(string maloai, string tenloai, Nullable<bool> deleted)
@@ -104,7 +111,7 @@ namespace sales_management_software
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_ncc", maNCCParameter, tenctyParameter, diachiParameter, sdtParameter, deletedParameter);
         }
     
-        public virtual int Insert_sp(string masp, string tensp, Nullable<int> dongia, Nullable<int> soluong, string maNCC, string maloai, Nullable<bool> deleted)
+        public virtual int Insert_sp(string masp, string tensp, Nullable<int> dongia, Nullable<int> soluong, string maNCC, string maloai, Nullable<bool> deleted, string anhsp, string mats)
         {
             var maspParameter = masp != null ?
                 new ObjectParameter("masp", masp) :
@@ -134,7 +141,15 @@ namespace sales_management_software
                 new ObjectParameter("deleted", deleted) :
                 new ObjectParameter("deleted", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_sp", maspParameter, tenspParameter, dongiaParameter, soluongParameter, maNCCParameter, maloaiParameter, deletedParameter);
+            var anhspParameter = anhsp != null ?
+                new ObjectParameter("anhsp", anhsp) :
+                new ObjectParameter("anhsp", typeof(string));
+    
+            var matsParameter = mats != null ?
+                new ObjectParameter("mats", mats) :
+                new ObjectParameter("mats", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Insert_sp", maspParameter, tenspParameter, dongiaParameter, soluongParameter, maNCCParameter, maloaiParameter, deletedParameter, anhspParameter, matsParameter);
         }
     
         public virtual ObjectResult<Search_sp_Result> Search_sp(string tukhoa)
@@ -176,110 +191,16 @@ namespace sales_management_software
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_sp_Result>("Select_sp");
         }
     
-        public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
+        public virtual ObjectResult<Select_with_lsp_Result> Select_with_lsp(string maloai)
         {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
+            var maloaiParameter = maloai != null ?
+                new ObjectParameter("maloai", maloai) :
+                new ObjectParameter("maloai", typeof(string));
     
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_with_lsp_Result>("Select_with_lsp", maloaiParameter);
         }
     
-        public virtual int sp_creatediagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var versionParameter = version.HasValue ?
-                new ObjectParameter("version", version) :
-                new ObjectParameter("version", typeof(int));
-    
-            var definitionParameter = definition != null ?
-                new ObjectParameter("definition", definition) :
-                new ObjectParameter("definition", typeof(byte[]));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter);
-        }
-    
-        public virtual int sp_dropdiagram(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
-        }
-    
-        public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)
-        {
-            var diagramnameParameter = diagramname != null ?
-                new ObjectParameter("diagramname", diagramname) :
-                new ObjectParameter("diagramname", typeof(string));
-    
-            var owner_idParameter = owner_id.HasValue ?
-                new ObjectParameter("owner_id", owner_id) :
-                new ObjectParameter("owner_id", typeof(int));
-    
-            var new_diagramnameParameter = new_diagramname != null ?
-                new ObjectParameter("new_diagramname", new_diagramname) :
-                new ObjectParameter("new_diagramname", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
-        }
-    
-        public virtual int sp_upgraddiagrams()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
-        }
-    
-        public virtual int Update_kh(string makh, string tenkh, string sdt, string diachi, Nullable<bool> deleted)
+        public virtual int Update_kh(string makh, string tenkh, string sdt, string diachi, Nullable<bool> deleted, string username, string pass)
         {
             var makhParameter = makh != null ?
                 new ObjectParameter("makh", makh) :
@@ -301,7 +222,32 @@ namespace sales_management_software
                 new ObjectParameter("deleted", deleted) :
                 new ObjectParameter("deleted", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_kh", makhParameter, tenkhParameter, sdtParameter, diachiParameter, deletedParameter);
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passParameter = pass != null ?
+                new ObjectParameter("pass", pass) :
+                new ObjectParameter("pass", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_kh", makhParameter, tenkhParameter, sdtParameter, diachiParameter, deletedParameter, usernameParameter, passParameter);
+        }
+    
+        public virtual int update_lsp(string maloai, string tenloai, Nullable<bool> deleted)
+        {
+            var maloaiParameter = maloai != null ?
+                new ObjectParameter("maloai", maloai) :
+                new ObjectParameter("maloai", typeof(string));
+    
+            var tenloaiParameter = tenloai != null ?
+                new ObjectParameter("tenloai", tenloai) :
+                new ObjectParameter("tenloai", typeof(string));
+    
+            var deletedParameter = deleted.HasValue ?
+                new ObjectParameter("deleted", deleted) :
+                new ObjectParameter("deleted", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("update_lsp", maloaiParameter, tenloaiParameter, deletedParameter);
         }
     
         public virtual int Update_ncc(string maNCC, string tencty, string diachi, string sdt, Nullable<bool> deleted)
@@ -329,7 +275,7 @@ namespace sales_management_software
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_ncc", maNCCParameter, tenctyParameter, diachiParameter, sdtParameter, deletedParameter);
         }
     
-        public virtual int Update_sp(string masp, string tensp, Nullable<int> dongia, Nullable<int> soluong, string maNCC, string maloai, Nullable<bool> deleted)
+        public virtual int Update_sp(string masp, string tensp, Nullable<int> dongia, Nullable<int> soluong, string maNCC, string maloai, Nullable<bool> deleted, string anhsp, string mats)
         {
             var maspParameter = masp != null ?
                 new ObjectParameter("masp", masp) :
@@ -359,7 +305,20 @@ namespace sales_management_software
                 new ObjectParameter("deleted", deleted) :
                 new ObjectParameter("deleted", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_sp", maspParameter, tenspParameter, dongiaParameter, soluongParameter, maNCCParameter, maloaiParameter, deletedParameter);
+            var anhspParameter = anhsp != null ?
+                new ObjectParameter("anhsp", anhsp) :
+                new ObjectParameter("anhsp", typeof(string));
+    
+            var matsParameter = mats != null ?
+                new ObjectParameter("mats", mats) :
+                new ObjectParameter("mats", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Update_sp", maspParameter, tenspParameter, dongiaParameter, soluongParameter, maNCCParameter, maloaiParameter, deletedParameter, anhspParameter, matsParameter);
+        }
+    
+        public virtual ObjectResult<Select_tskt_Result> Select_tskt()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Select_tskt_Result>("Select_tskt");
         }
     }
 }

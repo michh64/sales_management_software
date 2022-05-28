@@ -19,14 +19,9 @@ namespace sales_management_software
 
         private void FormDemo_Load(object sender, EventArgs e)
         {
-           UC_DatHang uc=new UC_DatHang();
+            UC_QL_NCC uc=new UC_QL_NCC();
             uc.Dock = DockStyle.Fill;
             panel1.Controls.Add(uc);
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

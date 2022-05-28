@@ -32,7 +32,7 @@ namespace sales_management_software
         public static bool EF_AddNew(SAN_PHAM_DTO dto)
         {
             Sale_ManagementEntities data = new Sale_ManagementEntities();
-            data.Insert_sp(dto.maloai, dto.tensp, (int)dto.dongia, (int)dto.soluong, dto.maNCC, dto.maloai, (bool)dto.deleted);
+            data.Insert_sp(dto.maloai, dto.tensp, (int)dto.dongia, (int)dto.soluong, dto.maNCC, dto.maloai, (bool)dto.deleted, dto.anhsp, dto.mats);
             return data.SaveChanges() > 0 ? true : false;
         }
        

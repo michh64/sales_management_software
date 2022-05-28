@@ -161,13 +161,10 @@
     <Compile Include="Select_sp_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+    <Compile Include="Select_tskt_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="sp_helpdiagrams_Result.cs">
-      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
+    <Compile Include="Select_with_lsp_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="THONG_SO_KY_THUAT.cs">
@@ -232,36 +229,6 @@
     <Compile Include="UC_QL\UC_QL_LSP.Designer.cs">
       <DependentUpon>UC_QL_LSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_restore\UC_ThemLSP.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_restore\UC_ThemLSP.Designer.cs">
-      <DependentUpon>UC_ThemLSP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_restore\UC_ThemSanPham.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_restore\UC_ThemSanPham.Designer.cs">
-      <DependentUpon>UC_ThemSanPham.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_restore\UC_ThemNCC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_restore\UC_ThemNCC.Designer.cs">
-      <DependentUpon>UC_ThemNCC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_restore\UC_UpdateNCC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_restore\UC_UpdateNCC.Designer.cs">
-      <DependentUpon>UC_UpdateNCC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_restore\UC_UpdateSP.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_restore\UC_UpdateSP.Designer.cs">
-      <DependentUpon>UC_UpdateSP.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControl_KhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -315,21 +282,6 @@
     <EmbeddedResource Include="UC_QL\UC_QL_SP.resx">
       <DependentUpon>UC_QL_SP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_restore\UC_ThemLSP.resx">
-      <DependentUpon>UC_ThemLSP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_restore\UC_ThemNCC.resx">
-      <DependentUpon>UC_ThemNCC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_restore\UC_ThemSanPham.resx">
-      <DependentUpon>UC_ThemSanPham.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_restore\UC_UpdateNCC.resx">
-      <DependentUpon>UC_UpdateNCC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_restore\UC_UpdateSP.resx">
-      <DependentUpon>UC_UpdateSP.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_KhachHang.resx">
       <DependentUpon>UserControl_KhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,7 +310,6 @@
   <ItemGroup>
     <Content Include="Infomation.txt" />
     <Content Include="Query.sql" />
-    <None Include="Resources\optimization.png" />
     <Content Include="Sale_Management_Data.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
@@ -369,6 +320,7 @@
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
       <LastGenOutput>Sale_Management_Data.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\optimization.png" />
     <None Include="Resources\customer.png" />
     <None Include="Resources\distributed.png" />
     <None Include="Resources\packages.png" />
