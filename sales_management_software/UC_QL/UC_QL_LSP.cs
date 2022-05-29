@@ -29,13 +29,8 @@ namespace sales_management_software
         private void Showdata_gridview()
         {
             listLSP = LOAI_SAN_PHAM_BLL.EF_GetAll();
-            dataGridView1.Columns.Add("maloai", "Mã loại");
-            dataGridView1.Columns.Add("tensp", "Tên loại");
-
-            for (int i = 0; i < listLSP.Count; i++)
-            {
-                dataGridView1.Rows.Add(listLSP[i].maloai, listLSP[i].tenloai);
-            }
+            dataGridView1.DataSource = listLSP;
+            dataGridView1.Columns["deleted"].Visible = false;
         }
 
         private void reset()
@@ -92,11 +87,11 @@ namespace sales_management_software
             SAN_PHAM_DTO sp = new SAN_PHAM_DTO();
 
             // Thêm
-            if (panel2.Location.X != button1.Location.X)
+            if (panel2.Location.X == button1.Location.X)
             {
                 if (textBox1.Text != "" && textBox2.Text != "")
                 {
-                    string maloai = textBox1.Text.ToString().ToUpper();
+                    string maloai = textBox1.Text.ToUpper();
                     string tenloai = textBox2.Text;
                     data.Insert_lsp(maloai, tenloai, false);
                     data.SaveChanges();
@@ -107,13 +102,13 @@ namespace sales_management_software
             }
 
             // Sửa
-            if (panel2.Location.X != button2.Location.X)
+            if (panel2.Location.X == button2.Location.X)
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
                     if (textBox1.Text != "" && textBox2.Text != "")
                     {
-                        string maloai = textBox1.ToString().ToUpper();
+                        string maloai = textBox1.Text.ToUpper();
                         string tenloai = textBox2.Text;
 
                         data.update_lsp(maloai, tenloai, false);
@@ -135,33 +130,34 @@ namespace sales_management_software
             }
 
             // Xóa
-            if (panel2.Location.X != button3.Location.X)
+            if (panel2.Location.X == button3.Location.X)
             {
                 if (dataGridView1.SelectedRows.Count > 0)
                 {
-                    if (textBox1.Text != "" && textBox2.Text != "")
-                    {
-                        string maloai = textBox1.Text;
-                        string tenloai = textBox2.Text;
-                        data.update_lsp(maloai, tenloai, true);
-                        data.SaveChanges();
-                        Showdata_gridview();
-                        MessageBox.Show("Xoá thành công");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Xin hãy nhập đầy đủ");
-                    }
+                    string maloai = textBox1.Text;
+                    string tenloai = textBox2.Text;
+                    data.update_lsp(maloai, tenloai, true);
+                    data.SaveChanges();
+                    Showdata_gridview();
+                    MessageBox.Show("Xoá thành công");
                 }
                 else
                 {
                     MessageBox.Show("Xoá không thành công");
-
                 }
             }
 
 
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            Sale_ManagementEntities sale = new Sale_ManagementEntities();
+            string tukhoa = txtNhapTuKhoa.Text;
+            dataGridView1.DataSource = sale.Search_lsp(tukhoa);
+        }
+
+
 
     }
 

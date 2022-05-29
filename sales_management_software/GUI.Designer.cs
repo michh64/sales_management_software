@@ -31,7 +31,6 @@ namespace sales_management_software
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GUI));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -637,7 +636,6 @@ namespace sales_management_software
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TabControl tabControl1;
         public System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;

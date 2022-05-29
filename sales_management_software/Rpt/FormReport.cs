@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace sales_management_software
 {
-    public partial class FormDemo : Form
+    public partial class FormReport : Form
     {
-        public FormDemo()
+        public FormReport()
         {
             InitializeComponent();
-        }
-
-        private void FormDemo_Load(object sender, EventArgs e)
-        {
-            UC_QL_SP uc = new UC_QL_SP();
-            uc.Dock = DockStyle.Fill;
-            panel1.Controls.Add(uc);
         }
     }
 }

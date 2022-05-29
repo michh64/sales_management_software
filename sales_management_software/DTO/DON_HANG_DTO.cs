@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace sales_management_software.DTO
+namespace sales_management_software
 {
 	public class DON_HANG_DTO
 	{
@@ -15,12 +15,6 @@ namespace sales_management_software.DTO
 			set { _madh = value; }
 		}
 
-		private string _mahd;
-		public string mahd
-		{
-			get { return _mahd; }
-			set { _mahd = value; }
-		}
 		private string _makh;
 		public string makh
 		{
@@ -56,21 +50,52 @@ namespace sales_management_software.DTO
 			set { _deleted = value; }
 		}
 
+		private string _masp;
+		public string masp
+		{
+			get { return _masp; }
+			set { _masp = value; }
+		}
 
-		public DON_HANG_DTO(string madh_, string mahd_, string makh_, DateTime ngaydat_, DateTime ngaygiao_, string diachigiao_, bool deleted_)
+		private string _tensp;
+		public string tensp
+		{
+			get { return _tensp; }
+			set { _tensp = value; }
+		}
+
+		private int _dongia;
+		public int dongia
+		{
+			get { return _dongia; }
+			set { _dongia = value; }
+		}
+
+		private int _soluong;
+		public int soluong
+		{
+			get { return _soluong; }
+			set { _soluong = value; }
+		}
+
+
+		public DON_HANG_DTO(string madh_, string makh_, DateTime ngaydat_, DateTime ngaygiao_, string diachigiao_, bool deleted_, string masp_, string tensp_, int dongia_, int soluong_)
 		{
 			this.madh = madh_;
-			this.madh = mahd_;
 			this.makh = makh_;
 			this.ngaydat = ngaydat_;
 			this.ngaygiao = ngaygiao_;
 			this.diachigiao = diachigiao_;
 			this.deleted = deleted_;
+			this.masp = masp_;
+			this.tensp = tensp_;
+			this.dongia = dongia_;
+			this.soluong = soluong_;
 		}
 		public DON_HANG_DTO()
 		{
 
 		}
 	}
-	
+
 }

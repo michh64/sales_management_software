@@ -11,19 +11,14 @@ namespace sales_management_software
 {
     using System;
     
-    public partial class select_hoadon_Result
+    public partial class Search_kh_Result
     {
-        public string mahd { get; set; }
-        public string masp { get; set; }
-        public string tensp { get; set; }
-        public Nullable<int> dongia { get; set; }
-        public Nullable<int> giamgia { get; set; }
-        public Nullable<int> soluong { get; set; }
-        public Nullable<int> tongtien { get; set; }
-        public Nullable<bool> deleted { get; set; }
-        public string madh { get; set; }
-        public Nullable<System.DateTime> ngaydat { get; set; }
         public string makh { get; set; }
         public string tenkh { get; set; }
+        public string sdt { get; set; }
+        public string diachi { get; set; }
+        public Nullable<bool> deleted { get; set; }
+        public string username { get; set; }
+        public string pass { get; set; }
     }
 }

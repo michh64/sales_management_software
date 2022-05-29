@@ -169,6 +169,9 @@ namespace sales_management_software
         {
             panel12.Location = new Point(panel12.Location.X, button12.Location.Y + 7);
 
+            UC_report uc = new UC_report();
+            ShowUCtoContent(uc);
+
         }
 
         private void button7_Click(object sender, EventArgs e)

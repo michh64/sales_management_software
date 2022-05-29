@@ -13,55 +13,75 @@ namespace sales_management_software
     public partial class UC_DatHang : UserControl
     {
         List<SAN_PHAM_DTO> listSP;
-        List<KHACH_HANG_DTO> listKH;
-        //List<NHAN_VIEN_DTO> listNV;
+
         public UC_DatHang()
         {
             InitializeComponent();
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.ReadOnly = true;
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                txtMaSanPham.ReadOnly = true;
-                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
-                txtMaSanPham.Text = row.Cells[0].Value.ToString();
-                txttensanpham.Text = row.Cells[1].Value.ToString();
-                txtSoLuong.Text = row.Cells[3].Value.ToString();
-                txtDonGia.Text = row.Cells[2].Value.ToString();
-            }
+            dataGridViewDonHang.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewDonHang.ReadOnly = true;
         }
 
         private void UC_DatHang_Load(object sender, EventArgs e)
         {
-            KHACH_HANG_DTO kh = new KHACH_HANG_DTO();
-            txtMaKhachHang.Text = kh.makh;
-            listKH = KHACH_HANG_BLL.EF_GetAll();
-
-
             Showdata_gridview();
+        }
+
+        private void dataGridViewDonHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                txtMaSanPham.ReadOnly = true;
+                DataGridViewRow row = this.dataGridViewDonHang.Rows[e.RowIndex];
+                txtMaSanPham.Text = row.Cells[0].Value.ToString();
+                txtTenSanPham.Text = row.Cells[1].Value.ToString();
+                txtSoLuong.Text = row.Cells[3].Value.ToString();
+                txtDonGia.Text = row.Cells[2].Value.ToString();
+
+                textBox1.Text = row.Cells[3].Value.ToString().Trim(); // Số lượng
+                textBox2.Text = row.Cells[4].Value.ToString().Trim(); // mã NCC
+                textBox3.Text = row.Cells[5].Value.ToString().Trim(); // mã loại
+                textBox4.Text = row.Cells[6].Value.ToString().Trim(); // mã thông số
+                textBox5.Text = row.Cells[7].Value.ToString().Trim(); // ảnh sản phẩm
+            }
+
         }
 
         private void Showdata_gridview()
         {
             listSP = SAN_PHAM_BLL.EF_GetAll();
-            dataGridView1.Columns.Add("masp", "Mã sản phẩm");
-            dataGridView1.Columns.Add("tensp", "Tên sản phẩm");
-            dataGridView1.Columns.Add("dongia", "Đơn giá");
-            dataGridView1.Columns.Add("soluong", "Số lượng");
+            dataGridViewDonHang.DataSource = listSP;
+            dataGridViewDonHang.Columns["deleted"].Visible = false;
+        }
 
-            for (int i = 0; i < listSP.Count; i++)
+        private void btnDatHang_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(textBox1.Text) - int.Parse(txtSoLuong.Text) > 0)
             {
-                dataGridView1.Rows.Add(listSP[i].masp, listSP[i].tensp, listSP[i].dongia, listSP[i].soluong);
+
+                List<DON_HANG_DTO> listdh = DON_HANG_BLL.EF_GetAll();
+                // Lấy giá trị mã sản phẩm cuối cùng
+                if (listdh.Count - 1 >= 0)
+                {
+                    string val = Convert.ToString(listdh[listdh.Count - 1].madh.ToString());
+                    // Lấy chỉ số của sản phẩm cuối
+                    int index = Convert.ToInt32(val.Remove(0, 2)) + 1;
+                    txtMaDonHang.Text = "DH" + index.ToString("000");
+                }
+                else
+                    txtMaDonHang.Text = "DH001";
+
+                Sale_ManagementEntities data = new Sale_ManagementEntities();
+
+                data.Insert_donhang(txtMaDonHang.Text, txtMaKhachHang.Text, dateTimePickerNgayDat.Value, dateTimePickerNgayGiao.Value,
+                    txtDiaChiGiao.Text, false, txtMaSanPham.Text, txtTenSanPham.Text, int.Parse(txtDonGia.Text), int.Parse(txtSoLuong.Text));
+                MessageBox.Show("Đã đặt hàng");
+
+                data.Update_sp(txtMaSanPham.Text.Trim(), txtTenSanPham.Text, int.Parse(txtDonGia.Text), ( int.Parse(textBox1.Text) - int.Parse(txtSoLuong.Text) ),
+                    textBox2.Text, textBox3.Text, false, textBox5.Text, textBox4.Text);
+                data.SaveChanges();
+                Showdata_gridview();
             }
         }
 
-        private void labelSoLuong_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

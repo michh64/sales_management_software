@@ -49,17 +49,19 @@ namespace sales_management_software
         private void Showdata_gridview()
         {
             listsp = SAN_PHAM_BLL.EF_GetAll();
-            dataGridView1.Columns.Add("masp", "Mã sản phẩm");
-            dataGridView1.Columns.Add("tensp", "Tên sản phẩm");
-            dataGridView1.Columns.Add("dongia", "Đơn giá");
-            dataGridView1.Columns.Add("soluong", "Số lượng");
-            dataGridView1.Columns.Add("maloai", "Mã loại");
-            dataGridView1.Columns.Add("maNCC", "Mã nhà cung cấp");
-            for (int i = 0; i < listsp.Count; i++)
-            {
-                dataGridView1.Rows.Add(listsp[i].masp, listsp[i].tensp, listsp[i].dongia, listsp[i].soluong, listsp[i].maloai, listsp[i].maNCC);
-            }
-            //dataGridView1.DataSource = listsp;
+            //dataGridView1.Columns.Add("masp", "Mã sản phẩm");
+            //dataGridView1.Columns.Add("tensp", "Tên sản phẩm");
+            //dataGridView1.Columns.Add("dongia", "Đơn giá");
+            //dataGridView1.Columns.Add("soluong", "Số lượng");
+            //dataGridView1.Columns.Add("maloai", "Mã loại");
+            //dataGridView1.Columns.Add("maNCC", "Mã nhà cung cấp");
+            //for (int i = 0; i < listsp.Count; i++)
+            //{
+            //    dataGridView1.Rows.Add(listsp[i].masp, listsp[i].tensp, listsp[i].dongia, listsp[i].soluong, listsp[i].maloai, listsp[i].maNCC);
+            //}
+            dataGridView1.DataSource = listsp;
+            dataGridView1.Columns["deleted"].Visible = false;
+            dataGridView1.Columns["anhsp"].Visible = false;
         }
 
         private void LoadCombobox (ComboBox cb, int type)
@@ -94,6 +96,47 @@ namespace sales_management_software
         {
             Sale_ManagementEntities data = new Sale_ManagementEntities();
 
+            //Thêm
+            if (panel4.Location.X == button1.Location.X)
+            {
+                if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && comboBox1.SelectedValue.ToString() != "" && comboBox2.SelectedValue.ToString() != "" && comboBox3.SelectedValue.ToString() != "" && pictureBox1.Image != null)
+                {
+                    // Lấy giá trị mã sản phẩm cuối cùng
+                    string value = Convert.ToString(dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0].Value);
+
+                    // Lấy chỉ số của sản phẩm cuối
+                    int index = Convert.ToInt32(value.Remove(0, 2)) + 1;
+
+                    textBox1.Text = "SP" + index.ToString("000");
+
+                    //them sp
+                    string masp = textBox1.Text;
+                    string tensp = textBox2.Text;
+                    int dongia = int.Parse(textBox3.Text);
+                    int soluong = int.Parse(textBox4.Text);
+                    string mats = comboBox1.SelectedValue.ToString().ToUpper();
+                    string maloai = comboBox2.SelectedValue.ToString().ToUpper();
+                    string ncc = comboBox3.SelectedValue.ToString().ToUpper();
+                    string anhsp = SpecFunctions.ImageToBase64(pictureBox1.Image);
+                    bool check = false;
+                    data.Insert_sp(masp, tensp, dongia, soluong, ncc, maloai, check, anhsp, mats);
+                    data.SaveChanges();
+
+                    MessageBox.Show("Thêm sản phẩm thành công");
+
+                    Showdata_gridview();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    textBox4.Text = "";
+                    pictureBox1.Image = null;
+                }
+                else
+                {
+                    MessageBox.Show("Thêm sản phẩm không thành công");
+                }
+            }
+
             // sửa
             if (panel4.Location.X == button2.Location.X)
             {
@@ -109,10 +152,10 @@ namespace sales_management_software
                         string maNCC = comboBox3.SelectedValue.ToString().ToUpper();
                         string anhsp = SpecFunctions.ImageToBase64(pictureBox1.Image);
 
-                        data.Update_sp(textBox2.Text, tensp, dongia, soluong, maNCC, maloai, false, anhsp, mats);
+                        data.Update_sp(textBox1.Text, tensp, dongia, soluong, maNCC, maloai, false, anhsp, mats);
                         data.SaveChanges();
-                        listsp = SAN_PHAM_BLL.EF_GetAll();
-                        dataGridView1.DataSource = listsp;
+
+                        Showdata_gridview();
                         MessageBox.Show("Update thành công");
                     }
                     else
@@ -126,43 +169,7 @@ namespace sales_management_software
 
                 }
             }
-            //Thêm
 
-            if (panel4.Location.X == button1.Location.X)
-            {
-                if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "" && comboBox1.SelectedValue.ToString() != "" && comboBox2.SelectedValue.ToString() != "" && comboBox3.SelectedValue.ToString() != "" && pictureBox1.Image != null)
-                {                 
-                    // Lấy giá trị mã sản phẩm cuối cùng
-                    string value = Convert.ToString(dataGridView1.Rows[dataGridView1.Rows.Count - 1].Cells[0].Value);
-
-                    // Lấy chỉ số của sản phẩm cuối
-                    int index = Convert.ToInt32(value.Remove(0, 2)) + 1;
-
-                    textBox4.Text = "SP" + index.ToString("000");
-
-                    //them sp
-                    string masp = textBox4.Text;
-                    string tensp = textBox3.Text;
-                    int dongia = int.Parse(textBox2.Text);
-                    int soluong = int.Parse(textBox1.Text);
-                    string mats = comboBox1.Text.ToUpper();
-                    string maloai = comboBox2.Text.ToUpper();
-                    string ncc = comboBox3.Text.ToUpper();
-                    string anhsp = SpecFunctions.ImageToBase64(pictureBox1.Image);
-                    bool check = false;
-                    data.Insert_sp(masp, tensp, dongia, soluong, ncc, maloai, check, anhsp, mats);
-                    data.SaveChanges();
-
-                    MessageBox.Show("Thêm sản phẩm thành công");
-
-                    Showdata_gridview();
-                    textBox1.Text = "";
-                    textBox2.Text = "";
-                    textBox3.Text = "";
-                    textBox4.Text = "";
-                    pictureBox1.Image = null;
-                }
-            }
             //xóa
             if (panel4.Location.X == button3.Location.X)
             {
@@ -180,7 +187,7 @@ namespace sales_management_software
                         string maNCC = comboBox3.SelectedValue.ToString();
                         string anhsp = SpecFunctions.ImageToBase64(pictureBox1.Image);
 
-                        data.Update_sp(masp, tensp, dongia, soluong, maloai, maNCC, true, anhsp, mats);
+                        data.Update_sp(masp, tensp, dongia, soluong, maNCC, maloai, true, anhsp, mats);
                         data.SaveChanges();
 
                         Showdata_gridview();
@@ -331,6 +338,13 @@ namespace sales_management_software
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
 
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            Sale_ManagementEntities sale = new Sale_ManagementEntities();
+            string tukhoa = txtNhapTuKhoa.Text;
+            dataGridView1.DataSource = sale.Search_sp(tukhoa);
         }
 
     }

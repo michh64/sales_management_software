@@ -16,5 +16,10 @@ namespace sales_management_software
         {
             return SAN_PHAM_DAL.EF_AddNew(sp);
         }
+
+        public static List<SAN_PHAM_DTO> EF_GetAllWithMaLoai(string maloai)
+        {
+            return SAN_PHAM_DAL.EF_GetAllWithMaLoai(maloai);
+        }
     }
 }

@@ -10,17 +10,14 @@
 namespace sales_management_software
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class Search_sp_Result
+    public partial class sysdiagram
     {
-        public string masp { get; set; }
-        public string tensp { get; set; }
-        public Nullable<int> dongia { get; set; }
-        public Nullable<int> soluong { get; set; }
-        public string maNCC { get; set; }
-        public string maloai { get; set; }
-        public Nullable<bool> deleted { get; set; }
-        public string anhsp { get; set; }
-        public string mats { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

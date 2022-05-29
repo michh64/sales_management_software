@@ -16,6 +16,13 @@ namespace sales_management_software
 			set { _mahd = value; }
 		}
 
+		private string _madh;
+		public string madh
+		{
+			get { return _madh; }
+			set { _madh = value; }
+		}
+
 		private string _masp;
 		public string masp
 		{
@@ -65,10 +72,32 @@ namespace sales_management_software
 			set { _deleted = value; }
 		}
 
+		private DateTime _ngaydat;
+		public DateTime ngaydat
+		{
+			get { return _ngaydat; }
+			set { _ngaydat = value; }
+		}
 
-		public HOA_DON_DTO(string mahd_, string masp_, string tensp_, int dongia_, int giamgia_, int soluong_, int tongtien_, bool deleted_)
+		private string _makh;
+		public string makh
+		{
+			get { return _makh; }
+			set { _makh = value; }
+		}
+
+		private string _tenkh;
+		public string tenkh
+		{
+			get { return _tenkh; }
+			set { _tenkh = value; }
+		}
+
+
+		public HOA_DON_DTO(string mahd_, string madh_, string masp_, string tensp_, int dongia_, int giamgia_, int soluong_, int tongtien_, bool deleted_, DateTime ngaydat_, string makh_, string tenkh_)
 		{
 			this.mahd = mahd_;
+			this.madh = madh_;
 			this.masp = masp_;
 			this.tensp = tensp_;
 			this.dongia = dongia_;
@@ -76,11 +105,14 @@ namespace sales_management_software
 			this.soluong = soluong_;
 			this.tongtien = tongtien_;
 			this.deleted = deleted_;
+			this.ngaydat = ngaydat_;
+			this.makh = makh_;
+			this.tenkh = tenkh_;
 		}
 		public HOA_DON_DTO()
 		{
 
 		}
 	}
-	
+
 }

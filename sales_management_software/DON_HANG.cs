@@ -14,15 +14,25 @@ namespace sales_management_software
     
     public partial class DON_HANG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DON_HANG()
+        {
+            this.HOA_DON = new HashSet<HOA_DON>();
+        }
+    
         public string madh { get; set; }
-        public string mahd { get; set; }
         public string makh { get; set; }
         public Nullable<System.DateTime> ngaydat { get; set; }
         public Nullable<System.DateTime> ngaygiao { get; set; }
         public string diachigiao { get; set; }
         public Nullable<bool> deleted { get; set; }
+        public string masp { get; set; }
+        public string tensp { get; set; }
+        public Nullable<int> dongia { get; set; }
+        public Nullable<int> soluong { get; set; }
     
-        public virtual HOA_DON HOA_DON { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOA_DON> HOA_DON { get; set; }
         public virtual KHACH_HANG KHACH_HANG { get; set; }
     }
 }

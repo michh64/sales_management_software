@@ -10,14 +10,15 @@ using System.Windows.Forms;
 
 namespace sales_management_software
 {
-    public partial class UserControl_KhachHang : UserControl
+    public partial class UC_KH : UserControl
     {
-        List<SAN_PHAM_DTO> list_sanpham;
-        public UserControl_KhachHang()
+        public UC_KH()
         {
             InitializeComponent();
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
         }
+        List<SAN_PHAM_DTO> list_sanpham;
 
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -25,18 +26,15 @@ namespace sales_management_software
             Sale_ManagementEntities sale = new Sale_ManagementEntities();
             string tukhoa = txtNhapTuKhoa.Text;
             dataGridView1.DataSource = sale.Search_sp(tukhoa);
-
         }
 
 
-        private void UserControl_KhachHang_Load(object sender, EventArgs e)
+        private void UC_QL_KH_Load(object sender, EventArgs e)
         {
-            
             list_sanpham = SAN_PHAM_BLL.EF_GetAll();
             dataGridView1.DataSource = list_sanpham;
             dataGridView1.ReadOnly = true;
         }
-
 
     }
 }

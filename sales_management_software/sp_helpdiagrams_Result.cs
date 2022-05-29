@@ -11,16 +11,12 @@ namespace sales_management_software
 {
     using System;
     
-    public partial class Search_sp_Result
+    public partial class sp_helpdiagrams_Result
     {
-        public string masp { get; set; }
-        public string tensp { get; set; }
-        public Nullable<int> dongia { get; set; }
-        public Nullable<int> soluong { get; set; }
-        public string maNCC { get; set; }
-        public string maloai { get; set; }
-        public Nullable<bool> deleted { get; set; }
-        public string anhsp { get; set; }
-        public string mats { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

@@ -17,7 +17,7 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,6 +25,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>bin\Debug\sales_management_software.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,6 +40,22 @@
   <ItemGroup>
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\New folder\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\New folder\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\New folder\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\New folder\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -122,6 +140,36 @@
     <Compile Include="QUAN_LY.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="Rpt\FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rpt\FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rpt\Rpt_theoNhom.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_theoNhom.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpt\UC_report.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rpt\UC_report.Designer.cs">
+      <DependentUpon>UC_report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rpt\Rpt_ALLsp.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_ALLsp.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rpt\Rpt_theoLoai.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_theoLoai.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Sale_Management_Data.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,10 +188,22 @@
     <Compile Include="SAN_PHAM.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="Search_kh_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Search_lsp_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Search_ncc_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="Search_sp_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
-    <Compile Include="Select_hoadon_Result.cs">
+    <Compile Include="select_donhang_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_hoadon_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
     <Compile Include="Select_kh_DE_Result.cs">
@@ -167,6 +227,15 @@
     <Compile Include="Select_with_lsp_Result.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Sale_Management_Data.tt</DependentUpon>
+    </Compile>
     <Compile Include="THONG_SO_KY_THUAT.cs">
       <DependentUpon>Sale_Management_Data.tt</DependentUpon>
     </Compile>
@@ -175,11 +244,6 @@
     </Compile>
     <Compile Include="UC\UC_Login.Designer.cs">
       <DependentUpon>UC_Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_List_sp.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UC_List_sp.resx</DependentUpon>
     </Compile>
     <Compile Include="UC\UC_Maintain.cs">
       <SubType>UserControl</SubType>
@@ -199,17 +263,17 @@
     <Compile Include="UC_HoaDon.Designer.cs">
       <DependentUpon>UC_HoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_ListSP.cs">
+    <Compile Include="UC\UC_ListSP.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_ListSP.Designer.cs">
+    <Compile Include="UC\UC_ListSP.Designer.cs">
       <DependentUpon>UC_ListSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_QL\UC_QL_KH.cs">
+    <Compile Include="UC_QL\UC_KH.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_QL\UC_QL_KH.Designer.cs">
-      <DependentUpon>UC_QL_KH.cs</DependentUpon>
+    <Compile Include="UC_QL\UC_KH.Designer.cs">
+      <DependentUpon>UC_KH.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_QL\UC_QL_NCC.cs">
       <SubType>UserControl</SubType>
@@ -229,11 +293,11 @@
     <Compile Include="UC_QL\UC_QL_LSP.Designer.cs">
       <DependentUpon>UC_QL_LSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl_KhachHang.cs">
+    <Compile Include="UC_QL_KH.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl_KhachHang.Designer.cs">
-      <DependentUpon>UserControl_KhachHang.cs</DependentUpon>
+    <Compile Include="UC_QL_KH.Designer.cs">
+      <DependentUpon>UC_QL_KH.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormDemo.resx">
       <DependentUpon>FormDemo.cs</DependentUpon>
@@ -251,6 +315,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Rpt\FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt\Rpt_theoNhom.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_theoNhom.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt\UC_report.resx">
+      <DependentUpon>UC_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt\Rpt_ALLsp.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_ALLsp.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rpt\Rpt_theoLoai.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_theoLoai.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_Login.resx">
       <DependentUpon>UC_Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,18 +342,14 @@
     <EmbeddedResource Include="UC_HoaDon.resx">
       <DependentUpon>UC_HoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_ListSP.resx">
+    <EmbeddedResource Include="UC\UC_ListSP.resx">
       <DependentUpon>UC_ListSP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_List_sp.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>UC_List_sp.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\UC_Maintain.resx">
       <DependentUpon>UC_Maintain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_QL\UC_QL_KH.resx">
-      <DependentUpon>UC_QL_KH.cs</DependentUpon>
+    <EmbeddedResource Include="UC_QL\UC_KH.resx">
+      <DependentUpon>UC_KH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QL\UC_QL_LSP.resx">
       <DependentUpon>UC_QL_LSP.cs</DependentUpon>
@@ -282,8 +360,8 @@
     <EmbeddedResource Include="UC_QL\UC_QL_SP.resx">
       <DependentUpon>UC_QL_SP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl_KhachHang.resx">
-      <DependentUpon>UserControl_KhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="UC_QL_KH.resx">
+      <DependentUpon>UC_QL_KH.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -320,6 +398,7 @@
       <DependentUpon>Sale_Management_Data.edmx</DependentUpon>
       <LastGenOutput>Sale_Management_Data.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\x.png" />
     <None Include="Resources\optimization.png" />
     <None Include="Resources\customer.png" />
     <None Include="Resources\distributed.png" />

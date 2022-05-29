@@ -10,23 +10,18 @@
 namespace sales_management_software
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class HOA_DON
+    public partial class select_donhang_Result
     {
-        public string mahd { get; set; }
+        public string madh { get; set; }
+        public string makh { get; set; }
+        public Nullable<System.DateTime> ngaydat { get; set; }
+        public Nullable<System.DateTime> ngaygiao { get; set; }
+        public string diachigiao { get; set; }
+        public Nullable<bool> deleted { get; set; }
         public string masp { get; set; }
         public string tensp { get; set; }
         public Nullable<int> dongia { get; set; }
-        public Nullable<int> giamgia { get; set; }
         public Nullable<int> soluong { get; set; }
-        public Nullable<int> tongtien { get; set; }
-        public Nullable<bool> deleted { get; set; }
-        public string madh { get; set; }
-        public Nullable<System.DateTime> ngaydat { get; set; }
-        public string makh { get; set; }
-        public string tenkh { get; set; }
-    
-        public virtual DON_HANG DON_HANG { get; set; }
     }
 }

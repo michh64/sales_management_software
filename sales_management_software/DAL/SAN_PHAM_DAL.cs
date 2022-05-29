@@ -35,6 +35,25 @@ namespace sales_management_software
             data.Insert_sp(dto.maloai, dto.tensp, (int)dto.dongia, (int)dto.soluong, dto.maNCC, dto.maloai, (bool)dto.deleted, dto.anhsp, dto.mats);
             return data.SaveChanges() > 0 ? true : false;
         }
-       
+
+        public static List<SAN_PHAM_DTO> EF_GetAllWithMaLoai(string maloai)
+        {
+            Sale_ManagementEntities data = new Sale_ManagementEntities();
+            var truyvan = data.Select_with_lsp(maloai).ToList();
+            List<SAN_PHAM_DTO> dsSP = new List<SAN_PHAM_DTO>();
+            foreach (var s in truyvan)
+            {
+                SAN_PHAM_DTO dp = new SAN_PHAM_DTO();
+                dp.masp = s.masp;
+                dp.tensp = s.tensp;
+                dp.dongia = (int)s.dongia;
+                dp.maNCC = s.maNCC;
+                dp.maloai = s.maloai;
+                dp.mats = s.mats;
+                dp.soluong = (int)s.soluong;
+                dsSP.Add(dp);
+            }
+            return dsSP;
+        }
     }
 }

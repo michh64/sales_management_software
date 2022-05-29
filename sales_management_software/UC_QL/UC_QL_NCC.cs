@@ -77,15 +77,8 @@ namespace sales_management_software
         private void Showdata_gridview()
         {
             listNCC = NHA_CUNG_CAP_BLL.EF_GetAll();
-            dataGridView1.Columns.Add("mancc", "Mã nhà cung cấp");
-            dataGridView1.Columns.Add("tenncc", "Tên nhà cung cấp");
-            dataGridView1.Columns.Add("sdt", "Số điện thoại");
-            dataGridView1.Columns.Add("diachi", "Địa chỉ");
-
-            for (int i = 0; i < listNCC.Count; i++)
-            {
-                dataGridView1.Rows.Add(listNCC[i].maNCC, listNCC[i].tencty, listNCC[i].sdt, listNCC[i].diachi);
-            }
+            dataGridView1.DataSource = listNCC;
+            dataGridView1.Columns["deleted"].Visible = false;
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -120,7 +113,6 @@ namespace sales_management_software
             {
                 if (txt_maNCC.Text != "" && txt_tencty.Text != "" && txt_diachi.Text != "" && txt_sdt.Text != "")
                 {
-
                     //thêm nhà cung cấp
                     string maNCC = txt_maNCC.Text;
                     string tencty = txt_tencty.Text;
@@ -185,6 +177,15 @@ namespace sales_management_software
                 }
             }
         }
+
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            Sale_ManagementEntities sale = new Sale_ManagementEntities();
+            string tukhoa = txtNhapTuKhoa.Text;
+            dataGridView1.DataSource = sale.Search_ncc(tukhoa);
+        }
+
 
     }
 }

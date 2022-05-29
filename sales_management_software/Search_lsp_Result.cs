@@ -10,22 +10,11 @@
 namespace sales_management_software
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class SAN_PHAM
+    public partial class Search_lsp_Result
     {
-        public string masp { get; set; }
-        public string tensp { get; set; }
-        public Nullable<int> dongia { get; set; }
-        public Nullable<int> soluong { get; set; }
-        public string maNCC { get; set; }
         public string maloai { get; set; }
+        public string tenloai { get; set; }
         public Nullable<bool> deleted { get; set; }
-        public string anhsp { get; set; }
-        public string mats { get; set; }
-    
-        public virtual LOAI_SAN_PHAM LOAI_SAN_PHAM { get; set; }
-        public virtual NHA_CUNG_CAP NHA_CUNG_CAP { get; set; }
-        public virtual THONG_SO_KY_THUAT THONG_SO_KY_THUAT { get; set; }
     }
 }
